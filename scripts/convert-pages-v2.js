@@ -14,7 +14,7 @@ window.vcb2 = ( function () {
 		if ( media ) { return media; }
 		media = {};
 		for ( var p = 1; ; p++ ) {
-			var b = await api( { path: '/wp/v2/media?per_page=100&_fields=id,source_url,title&page=' + p } ).catch( function () { return []; } );
+			var b = await api( { path: '/wp/v2/media?per_page=100&context=edit&_fields=id,source_url,title&page=' + p } ).catch( function () { return []; } );
 			b.forEach( function ( m ) {
 				var t = ( m.title && ( m.title.raw || m.title.rendered ) || '' ).toLowerCase().trim();
 				if ( t && ! media[ t ] ) { media[ t ] = m.source_url; }
@@ -111,9 +111,11 @@ window.vcb2 = ( function () {
 	}
 	function bgImage( el ) {
 		var st = el && el.getAttribute( 'style' ) || '';
-		var m = st.match( /url\(\s*['"]?([^'")]+)['"]?\s*\)/ );
-		if ( ! m ) { return ''; }
-		var u = m[ 1 ].split( '?' )[ 0 ];
+		var at = st.indexOf( 'url(' );
+		if ( at < 0 ) { return ''; }
+		var rest = st.slice( at + 4 );
+		var end = rest.search( /['"]?\)\s*(center|no-repeat|top|left|right|bottom|\/|;|$)/ );
+		var u = ( end < 0 ? rest : rest.slice( 0, end ) ).replace( /^\s*['"]?/, '' ).split( '?' )[ 0 ].trim();
 		if ( ! /^(https?:)?\//.test( u ) ) { u = '/wp-content/themes/vineyard/files/' + u.split( '/' ).map( encodeURIComponent ).join( '/' ); }
 		return relink( u );
 	}
@@ -124,10 +126,13 @@ window.vcb2 = ( function () {
 		var col2 = blk.querySelector( '.col-md-5' ) || blk;
 		var name = col2.querySelector( 'h2' );
 		var more = col2.querySelector( '.rz-bus-readmore' );
-		var desc = col2.querySelector( '.rz-business-desc' );
 		var mid = [];
 		if ( name ) { mid.push( B.createBlock( 'core/heading', { level: 3, content: esc( txt( name ) ), className: 'directory-name' } ) ); }
-		if ( desc ) { mid = mid.concat( raw( desc.innerHTML.replace( /<h2/g, '<p' ).replace( /<\/h2>/g, '</p>' ) ) ); }
+		var rest = col2.cloneNode( true ); // everything between the name and Read More (the browser may have moved it out of its span)
+		var rn = rest.querySelector( 'h2' ); if ( rn ) { rn.remove(); }
+		rest.querySelectorAll( '.rz-bus-readmore' ).forEach( function ( x ) { x.remove(); } );
+		var descHtml = rest.innerHTML.replace( /<h2/g, '<p' ).replace( /<\/h2>/g, '</p>' );
+		mid = mid.concat( raw( descHtml ) );
 		if ( more ) { mid.push( para( '<a href="' + esc( more.getAttribute( 'href' ) ) + '">Read More</a>', 'directory-more' ) ); }
 		var right = contactLines( blk );
 		var cols = [
@@ -278,10 +283,53 @@ window.vcb2 = ( function () {
 		return null;
 	}
 
+	/** A page still in its original copied form: build the standard layout around its converted content. */
+	function esc2( s ) { return esc( s ); }
+	function freshLayout( raw, parts ) {
+		var body = rebuildBody( raw );
+		var full = /fullwidth/.test( parts.template || '' );
+		var head = [ B.createBlock( 'vineyard/breadcrumbs' ), B.createBlock( 'core/post-title', { level: 1, className: 'page-title' } ) ];
+		if ( parts.buttons && parts.buttons.length ) {
+			head.push( B.createBlock( 'core/buttons', { className: 'inner-buttons' }, parts.buttons.map( function ( b ) {
+				return B.createBlock( 'core/button', { text: esc2( b.label ), url: b.url, linkTarget: b.new_tab ? '_blank' : undefined, rel: b.new_tab ? 'noreferrer noopener' : undefined, className: 'inner-button' } );
+			} ) ) );
+		}
+		var main = head.concat( body );
+		if ( full ) { return { blocks: [ B.createBlock( 'core/group', { className: 'entry-wrap', layout: { type: 'default' } }, main ) ], template: 'page-full-width' }; }
+		var rel = parts.related && parts.related !== '0' ? parts.related : '';
+		var side = [ B.createBlock( 'vineyard/related-pages', rel ? { menu: rel } : {} ) ];
+		var c = parts.contact;
+		if ( c ) {
+			var box = [];
+			if ( c.title ) { box.push( B.createBlock( 'core/heading', { level: 2, content: esc2( c.title ), className: 'box-header' } ) ); }
+			if ( c.text ) { box.push( para( esc2( c.text ), 'contact-details' ) ); }
+			if ( c.phone ) { box.push( para( '<a href="' + c.phone_href + '">' + esc2( c.phone ) + '</a>', 'contact-link' ) ); }
+			side.push( B.createBlock( 'core/group', { className: 'contact-box', backgroundColor: 'slate', textColor: 'base', layout: { type: 'default' } }, box ) );
+		}
+		return { blocks: [ B.createBlock( 'core/columns', { className: 'inner-layout' }, [
+			B.createBlock( 'core/column', { width: '25%', className: 'inner-sidebar' }, side ),
+			B.createBlock( 'core/column', { width: '75%', className: 'inner-main' }, main )
+		] ) ], template: '' };
+	}
+	async function fresh( id, opts ) {
+		var page = await api( { path: '/wp/v2/pages/' + id + '?context=edit&_fields=id,content' } );
+		var cur = page.content.raw || '';
+		if ( /wp:vineyard\/breadcrumbs/.test( cur ) ) { return { id: id, skipped: true }; }
+		var parts = await api( { path: '/vineyard/v1/page-parts/' + id } );
+		if ( parts.is_front ) { return { id: id, skipped: true }; }
+		var r = freshLayout( cur, parts );
+		var next = relink( B.serialize( r.blocks ) );
+		var c = check( next );
+		if ( c.bad || c.html ) { return { id: id, error: c.bad + ' invalid, ' + c.html + ' html' }; }
+		if ( opts && opts.dry ) { return { id: id, content: next }; }
+		await api( { path: '/wp/v2/pages/' + id, method: 'POST', data: { content: next, template: r.template } } );
+		return { id: id, ok: true };
+	}
+
 	async function one( id, opts ) {
 		var page = await api( { path: '/wp/v2/pages/' + id + '?context=edit&_fields=id,content' } );
 		var cur = page.content.raw || '';
-		var lost = /<!-- wp:html \/-->|<!-- wp:html -->\s*<!-- \/wp:html -->/.test( cur );
+		var lost = ( opts && opts.force ) || /<!-- wp:html \/-->|<!-- wp:html -->\s*<!-- \/wp:html -->/.test( cur );
 		var next = cur;
 		if ( lost ) {
 			var old = await oldVersion( id );
@@ -344,5 +392,5 @@ window.vcb2 = ( function () {
 		res.done = true;
 		return res;
 	}
-	return { run: run, one: one, htmlToBlocks: htmlToBlocks, loadMedia: loadMedia, relink: relink };
+	return { run: run, one: one, fresh: fresh, htmlToBlocks: htmlToBlocks, loadMedia: loadMedia, relink: relink };
 } )();
