@@ -99,7 +99,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'vineyard-layout', $dir . '/css/layout.css', array( 'vineyard-ytplayer' ), '1.02' );
 
 	if ( is_front_page() || is_page( 'calendar' ) ) {
-		$cal = $dir . '/revize_calendar';
+		$cal = get_template_directory_uri() . '/revize/plugins/revize_calendar';
 		wp_enqueue_style( 'vineyard-cal-core', $cal . '/core/main.css', array( 'vineyard-layout' ), null );
 		wp_enqueue_style( 'vineyard-cal-daygrid', $cal . '/daygrid/main.min.css', array( 'vineyard-cal-core' ), null );
 		wp_enqueue_style( 'vineyard-cal-timegrid', $cal . '/timegrid/main.min.css', array( 'vineyard-cal-daygrid' ), null );
@@ -197,4 +197,39 @@ add_shortcode( 'vineyard_events', function () {
 		return $out;
 	}
 	return '';
+} );
+
+require_once get_template_directory() . '/inc/redirects.php';
+
+// Page-specific original CSS/JS (document center, FAQ, business directory, …). The importer records, per page,
+// the extra <head> resources the original page loaded (post meta "vc_head_assets" = [["css","path"],["js","path"]]).
+add_action( 'wp_enqueue_scripts', function () {
+	if ( ! is_singular() ) {
+		return;
+	}
+	$list = json_decode( (string) get_post_meta( get_the_ID(), 'vc_head_assets', true ), true );
+	if ( ! is_array( $list ) ) {
+		return;
+	}
+	$base = get_template_directory_uri();
+	$path = get_template_directory();
+	foreach ( $list as $i => $pair ) {
+		list( $kind, $rel ) = $pair;
+		$rel = ( 0 === strpos( $rel, '_assets_/' ) || 0 === strpos( $rel, 'revize/' ) ) ? $rel : '_assets_/' . $rel;
+		if ( ! file_exists( $path . '/' . $rel ) ) {
+			continue; // not mirrored (e.g. third-party)
+		}
+		$handle = 'vineyard-page-' . $i . '-' . md5( $rel );
+		if ( 'css' === $kind ) {
+			wp_enqueue_style( $handle, $base . '/' . $rel, array( 'vineyard-layout' ), null );
+		} else {
+			wp_enqueue_script( $handle, $base . '/' . $rel, array( 'jquery' ), null, true );
+		}
+	}
+}, 30 );
+
+// Body classes that the original templates set on <body> (e.g. "fullwidth"); layout.css has rules keyed on them.
+add_filter( 'body_class', function ( $classes ) {
+	$extra = is_singular() ? trim( (string) vineyard_meta( 'vc_body_class' ) ) : '';
+	return $extra ? array_merge( $classes, preg_split( '/\s+/', $extra ) ) : $classes;
 } );
