@@ -43,5 +43,18 @@ check( $valid( '_vcc_all_day', '1' ) && $valid( '_vcc_all_day', '' ) && ! $valid
 check( 'Vineyard Grove Park' === $san( '_vcc_location', " Vineyard Grove <b>Park</b>\n" ), '_vcc_location stored as plain text' );
 // the format the meta box saves is exactly what REST stores (front end sorts/filters on it as DATETIME)
 check( preg_match( '/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', $san( '_vcc_start', '2026-11-10T17:00' ) ), 'REST value has the same shape as the meta box value ("Y-m-d H:i:s")' );
+// 1.0.3: titles/descriptions become plain text once (WordPress returns titles texturized: & → &#038;) and are escaped on output
+function wp_strip_all_tags( $s ) { return trim( strip_tags( preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $s ) ) ); }
+require $root . '/plugin/vineyard-city-content/includes/render.php';
+foreach ( array(
+	array( 'Trash &#038; Recycle Pickup', 'Trash & Recycle Pickup' ), array( 'Blizzard 5K &#038; 1K', 'Blizzard 5K & 1K' ),
+	array( 'Mayor&#8217;s &#8220;Coffee&#8221; Chat &#038; Q&#038;A', "Mayor\u{2019}s \u{201C}Coffee\u{201D} Chat & Q&A" ), array( 'Fish &amp; Chips', 'Fish & Chips' ),
+	array( 'It&#039;s &quot;on&quot;', 'It\'s "on"' ), array( '<p>Bins&nbsp;out &amp; <a href="/x">schedule</a></p>', 'Bins out & schedule' ), array( 'Plain & simple', 'Plain & simple' ),
+) as $c ) {
+	check( $c[1] === vcc_plain_text( $c[0] ), 'vcc_plain_text( ' . $c[0] . ' ) = ' . $c[1] );
+}
+$j = json_encode( array( 'title' => vcc_plain_text( 'Trash &#038; Recycle </script>' ) ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE );
+check( false === strpos( $j, '</' ) && false === strpos( $j, '&' ) && 'Trash & Recycle' === json_decode( $j, true )['title'], 'calendar JSON is safe inside <script> and decodes to "Trash & Recycle"' );
+
 echo $f ? "\n$f check(s) FAILED\n" : "\nAll event REST checks passed\n";
 exit( $f ? 1 : 0 );

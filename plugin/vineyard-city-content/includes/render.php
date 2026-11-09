@@ -5,6 +5,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* ------------------------------------------------------------------ events data */
+/**
+ * Plain text for titles/descriptions: WordPress returns titles "texturized" (& → &#038;, ' → &#8217;), which is right for
+ * HTML but shows as "&#038;" once a script inserts it as text (the calendar). Decode ONCE here; every output escapes it again
+ * (esc_html / esc_attr in PHP, the calendar library escapes titles itself).
+ */
+function vcc_plain_text( $s ) {
+	$s = html_entity_decode( wp_strip_all_tags( (string) $s ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+	return trim( preg_replace( '/[\s\x{00A0}]+/u', ' ', $s ) );
+}
+
 function vcc_cat_color( $slug ) {
 	$map = array( 'meetings' => '#114a76', 'recreation' => '#087968', 'community' => '#fcb215', 'utilities' => '#4e606f', 'library' => '#cc3232' );
 	$t   = get_term_by( 'slug', $slug, 'vc_event_cat' );
@@ -20,11 +30,11 @@ function vcc_event_data( $id ) {
 	$ts    = $start ? strtotime( $start ) : 0;
 	$terms = wp_get_post_terms( $id, 'vc_event_cat' );
 	$cats  = is_wp_error( $terms ) ? array() : wp_list_pluck( $terms, 'slug' );
-	$desc  = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( str_replace( '>', '> ', strip_shortcodes( $p->post_content ) ) ) ) );
+	$desc  = vcc_plain_text( str_replace( '>', '> ', strip_shortcodes( $p->post_content ) ) );
 	$time  = $all || ! $ts ? '' : date_i18n( 'g:i a', $ts ) . ( $end ? ' – ' . date_i18n( 'g:i a', strtotime( $end ) ) : '' );
 	return array(
-		'id' => $id, 'title' => get_the_title( $id ), 'url' => get_permalink( $id ), 'start' => $start, 'end' => $end, 'all_day' => $all, 'location' => get_post_meta( $id, '_vcc_location', true ),
-		'desc_html' => $p->post_content, 'desc_short' => mb_strlen( $desc ) > 120 ? mb_substr( $desc, 0, 120 ) . '…' : $desc, 'cats' => $cats,
+		'id' => $id, 'title' => vcc_plain_text( get_the_title( $id ) ), 'url' => get_permalink( $id ), 'start' => $start, 'end' => $end, 'all_day' => $all, 'location' => vcc_plain_text( get_post_meta( $id, '_vcc_location', true ) ),
+		'desc_html' => $p->post_content, 'desc_short' => mb_strlen( $desc ) > 120 ? rtrim( mb_substr( $desc, 0, 120 ) ) . '…' : $desc, 'cats' => $cats,
 		'color' => $cats ? vcc_cat_color( $cats[0] ) : '#3788d8',
 		'month' => $ts ? strtoupper( date_i18n( 'M', $ts ) ) : '', 'day' => $ts ? date_i18n( 'j', $ts ) : '', 'time' => $time,
 		'when_long' => $ts ? date_i18n( 'l, F j, Y', $ts ) . ( $time ? ' · ' . $time : '' ) : '',
@@ -69,7 +79,7 @@ function vcc_enqueue_calendar() {
 	wp_enqueue_script( 'vcc-fc-core', VCC_URL . 'assets/fullcalendar/core.min.js', array(), VCC_VERSION, true );
 	wp_enqueue_script( 'vcc-fc-daygrid', VCC_URL . 'assets/fullcalendar/daygrid.min.js', array( 'vcc-fc-core' ), VCC_VERSION, true );
 	wp_enqueue_script( 'vcc-events', VCC_URL . 'assets/events.js', array( 'vcc-fc-daygrid' ), VCC_VERSION, true );
-	wp_add_inline_script( 'vcc-events', 'window.vccEvents=' . wp_json_encode( vcc_calendar_json() ) . ';', 'before' );
+	wp_add_inline_script( 'vcc-events', 'window.vccEvents=' . wp_json_encode( vcc_calendar_json(), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE ) . ';', 'before' );
 }
 
 /* ------------------------------------------------------------------ section renderers */

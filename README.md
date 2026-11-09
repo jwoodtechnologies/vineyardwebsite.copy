@@ -114,12 +114,12 @@ scripts/build_deploy_branches.sh        # (re)builds deploy/site (theme + files/
 ## Install the editable theme + plugin (one time, no code)
 
 Two small zips are on the server after `deploy/site` is deployed (and in this repo under `content/`):
-`/wp-content/themes/vineyard/files/_import/vineyard-city-content-1.0.2.zip` (the plugin that **owns your content**) and
+`/wp-content/themes/vineyard/files/_import/vineyard-city-content-1.0.3.zip` (the plugin that **owns your content**) and
 `/wp-content/themes/vineyard/files/_import/vineyard-city-theme-1.0.2.zip` (a **display-only** theme, no 1.6 GB files).
 Do **not** delete or disconnect the old `vineyard` theme folder: it still hosts the documents (`…/themes/vineyard/files/…`). You simply never activate it.
 
 1. Open each zip's address in your browser and save it to your computer.
-2. **Plugins → Add New Plugin → Upload Plugin → Choose File → `vineyard-city-content-1.0.2.zip` → Install Now → Activate Plugin.**
+2. **Plugins → Add New Plugin → Upload Plugin → Choose File → `vineyard-city-content-1.0.3.zip` → Install Now → Activate Plugin.**
 3. **Appearance → Themes → Add New Theme → Upload Theme → `vineyard-city-theme-1.0.2.zip` → Install Now → Activate.**
 4. Left menu **Vineyard Site Content → Start here → “Load the starter content”**, wait for the green message, then **“Tidy the pages”** (keep the tab open; it counts up to 621).
 5. **Appearance → Menus → Manage Locations** → set **Main menu (top of every page)** to **Primary** → Save.
@@ -140,6 +140,13 @@ Day one the site looks the same as before. Remaining visible differences are lis
 4. Open any wp-admin page once: the plugin moves an **unchanged** 1.0.1 home page to the new layout by itself (banner and alerts become movable blocks; the old text is kept as a revision). If you had already re-arranged the home page, your order is kept and only the Alerts block is added at the end.
 5. **Pages → Home → Edit**: you should see the seven cards with previews and no warnings. If anything looks off, **Vineyard Site Content → Start here → Rebuild the home page sections**.
 6. Hard-refresh the editor tab (Ctrl+F5 / Cmd+Shift+R) if your browser still shows the old message – it may have kept the old script.
+
+### Upgrading to 1.0.3 (event titles with “&”, home event tabs)
+
+**Fixed:** titles such as *Trash & Recycle Pickup* or *Blizzard 5K & 1K* showed as `Trash &#038; Recycle Pickup` on the calendar. WordPress hands out titles already converted for HTML (`&` → `&#038;`, `'` → `&#8217;`); the calendar then printed that as text. 1.0.3 converts titles, places and short descriptions to plain text once and escapes them at every output: the Calendar page (month grid, category filters, list), the home **Upcoming Events** tabs and small calendars, and each event’s own page. Event descriptions keep their links on the event page (the home list shows a short text-only preview, as before). There are no event pop-ups or .ics exports in the plugin – events open their own page.
+**Also fixed:** the home page **Community** and **Recreation** tabs now switch (they did not since 1.0.0), the event list stays beside the small calendar, and days with events are underlined again (click one to open its event).
+
+**Clicks:** download `…/files/_import/vineyard-city-content-1.0.3.zip` → **Plugins → Add New Plugin → Upload Plugin → Install Now → “Replace current with uploaded”**. The theme is unchanged (`vineyard-city-theme-1.0.2.zip`). Nothing to re-import; the 322 events are fixed as soon as the page is shown. Hard-refresh (Ctrl+F5 / Cmd+Shift+R) if your browser still shows the old calendar script.
 
 ### Importing events through the REST API (1.0.2)
 

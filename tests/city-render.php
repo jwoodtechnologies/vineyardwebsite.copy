@@ -33,10 +33,10 @@ function get_template_directory_uri() { return $GLOBALS['SITE'] . '/wp-content/t
 function home_url( $p = '' ) { return $GLOBALS['SITE'] . ( '' === $p ? '' : '/' . ltrim( $p, '/' ) ); }
 function content_url( $p = '' ) { return $GLOBALS['SITE'] . '/wp-content/' . ltrim( $p, '/' ); }
 function trailingslashit( $s ) { return rtrim( $s, '/' ) . '/'; }
-function esc_url( $u ) { return htmlspecialchars( (string) $u, ENT_QUOTES ); } function esc_attr( $s ) { return htmlspecialchars( (string) $s, ENT_QUOTES ); }
-function esc_html( $s ) { return htmlspecialchars( (string) $s, ENT_QUOTES ); } function esc_textarea( $s ) { return htmlspecialchars( (string) $s ); }
+function esc_url( $u ) { return htmlspecialchars( (string) $u, ENT_QUOTES ); } function esc_attr( $s ) { return htmlspecialchars( (string) $s, ENT_QUOTES, 'UTF-8', false ); }
+function esc_html( $s ) { return htmlspecialchars( (string) $s, ENT_QUOTES, 'UTF-8', false ); } /* like WordPress: never double-encodes */ function esc_textarea( $s ) { return htmlspecialchars( (string) $s ); }
 function wp_kses_post( $s ) { return $s; } function wp_strip_all_tags( $s ) { return trim( strip_tags( $s ) ); } function strip_shortcodes( $s ) { return preg_replace( '/\[[^\]]+\]/', '', $s ); }
-function wp_json_encode( $v ) { return json_encode( $v, JSON_UNESCAPED_SLASHES ); } function wp_unslash( $v ) { return $v; }
+function wp_json_encode( $v, $flags = 0 ) { return json_encode( $v, $flags | JSON_UNESCAPED_SLASHES ); } function wp_unslash( $v ) { return $v; }
 function current_time( $t ) { return 'timestamp' === $t ? strtotime( '2026-11-09 08:00:00' ) : ( 'mysql' === $t ? '2026-11-09 08:00:00' : date( $t, strtotime( '2026-11-09 08:00:00' ) ) ); }
 function date_i18n( $f, $ts ) { return date( $f, $ts ); }
 function wp_enqueue_style( $h, $src = '', $d = array(), $v = null ) { if ( $src ) { $GLOBALS['S']['styles'][ $h ] = $src; } }
@@ -53,7 +53,9 @@ function get_post( $id ) { return $GLOBALS['S']['posts'][ $id ] ?? null; }
 function get_post_meta( $id, $k, $single = true ) { return $GLOBALS['S']['meta'][ $id ][ $k ] ?? ''; }
 function get_the_post_thumbnail_url( $id, $s = 'full' ) { return $GLOBALS['S']['thumbs'][ $id ] ?? false; }
 function get_permalink( $id = 0 ) { $p = get_post( $id ?: ( $GLOBALS['S']['cur'] ?? 0 ) ); return $p ? home_url( '/' . ( $p->path ?? '' ) ) : home_url( '/' ); }
-function get_the_title( $id = 0 ) { $p = get_post( $id ?: ( $GLOBALS['S']['cur'] ?? 0 ) ); return $p ? $p->post_title : ''; }
+function get_the_title( $id = 0 ) { $p = get_post( $id ?: ( $GLOBALS['S']['cur'] ?? 0 ) ); return $p ? wptexturize_stub( $p->post_title ) : ''; }
+/** What WordPress does to titles (wptexturize): & → &#038;, ' → &#8217;, "…" → &#8220;…&#8221;. */
+function wptexturize_stub( $t ) { $t = preg_replace( '/&(?![a-z0-9#]+;)/i', '&#038;', $t ); $t = str_replace( "'", '&#8217;', $t ); $i = 0; return preg_replace_callback( '/"/', function () use ( &$i ) { return ( $i++ % 2 ) ? '&#8221;' : '&#8220;'; }, $t ); }
 function get_the_ID() { return $GLOBALS['S']['cur']; } function wp_get_post_parent_id( $id ) { $p = get_post( $id ); return $p ? (int) ( $p->post_parent ?? 0 ) : 0; }
 function get_posts( $a ) {
 	$r = array_filter( $GLOBALS['S']['posts'], function ( $p ) use ( $a ) { return $p->post_type === $a['post_type'] && 'publish' === ( $p->post_status ?? 'publish' ); } );
@@ -70,7 +72,7 @@ function get_post_field( $f, $id ) { return $GLOBALS['S']['content'] ?? ''; }
 function has_block( $n ) { return false !== strpos( $GLOBALS['S']['content'] ?? '', 'wp:' . $n ); }
 function wp_list_pluck( $a, $f ) { return array_map( function ( $o ) use ( $f ) { return is_object( $o ) ? $o->$f : $o[ $f ]; }, $a ); }
 function is_wp_error( $x ) { return $x instanceof WP_Error; }
-function is_front_page() { return $GLOBALS['S']['front']; } function is_singular() { return true; } function in_the_loop() { return true; } function is_main_query() { return true; }
+function is_front_page() { return $GLOBALS['S']['front']; } function is_singular( $t = null ) { if ( null === $t ) { return true; } $p = get_post( $GLOBALS['S']['cur'] ?? 0 ); return $p && in_array( $p->post_type, (array) $t, true ); } function in_the_loop() { return true; } function is_main_query() { return true; }
 function is_search() { return false; } function get_search_query() { return ''; } function is_404() { return false; } function is_active_sidebar() { return false; } function dynamic_sidebar() {}
 function get_pages( $a ) { return array(); } function wp_parse_url( $u, $c = -1 ) { return parse_url( $u, $c ); } function is_admin() { return false; } function current_user_can( $c ) { return false; } function admin_url( $p = '' ) { return $GLOBALS['SITE'] . '/wp-admin/' . $p; }
 function wp_head() { do_action( 'wp_enqueue_scripts' ); echo '<title>' . esc_html( $GLOBALS['S']['title'] ?? 'Vineyard City' ) . "</title>\n"; foreach ( $GLOBALS['S']['styles'] as $h => $s ) { echo '<link rel="stylesheet" href="' . esc_url( $s ) . '">' . "\n"; } do_action( 'wp_head' ); }
@@ -84,8 +86,8 @@ function wp_footer() {
 function get_header() { include get_template_directory() . '/header.php'; } function get_footer() { include get_template_directory() . '/footer.php'; }
 function get_template_part( $s ) { include get_template_directory() . '/' . $s . '.php'; }
 function have_posts() { static $d = false; if ( $d ) { $d = false; return false; } $d = true; return true; } function the_post() {}
-function the_title() { echo esc_html( get_the_title() ); } function get_the_content() { return $GLOBALS['S']['content']; }
-function the_content() { echo do_blocks_stub( $GLOBALS['S']['content'] ); }
+function the_title() { echo get_the_title(); } /* WordPress prints the texturized title as HTML */ function get_the_content() { return $GLOBALS['S']['content']; }
+function the_content() { echo apply_filters( 'the_content', do_blocks_stub( $GLOBALS['S']['content'] ) ); }
 function do_blocks_stub( $c ) {
 	$c = preg_replace_callback( '/<!-- wp:([a-z0-9-]+\/[a-z0-9-]+) \/-->/', function ( $m ) { return isset( $GLOBALS['S']['blocks'][ $m[1] ] ) ? call_user_func( $GLOBALS['S']['blocks'][ $m[1] ] ) : ''; }, $c );
 	$c = preg_replace( '/<!-- \/?wp:shortcode -->/', '', $c );
@@ -138,12 +140,30 @@ $S['options']['vcc_settings'] = $settings;
 $mk = function ( $type, $title, $order = 0, $extra = array() ) use ( &$S ) { $id = ++$S['next']; $S['posts'][ $id ] = (object) array_merge( array( 'ID' => $id, 'post_type' => $type, 'post_title' => $title, 'post_content' => '', 'menu_order' => $order, 'post_status' => 'publish' ), $extra ); return $id; };
 foreach ( $seed['quicklinks'] as $i => $q ) { $id = $mk( 'vc_quicklink', $q['title'], $i ); $S['meta'][ $id ] = array( '_vcc_url' => 0 === strpos( $q['url'], '/' ) ? home_url( $q['url'] ) : $q['url'], '_vcc_new_tab' => $q['new_tab'] ? '1' : '', '_vcc_title2' => $q['title2'] ); $S['thumbs'][ $id ] = $S['att'][ $ref_url( $q['image'] ) ]; }
 foreach ( $seed['tiles'] as $i => $q ) { $id = $mk( 'vc_tile', $q['title'], $i ); $S['meta'][ $id ] = array( '_vcc_url' => 0 === strpos( $q['url'], '/' ) ? home_url( $q['url'] ) : $q['url'], '_vcc_new_tab' => $q['new_tab'] ? '1' : '' ); $S['thumbs'][ $id ] = $S['att'][ $ref_url( $q['image'] ) ]; }
+if ( ! getenv( 'VCC_NO_TEST_EVENTS' ) ) $seed['events'] = array_merge( $seed['events'], array(
+	array( 'title' => 'Trash & Recycle Pickup', 'start' => '2026-11-20T00:00:00', 'end' => '', 'all_day' => true, 'location' => '', 'categories' => array( 'Utilities' ),
+		'description' => '<p>Put bins out by 7am. <a href="https://example.org/schedule">See the schedule</a> &amp; <a href="/government/streets/">street info</a>.</p>' ),
+	array( 'title' => 'Blizzard 5K & 1K', 'start' => '2026-11-21T08:30:00', 'end' => '2026-11-21T09:30:00', 'location' => 'Vineyard Grove Park', 'categories' => array( 'Recreation' ), 'description' => '' ),
+	array( 'title' => 'Mayor\'s "Coffee" Chat & Q&A', 'start' => '2026-11-18T09:00:00', 'end' => '2026-11-18T10:00:00', 'location' => 'Grove Park & Pavilion', 'categories' => array( 'Community' ),
+		'description' => '<p>Bring your questions&nbsp;&amp; ideas – the Mayor\'s office hosts an informal chat about parks, roads &amp; budgets. Coffee &amp; donuts provided by local businesses &amp; volunteers.</p>' ),
+	array( 'title' => 'Planning & Zoning Meeting', 'start' => '2026-11-11T18:00:00', 'end' => '', 'location' => '125 S Main', 'categories' => array( 'Meetings' ),
+		'description' => '<p>Agenda: <a href="https://vineyardut.portal.civicclerk.com/">CivicClerk</a> &amp; minutes.</p>' ),
+) );
 foreach ( $seed['events'] as $e ) { $id = $mk( 'vc_event', $e['title'], 0, array( 'post_content' => $e['description'], 'path' => 'event/' . sanitize_slug( $e['title'] ) . '/' ) ); $all = ! empty( $e['all_day'] ) || '00:00:00' === substr( $e['start'], 11, 8 ); $S['meta'][ $id ] = array( '_vcc_start' => str_replace( 'T', ' ', $e['start'] ), '_vcc_end' => ( $e['end'] && ! $all ) ? str_replace( 'T', ' ', $e['end'] ) : '', '_vcc_all_day' => $all ? '1' : '', '_vcc_location' => $e['location'] ); $S['terms'][ $id ] = array_map( 'strtolower', $e['categories'] ); }
 function sanitize_slug( $s ) { return trim( preg_replace( '/[^a-z0-9]+/', '-', strtolower( $s ) ), '-' ); }
 $menu_id = array(); foreach ( $seed['related_menus'] as $i => $m ) { $S['menus'][ 500 + $i ] = $m['items']; $menu_id[ $m['name'] ] = 500 + $i; }
 $home_id = $mk( 'page', 'Home', 0, array( 'path' => '' ) ); $S['options']['page_on_front'] = $home_id;
 $S['thumbs'][ $home_id ] = vcc_file_url( $seed['home_banner']['file'] );
 
+function vc_render_event_pages( $out ) {
+	global $S;
+	foreach ( $S['posts'] as $id => $p ) {
+		if ( 'vc_event' !== $p->post_type ) { continue; }
+		$S['front'] = false; $S['cur'] = $id; $S['content'] = $p->post_content; $S['body'] = '';
+		ob_start(); include get_template_directory() . '/single-vc_event.php'; $h = ob_get_clean();
+		@mkdir( $out . '/' . $p->path, 0777, true ); file_put_contents( $out . '/' . $p->path . 'index.html', $h );
+	}
+}
 function vc_render( $S_cb ) { ob_start(); $S_cb(); return ob_get_clean(); }
 $S['front'] = true; $S['cur'] = $home_id; $S['content'] = $seed['home_content']; $S['title'] = 'Welcome to Vineyard UT';
 $html = vc_render( function () { include get_template_directory() . '/front-page.php'; } );
@@ -176,11 +196,12 @@ $want = isset( $argv[3] ) ? explode( ',', $argv[3] ) : null;
 foreach ( $man as $m ) {
 	if ( $want && ! in_array( $m['old_path'], $want, true ) ) { continue; }
 	$p = $pages[ $m['old_path'] ]; $id = $ids[ $m['old_path'] ];
-	$S['cur'] = $id; $S['content'] = $p['html']; $S['title'] = $m['title']; $S['body'] = $p['template'] ? 'fullwidth' : '';
+	$S['cur'] = $id; $S['content'] = 'calendar.php' === $m['old_path'] ? $seed['calendar_block'] : $p['html']; $S['title'] = $m['title']; $S['body'] = $p['template'] ? 'fullwidth' : '';
 	$tpl = $p['template'] ? 'template-fullwidth.php' : 'page.php';
 	$html = vc_render( function () use ( $tpl ) { include get_template_directory() . '/' . $tpl; } );
 	$dir = $out . '/' . $m['new_path']; @mkdir( $dir, 0777, true ); file_put_contents( $dir . 'index.html', $html ); $n++;
 }
+vc_render_event_pages( $out );
 echo "rendered home + $n pages to $out\n";
 
 // ---- editor preview: what each block's card shows in the block editor (ServerSideRender asks the site with REST_REQUEST)

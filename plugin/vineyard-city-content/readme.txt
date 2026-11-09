@@ -2,7 +2,7 @@
 Contributors: vineyardcity
 Requires at least: 6.3
 Tested up to: 6.8
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 
 Keeps the Vineyard City website's own content (header/footer details, home page tiles, quick links, events, alerts) in WordPress itself so it stays when the theme changes.
@@ -11,6 +11,11 @@ Keeps the Vineyard City website's own content (header/footer details, home page 
 Adds one menu, "Vineyard Site Content", with Header, Footer, Home page, Quick Links, Photo Tiles, Alerts and Events. Adds blocks (Quick Links, Upcoming Events, Photo Tiles, Social Media Icons, Newsletter Sign-up, Events Calendar and List) and plain boxes on the Edit Page screen (contact box, buttons, Related Pages list). Works with any theme; the Vineyard City theme styles it to match the original website.
 
 == Changelog ==
+= 1.0.3 =
+* Fix: event titles with &, quotes or apostrophes showed as "&#038;" (or "&#8217;") on the calendar. Titles, places and short descriptions are now turned into plain text once and escaped at every output (calendar, home Upcoming Events, Calendar page list, event page); the calendar data in the page is hex-escaped so no title can break the script.
+* Fix: the Community and Recreation tabs on the home page did not switch (since 1.0.0), and switching left the event list under the calendar instead of beside it.
+* Fix: days with events are underlined in the small calendars again; clicking such a day opens its first event.
+
 = 1.0.2 =
 * Fix: the home page sections showed as "Your site doesn't include support for this block" in the editor. Every section is now a proper block (block.json + editor script): a labelled card with a live preview, a help line and an "Edit these items" button.
 * New blocks: Home Banner (photo, logo, button) and Alerts, so every part of the home page can be moved or removed.
