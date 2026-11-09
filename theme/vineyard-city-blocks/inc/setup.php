@@ -38,8 +38,9 @@ function vcb_setup() {
 			set_theme_mod( 'custom_logo', $logo );
 		}
 	}
-	if ( ! get_theme_mod( 'vcb_default_banner' ) ) {
-		$b = vcb_media_from_theme( '_assets_/images/nav-img.jpg', 'banner' );
+	$cur = (int) get_theme_mod( 'vcb_default_banner' );
+	if ( ! $cur || $cur === (int) get_option( 'vcb_media_banner' ) ) { // not set, or still the earlier wrong picture
+		$b = vcb_media_from_theme( '_assets_/images/inner-slide-1.jpg', 'banner_std' );
 		if ( $b ) {
 			set_theme_mod( 'vcb_default_banner', $b );
 		}

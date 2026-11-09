@@ -9,3 +9,5 @@
 .editor-styles-wrapper .photo-tile .tile-title a::after { display: none; }
 .editor-styles-wrapper .site-header__nav .wp-block-navigation__submenu-container { display: none; }
 .editor-styles-wrapper .vcb-related.is-empty { background: var(--wp--preset--color--primary); }
+.editor-styles-wrapper .page-banner { background: url(../../_assets_/images/inner-slide-1.jpg) center / cover no-repeat; }
+.editor-styles-wrapper .page-banner .components-placeholder__illustration { display: none; }

@@ -7,7 +7,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-define( 'VCB_VERSION', '2.0.0' );
+define( 'VCB_VERSION', '2.0.1' );
 
 require_once __DIR__ . '/inc/class-walkers.php';
 require_once __DIR__ . '/inc/redirects.php';
@@ -100,7 +100,7 @@ add_filter( 'render_block_core/cover', function ( $html, $block ) {
 function vcb_default_banner() {
 	$id = (int) get_theme_mod( 'vcb_default_banner' );
 	$u  = $id ? wp_get_attachment_image_url( $id, 'full' ) : '';
-	return $u ? $u : vcb_asset( 'images/nav-img.jpg' );
+	return $u ? $u : vcb_asset( 'images/inner-slide-1.jpg' ); // the original site's standard banner
 }
 
 // Site logo block falls back to the city logo until one is chosen.
