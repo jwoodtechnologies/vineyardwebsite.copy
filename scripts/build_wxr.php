@@ -9,8 +9,8 @@
  *
  * Links are written as ROOT-RELATIVE URLs so the file works on any domain:
  *   page links  -> /government/building/
- *   file links  -> /wp-content/uploads/vineyard-files/<old path>   (deployed from branch deploy/files)
- *   theme files -> /wp-content/themes/vineyard/_assets_/...        (deployed from branch deploy/theme)
+ *   file links  -> /wp-content/themes/vineyard/files/<old path>   (the files/ folder of branch deploy/site)
+ *   theme files -> /wp-content/themes/vineyard/_assets_/...        (branch deploy/site)
  */
 require __DIR__ . '/lib-rewrite.php';
 
@@ -22,6 +22,7 @@ $ctx      = array(
 	'media_map'    => vc_load_media_csv( $root . '/content/media.csv' ),
 	'home'         => '/',
 	'uploads'      => '/wp-content/uploads',
+	'files_base'   => '/wp-content/themes/vineyard/files',
 	'theme_assets' => '/wp-content/themes/vineyard/_assets_',
 	'theme_uri'    => '/wp-content/themes/vineyard',
 	'unresolved'   => array(),

@@ -50,7 +50,7 @@ function vc_map_url( $url, &$ctx ) {
 		return $ctx['home'] . $ctx['page_map'][ rtrim( $path, '/' ) . '/index.php' ] . $frag;
 	}
 	if ( isset( $ctx['media_map'][ $path ] ) ) {
-		return $ctx['uploads'] . '/vineyard-files/' . vc_encode_path( $path ) . $frag; // drops the ?t=… cache-buster
+		return ( isset( $ctx['files_base'] ) ? $ctx['files_base'] : $ctx['uploads'] . '/vineyard-files' ) . '/' . vc_encode_path( $path ) . $frag; // drops the ?t=… cache-buster
 	}
 	if ( 0 === strpos( $path, 'revize/' ) && isset( $ctx['theme_uri'] ) ) {
 		return $ctx['theme_uri'] . '/' . vc_encode_path( $path ) . $frag;

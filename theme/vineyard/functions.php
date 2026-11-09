@@ -55,17 +55,16 @@ function vineyard_url( $old_path ) {
 
 /**
  * URL of a document/image that lived at the site root of the old site (e.g. "Headshots/IMG_1037 - Copy.jpg").
- * Files are deployed (GitHub Deployments, branch deploy/files) to wp-content/uploads/vineyard-files/<old path>,
- * so the URL is derived from the old path and needs no database lookup. Override the folder with the
- * VINEYARD_FILES_DIR constant if you deploy the files elsewhere.
+ * The files ship inside the theme (branch deploy/site, folder files/), so they are served from
+ * /wp-content/themes/vineyard/files/<old path>. Change the base with the 'vineyard_files_base_url' filter.
  */
 function vineyard_media_url( $old_path ) {
 	$old_path = ltrim( rawurldecode( $old_path ), '/' );
 	if ( '' === $old_path ) {
 		return '';
 	}
-	$dir = defined( 'VINEYARD_FILES_DIR' ) ? VINEYARD_FILES_DIR : 'vineyard-files';
-	return content_url( 'uploads/' . $dir . '/' . implode( '/', array_map( 'rawurlencode', explode( '/', $old_path ) ) ) );
+	$base = apply_filters( 'vineyard_files_base_url', get_template_directory_uri() . '/files' );
+	return trailingslashit( $base ) . implode( '/', array_map( 'rawurlencode', explode( '/', $old_path ) ) );
 }
 
 /* ------------------------------------------------------------- enqueues */

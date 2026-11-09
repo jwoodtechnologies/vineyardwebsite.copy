@@ -18,6 +18,7 @@ $ctx      = array(
 	'media_map'    => vc_load_media_csv( $root . '/content/media.csv' ),
 	'home'         => trailingslashit( home_url( '/' ) ),
 	'uploads'      => $up['baseurl'],
+	'files_base'   => $up['baseurl'] . '/vineyard-files', // this WP-CLI route imports files to the Media Library path
 	'theme_assets' => get_theme_root_uri() . '/vineyard/_assets_',
 	'theme_uri'    => get_theme_root_uri() . '/vineyard',
 	'unresolved'   => array(),

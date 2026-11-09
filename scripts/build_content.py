@@ -393,7 +393,7 @@ def main():
             e = entries.get(rel)
             new_ref = "/" + e["new_path"] if e else "/"
         elif kind in ("document", "image") and not in_assets:
-            new_ref = "/wp-content/uploads/vineyard-files/" + clean_rel
+            new_ref = "/wp-content/themes/vineyard/files/" + clean_rel
         elif in_assets:
             new_ref = "theme: _assets_/" + clean_rel.split("_assets_/", 1)[-1] if "_assets_/" in rel else "theme: _assets_/revize_" + clean_rel[len("revize/"):]
         inv.append({"type": kind, "old_url": old_url_for(rel), "local_path": "source/www.vineyardutah.gov/" + rel,
@@ -435,7 +435,7 @@ def main():
     add("/index.html", "/")
     add("/search.php", "/")
     for old in sorted(media):
-        add(q("/" + old), "/wp-content/uploads/vineyard-files/" + q(old))
+        add(q("/" + old), "/wp-content/themes/vineyard/files/" + q(old))
     add("/DocumentCenter/View/319", "/government/resource-documents/")
     add("/DocumentCenter/View/2375/Building-Portal-Account-Guide", "/government/resource-documents/")
     add("^/DocumentCenter/(View|Home/View)/[0-9]+(/.*)?$", "/government/resource-documents/", 1)

@@ -20,7 +20,7 @@ $GLOBALS['vc']['front'] = true;
 file_put_contents( "$out/index.html", vc_run_template( 'front-page.php' ) );
 $GLOBALS['vc']['front'] = false;
 $ctx = array( 'page_map' => vc_load_page_map( $root . '/theme/vineyard' ), 'media_map' => vc_load_media_csv( $root . '/content/media.csv' ), 'home' => $GLOBALS['vc']['site'] . '/',
-	'uploads' => $GLOBALS['vc']['site'] . '/wp-content/uploads', 'theme_assets' => get_template_directory_uri() . '/_assets_', 'theme_uri' => get_template_directory_uri(), 'unresolved' => array() );
+	'uploads' => $GLOBALS['vc']['site'] . '/wp-content/uploads', 'files_base' => $GLOBALS['vc']['site'] . '/wp-content/themes/vineyard/files', 'theme_assets' => get_template_directory_uri() . '/_assets_', 'theme_uri' => get_template_directory_uri(), 'unresolved' => array() );
 $m = json_decode( file_get_contents( $root . '/content/manifest.json' ), true );
 $n = 0;
 foreach ( $m as $p ) {

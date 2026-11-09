@@ -1,6 +1,8 @@
 <?php
 /**
- * Fallback legacy-URL redirects driven by inc/redirects.csv (a copy of /redirects.csv: source,target,regex,code).
+ * Fallback legacy-URL redirects (CSV columns: source,target,regex,code, same as /redirects.csv).
+ * Source file: files/_import/redirects.csv (shipped in branch deploy/site, served at /wp-content/themes/vineyard/files/_import/),
+ * falling back to the copy in inc/redirects.csv.
  * Skipped automatically when the Redirection plugin is active (import /redirects.csv there instead).
  * Runs only on 404s, so real WordPress URLs and deployed files are never intercepted.
  */
@@ -8,7 +10,10 @@ add_action( 'template_redirect', function () {
 	if ( ! is_404() || class_exists( 'Red_Item' ) ) {
 		return;
 	}
-	$csv = __DIR__ . '/redirects.csv';
+	$csv = get_template_directory() . '/files/_import/redirects.csv';
+	if ( ! is_readable( $csv ) ) {
+		$csv = __DIR__ . '/redirects.csv';
+	}
 	if ( ! is_readable( $csv ) ) {
 		return;
 	}

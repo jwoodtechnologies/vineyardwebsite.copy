@@ -19,7 +19,7 @@ The real HTML, CSS, JS, images and documents were mirrored from the live site on
 ## What was copied (and what wasn't)
 
 * **621 pages** (+ home) → WordPress pages. 154 use the sidebar layout, 467 the `fullwidth` layout (incl. ~460 staff/board "directory" profile pages `business_detail_T13_R*.php`).
-* **610 documents/images** (~1.5 GB; PDFs, DOCX, PNG, JPG) → laid out as a mirror of the old site paths and served from `wp-content/uploads/vineyard-files/<original path>` (branch `deploy/files`). One 140 MB PDF exceeds GitHub's 100 MB file limit and is not on any branch (see `source/LARGE_FILES.md`).
+* **610 documents/images** (~1.5 GB; PDFs, DOCX, PNG, JPG) → laid out as a mirror of the old site paths and served from `/wp-content/themes/vineyard/files/<original path>` (folder `files/` of branch `deploy/site`). One 140 MB PDF exceeds GitHub's 100 MB file limit and is not on any branch (see `source/LARGE_FILES.md`).
 * The **original CSS/JS are enqueued unchanged** (`layout.css?ver=1.02`, bootstrap 4.6, tiny‑slider, Font Awesome, YTPlayer, matchHeight, `scripts.js`). Page-specific Revize CSS/JS (document center, FAQ, business directory) is enqueued per page from the list the importer stores in post meta.
 * Header, footer, share modal and the 100‑language translate list are the original markup; the nav is generated from the Menu (`wp_nav_menu` with a walker that outputs the original `menuLI/menuA levelN` classes, so the original mega‑menu CSS/JS work as is).
 
@@ -28,30 +28,37 @@ There is **no `/documentcenter` on the live site** (that is a CivicPlus URL patt
 
 ## Deploy to WordPress.com (Business plan, GitHub Deployments, no SSH)
 
-Three branches of this repository are used. All were created with normal pushes:
+WordPress.com allows one deployment folder per repository connection, so **one branch carries everything**:
 
 | Branch | Contents | Deploy target (remote path) |
 |--------|----------|-----------------------------|
-| `deploy/theme` | the theme **at the repo root** (`style.css`, `functions.php`, `page.php`, …) | `/wp-content/themes/vineyard` |
-| `deploy/files` | only documents/images, laid out like the old site (`Finance/FY 27….pdf`, `Headshots/….jpg`, …) | `/wp-content/uploads/vineyard-files` |
-| `claude/trusting-cori-wc9myt` (this branch) | everything else: `content/vineyard-import.xml`, `redirects.csv`, scripts, source mirror | not deployed – you download two files from it |
+| **`deploy/site`** | repo root = the theme (`style.css`, `functions.php`, `page.php`, …) **plus** `files/` = the 609 documents/images in old-site folder layout, plus `files/_import/vineyard-import.xml` and `files/_import/redirects.csv` | `/wp-content/themes/vineyard` |
+| `claude/trusting-cori-wc9myt` (this branch) | source of truth: mirror, scripts, `content/`, README | not deployed |
+| `deploy/theme`, `deploy/files` | **obsolete** (first attempt; deploying `deploy/files` replaced the theme). Don't connect them. | – |
+
+After deployment the files are served from `/wp-content/themes/vineyard/files/<old path>`, e.g.
+`/wp-content/themes/vineyard/files/Headshots/IMG_1037%20-%20Copy.jpg`, and the import files from
+`https://YOUR-SITE/wp-content/themes/vineyard/files/_import/vineyard-import.xml` and `…/redirects.csv`.
 
 > Screen names below are from the WordPress.com dashboard as of late 2026 and may be worded slightly differently. Do the steps **in this order**.
 
-### A. Deploy the theme and the files (GitHub Deployments)
+### A. Deploy the site (GitHub Deployments)
 1. Go to **wordpress.com/sites → click your site → Deployments** (it may sit under **Settings → Deployments** or **Hosting → Deployments**; the page is titled *GitHub Deployments*).
-2. Click **Connect repository** and authorise the **WordPress.com Developer** GitHub app for `jwoodtechnologies/vineyardwebsite.copy` if asked (choose *Only select repositories* → this repo → **Install**).
-3. Select repository `vineyardwebsite.copy`, branch **`deploy/theme`**.
-4. **Target directory:** `/wp-content/themes/vineyard`. **Deployment mode:** *Simple* (copies the files as they are; no build step). Leave *Automatic deployments* on. Click **Connect**.
-5. Repeat **Connect repository** a second time: same repo, branch **`deploy/files`**, **Target directory** `/wp-content/uploads/vineyard-files`, mode *Simple*. Click **Connect**.
-6. Wait for both rows to show **Deployed** (the files branch is ~1.5 GB, the first run can take a long while; press **Run deployment / View logs** to follow it). Check one file in the browser: `https://YOUR-SITE/wp-content/uploads/vineyard-files/Headshots/IMG_1037%20-%20Copy.jpg` should open an image.
+2. If a connection from the earlier attempt exists (`deploy/files` or `deploy/theme`), open its **⋯ menu → Disconnect** first.
+3. Click **Connect repository**; authorise the **WordPress.com Developer** GitHub app for `jwoodtechnologies/vineyardwebsite.copy` if asked (*Only select repositories* → this repo → **Install**).
+4. Select repository `vineyardwebsite.copy`, branch **`deploy/site`**.
+5. **Target directory:** `/wp-content/themes/vineyard`. **Deployment mode:** *Simple* (copies the files as they are; no build step). Leave *Automatic deployments* on. Click **Connect**.
+6. Wait for the row to show **Deployed** (the first run copies ~1.6 GB and can take a long time; use **View logs** to follow it). Then check in a browser:
+   * `https://YOUR-SITE/wp-content/themes/vineyard/style.css` shows the theme header;
+   * `https://YOUR-SITE/wp-content/themes/vineyard/files/Headshots/IMG_1037%20-%20Copy.jpg` opens an image;
+   * `https://YOUR-SITE/wp-content/themes/vineyard/files/_import/vineyard-import.xml` downloads the import file.
 
 ### B. Activate the theme
 1. **wp-admin → Appearance → Themes** (on WordPress.com: **Appearance → Themes → Installed themes** if the list is filtered).
 2. Find **Vineyard City (Revize clone)** → **Activate**.
 
 ### C. Import the pages and menu (WXR)
-1. Download `content/vineyard-import.xml` from this repository to your computer (GitHub → file → **Download raw file**).
+1. Download the import file to your computer: open `https://YOUR-SITE/wp-content/themes/vineyard/files/_import/vineyard-import.xml` in your browser and save it (right‑click → *Save as*), or use GitHub → `content/vineyard-import.xml` → **Download raw file**.
 2. **wp-admin → Tools → Import → WordPress → Install Now → Run Importer** (if offered, activate the plugin).
 3. **Choose File** → `vineyard-import.xml` → **Upload file and import** (file is 3.7 MB; if you get a size error raise it with *Tools → Import* limits or split the file).
 4. On *Assign Authors* choose your administrator user (existing user) – do **not** tick *Download and import file attachments* (there are none). Click **Submit**.
@@ -60,9 +67,9 @@ Three branches of this repository are used. All were created with normal pushes:
 
 ### D. Install the redirects (Redirection plugin)
 1. **Plugins → Add New** → search **Redirection** (by John Godley) → **Install Now → Activate** → **Start Setup → Finish Setup**.
-2. Download `redirects.csv` from this repository.
+2. Download `https://YOUR-SITE/wp-content/themes/vineyard/files/_import/redirects.csv` (or `redirects.csv` from GitHub).
 3. **Tools → Redirection → Import/Export tab** (the **Import** box) → choose `redirects.csv` → **Upload**, group **Redirections**. The CSV columns are `source,target,regex,code`; 1,249 rows, one of them (`^/DocumentCenter/…`) has the regex flag set.
-4. Test two: open `/government/building.php` (should land on `/government/building/`) and `/Departmnts/Building/Builder%20-%20Request%20Inspection.pdf` (should land on the file under `/wp-content/uploads/vineyard-files/`).
+4. Test two: open `/government/building.php` (should land on `/government/building/`) and `/Departmnts/Building/Builder%20-%20Request%20Inspection.pdf` (should land on the file under `/wp-content/themes/vineyard/files/`).
 
 ### E. Front page, menu location, permalinks
 1. **Settings → Reading → Your homepage displays → A static page**; **Homepage:** *Home*; leave **Posts page** empty → **Save Changes**.
@@ -74,7 +81,9 @@ Three branches of this repository are used. All were created with normal pushes:
 * Links are written **root‑relative** (`/government/building/`), so the site must live at the domain root.
 * Forms still post to the old Revize host (they will not work); the events calendar is empty; see `docs/dynamic-features.md`.
 * Third‑party widgets (Analytics, UserWay, Podium) are off. To enable add `define('VINEYARD_THIRD_PARTY', true);` – not possible without file access on some plans; use WordPress.com's **Settings → Marketing → Traffic** for Analytics instead.
-* The theme redirect fallback (`inc/redirects.php`) switches itself off when the Redirection plugin is active.
+* The theme redirect fallback (`inc/redirects.php`) reads `files/_import/redirects.csv` (or `inc/redirects.csv`) and switches itself off when the Redirection plugin is active. If you don't want to install Redirection, skip step D – the fallback already redirects 404s.
+* The theme is large (~1.6 GB with `files/`). If WordPress.com rejects a theme folder that big, move `files/` to a second repo/connection targeting `/wp-content/uploads/…` and set `add_filter('vineyard_files_base_url', …)` plus re‑run `scripts/build_wxr.php` with the new base.
+* One 140 MB PDF (Active Transportation Plan) is over GitHub's file limit and is not included; links to it 404 until you upload it.
 * The WP‑CLI importer (`scripts/import.sh`) is an alternative for hosts with SSH; the WXR route above is the one to use on WordPress.com.
 
 ### Rebuilding the deploy branches and the WXR
@@ -82,7 +91,7 @@ Three branches of this repository are used. All were created with normal pushes:
 python3 -I scripts/build_content.py     # content/, manifest, menu, redirects.csv, inventory, theme assets
 php scripts/build_wxr.php               # content/vineyard-import.xml
 python3 -I tests/validate_wxr.py        # well-formed + parent/menu IDs resolve
-scripts/build_deploy_branches.sh        # (re)creates deploy/theme and deploy/files locally; push them with normal pushes
+scripts/build_deploy_branches.sh        # (re)builds deploy/site (theme + files/ + files/_import/) and pushes it with normal pushes
 ```
 
 ## Run a local WordPress
@@ -117,7 +126,7 @@ Raise PHP `memory_limit`/`upload_max_filesize` (≥256 MB) for the larger PDFs.
 ### What `import.sh` does (idempotent – safe to re‑run)
 
 1. Activates the theme, sets permalinks to `/%postname%/`.
-2. `import-media.php` – copies every file to `uploads/vineyard-files/<old path>` and registers it in the Media Library (stores the old path in `_vc_old_path`).
+2. `import-media.php` – copies every file to `uploads/vineyard-files/<old path>` and registers it in the Media Library (WP-CLI route only; links are then rewritten to that uploads path) (stores the old path in `_vc_old_path`).
 3. `import-pages.php` – creates pages from `content/manifest.json` (parents first), **rewrites internal links** (page links → new permalinks; file links → `/wp-content/uploads/vineyard-files/…`; `?t=` cache‑busters dropped; theme assets → theme URL), saves page chrome (banner images, left nav, contact box, breadcrumbs, layout) as post meta, sets the static front page. Unresolvable internal URLs are written to `content/unresolved-links.txt`.
 4. `import-menu.php` – builds the **Primary** menu from `content/menu.json` (109 items, 3 levels) and assigns it to the theme location.
 5. Installs `redirects.csv` for the theme's 404 handler (`theme/vineyard/inc/redirects.php`; supports `^regex` rows). For production you can also convert it to server rules (nginx `map` / Apache `RewriteMap`) – the CSV format is `source,target,regex,code`.
