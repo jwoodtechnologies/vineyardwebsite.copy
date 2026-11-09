@@ -7,13 +7,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-define( 'VCB_VERSION', '2.0.1' );
+define( 'VCB_VERSION', '2.1.0' );
 
 require_once __DIR__ . '/inc/class-walkers.php';
 require_once __DIR__ . '/inc/redirects.php';
 require_once __DIR__ . '/inc/blocks.php';
 require_once __DIR__ . '/inc/setup.php';
 require_once __DIR__ . '/inc/rest.php';
+require_once __DIR__ . '/inc/security.php';
 
 function vcb_asset( $path ) {
 	return get_theme_file_uri( '_assets_/' . ltrim( $path, '/' ) );
