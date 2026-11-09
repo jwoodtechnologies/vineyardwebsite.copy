@@ -122,3 +122,41 @@ add_filter( 'register_post_type_args', function ( $args, $post_type ) {
 	}
 	return $args;
 }, 10, 2 );
+
+/**
+ * The header's menu: a block menu made once from the site's existing main menu ("Primary"),
+ * so it can be edited in the editor like any other block.
+ */
+function vcb_navigation_id() {
+	$id = (int) get_option( 'vcb_nav_id' );
+	if ( $id && 'wp_navigation' === get_post_type( $id ) && 'publish' === get_post_status( $id ) ) {
+		return $id;
+	}
+	$menu = 0;
+	foreach ( array( 'vineyard-city', 'vineyard' ) as $old ) {
+		$mods = get_option( 'theme_mods_' . $old );
+		if ( ! empty( $mods['nav_menu_locations']['primary'] ) ) {
+			$menu = (int) $mods['nav_menu_locations']['primary'];
+			break;
+		}
+	}
+	if ( ! $menu ) {
+		$m    = wp_get_nav_menu_object( 'Primary' );
+		$menu = $m ? (int) $m->term_id : 0;
+	}
+	$menu = $menu ? wp_get_nav_menu_object( $menu ) : null;
+	if ( ! $menu || ! class_exists( 'WP_Classic_To_Block_Menu_Converter' ) ) {
+		return 0;
+	}
+	$content = WP_Classic_To_Block_Menu_Converter::convert( $menu );
+	if ( is_wp_error( $content ) || ! $content ) {
+		return 0;
+	}
+	$content = preg_replace( '/"className":"[^"]*",/', '', $content ); // drop leftover classic-menu classes
+	$id = wp_insert_post( array( 'post_type' => 'wp_navigation', 'post_status' => 'publish', 'post_title' => 'Main menu', 'post_content' => $content ), true );
+	if ( is_wp_error( $id ) ) {
+		return 0;
+	}
+	update_option( 'vcb_nav_id', (int) $id, false );
+	return (int) $id;
+}
