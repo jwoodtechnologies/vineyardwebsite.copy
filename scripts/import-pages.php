@@ -64,7 +64,7 @@ foreach ( $manifest as $m ) {
 	if ( $id ) { $post['ID'] = $id; wp_update_post( wp_slash( $post ) ); $updated++; }
 	else       { $id = wp_insert_post( wp_slash( $post ) ); $created++; }
 	if ( is_wp_error( $id ) || ! $id ) { WP_CLI::warning( "failed: {$m['old_path']}" ); continue; }
-	$ids[ $m['slug'] ] = $id; // section landing pages are registered by slug so children can find them
+	if ( empty( $m['parent'] ) ) { $ids[ $m['slug'] ] = $id; } // top-level pages (section landings) are looked up by slug as parents
 	update_post_meta( $id, '_vc_old_path', $m['old_path'] );
 	update_post_meta( $id, '_vc_old_url', $m['old_url'] );
 	foreach ( $m['meta'] as $k => $v ) {
