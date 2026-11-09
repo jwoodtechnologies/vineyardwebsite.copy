@@ -194,3 +194,31 @@ a { transition: color .3s ease, background .3s ease; }
 .inner-main img { max-width: 100%; height: auto; }
 .wp-block-file a:not(.wp-block-file__button) { font-weight: 600; }
 @media (max-width: 600px) { .inner-buttons .wp-block-button, .inner-buttons .wp-block-button__link { width: 100%; } .home-hero { min-height: 560px !important; } }
+
+/* ---------- directories (council, staff, businesses) ---------- */
+.directory-item { gap: 30px !important; align-items: flex-start; margin: 30px 0 !important; }
+.directory-item .directory-photo { margin: 0; }
+.directory-item .directory-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.directory-item .directory-name { font-size: 22px; font-weight: 700; text-transform: uppercase; margin: 0 0 14px; color: var(--wp--preset--color--contrast); }
+.directory-item p { margin: 0 0 10px; }
+.directory-line { font-size: 15px; overflow-wrap: anywhere; }
+.directory-more a { font-weight: 600; }
+.directory-social { margin-top: 10px; }
+.directory-sep { border-color: #e3e6ec; margin: 0 !important; }
+@media (max-width: 781px) { .directory-item .directory-photo img { max-width: 260px; } }
+
+/* ---------- FAQs ---------- */
+.faq-heading { font-size: 24px; font-weight: 600; color: var(--wp--preset--color--primary); margin: 30px 0 12px; }
+.wp-block-details.faq-item { border: 1px solid #dfe3e8; border-radius: 4px; padding: 0; margin: 0 0 10px; background: #fff; }
+.wp-block-details.faq-item > summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: var(--wp--preset--color--primary); list-style-position: inside; }
+.wp-block-details.faq-item[open] > summary { border-bottom: 1px solid #dfe3e8; }
+.wp-block-details.faq-item > :not(summary) { padding: 0 18px; }
+.wp-block-details.faq-item > :not(summary):first-of-type { padding-top: 14px; }
+.wp-block-details.faq-item > :last-child { padding-bottom: 14px; }
+
+/* ---------- accessibility ---------- */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid var(--wp--preset--color--secondary); outline-offset: 2px; }
+.quick-links :where(a):focus-visible, .page-banner :where(a):focus-visible { outline-color: #fff; }
+.vcb-breadcrumbs li:last-child { color: #8f5f00; } /* readable gold on white */
+.page-banner .inner-caption { margin: 0; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
