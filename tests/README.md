@@ -2,6 +2,7 @@
 
 | Command | What it checks |
 |---|---|
+| `php tests/test-event-meta.php` | Events REST API: registered meta keys = the keys the event box saves, string/single/show_in_rest, edit_posts only, accepted/rejected date formats, editor + custom-fields support, categories in REST |
 | `php tests/test-home-fix.php` | Home page fix + 1.0.2 upgrade against the exact broken state reported on the live site (real plugin code, in-memory WordPress) |
 | `php tests/editor/dump-editor-data.php > tests/editor/editor-data.json` then `cd tests/editor && npm install && cd ../.. && NODE_PATH=tests/editor/node_modules node tests/editor/blocks-editor.test.js tests/editor/editor-data.json` | Blocks in the editor with WordPress's real block library: registered under “Vineyard City”, saved Home markup never “unsupported”/“invalid”, stable when re-saved, insertable, each card has title + help + edit link + live preview |
 | `php tests/city-render.php OUT http://localhost:8765` | Renders front page, all 621 pages and an editor-preview page through the real plugin + theme for screenshot comparison with the live site |

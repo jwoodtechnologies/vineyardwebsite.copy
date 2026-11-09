@@ -16,6 +16,7 @@ Adds one menu, "Vineyard Site Content", with Header, Footer, Home page, Quick Li
 * New blocks: Home Banner (photo, logo, button) and Alerts, so every part of the home page can be moved or removed.
 * Home page edit screen no longer shows the inner-page boxes (Related Pages, contact box, buttons).
 * Automatic one-time update of an unchanged 1.0.1 home page to the new layout (old text kept as a revision).
+* Events can be imported through the REST API: event details (_vcc_start, _vcc_end, _vcc_all_day, _vcc_location – the keys the event screen saves) are registered with show_in_rest, writable by users who can edit posts; events support the editor and custom fields in REST; categories at /wp/v2/vc_event_cat.
 
 = 1.0.1 =
 * Fix: the home page could end up showing another page's content (the untitled "Business Directory" page that WordPress Importer merged into Home). Page look-ups now never pick the Home page.

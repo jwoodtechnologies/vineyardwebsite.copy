@@ -21,14 +21,66 @@ function vcc_register_post_types() {
 	register_post_type( 'vc_event', array(
 		'labels' => array( 'name' => 'Events', 'singular_name' => 'Event', 'menu_name' => 'Events', 'add_new' => 'Add an Event', 'add_new_item' => 'Add an Event', 'edit_item' => 'Edit Event', 'all_items' => 'Events', 'not_found' => 'No events yet. Click “Add an Event”.' ),
 		'public' => true, 'publicly_queryable' => true, 'show_ui' => true, 'show_in_menu' => 'vineyard-site-content', 'show_in_rest' => true, 'has_archive' => false,
-		'rewrite' => array( 'slug' => 'event', 'with_front' => false ), 'supports' => array( 'title', 'editor' ), 'capability_type' => 'post', 'map_meta_cap' => true,
+		'rewrite' => array( 'slug' => 'event', 'with_front' => false ), 'rest_base' => 'vc_event', 'supports' => array( 'title', 'editor', 'custom-fields' ), 'capability_type' => 'post', 'map_meta_cap' => true,
 	) );
 	register_taxonomy( 'vc_event_cat', 'vc_event', array(
 		'labels' => array( 'name' => 'Event Categories', 'singular_name' => 'Event Category', 'menu_name' => 'Event Categories', 'add_new_item' => 'Add a category' ),
-		'hierarchical' => true, 'show_ui' => true, 'show_admin_column' => true, 'show_in_rest' => true, 'public' => false, 'rewrite' => false,
+		'hierarchical' => true, 'show_ui' => true, 'show_admin_column' => true, 'show_in_rest' => true, 'rest_base' => 'vc_event_cat', 'public' => false, 'rewrite' => false,
 	) );
 }
 add_action( 'init', 'vcc_register_post_types' );
+
+/**
+ * Event details for the REST API (import / sync tools). These are the SAME keys the "When and where" box saves and the
+ * website reads, so anything written through REST shows up in the editor and on the site:
+ *   _vcc_start     "YYYY-MM-DD HH:MM:SS" (all-day: "YYYY-MM-DD 00:00:00"; "YYYY-MM-DD", "YYYY-MM-DD HH:MM" and a "T" are accepted)
+ *   _vcc_end       same format, same day; "" when there is no end time or for all-day events
+ *   _vcc_all_day   "1" = all day / no set time, "" = timed
+ *   _vcc_location  plain text
+ * Description = the post content (editor); category = the vc_event_cat taxonomy (REST field "vc_event_cat", term IDs).
+ */
+function vcc_event_meta_fields() {
+	$dt = '^$|^[0-9]{4}-[0-9]{2}-[0-9]{2}([ T][0-9]{2}:[0-9]{2}(:[0-9]{2})?)?$';
+	return array(
+		'_vcc_start'    => array( 'Start date and time, "YYYY-MM-DD HH:MM:SS" (all-day events: time 00:00:00).', $dt ),
+		'_vcc_end'      => array( 'End date and time on the same day, "YYYY-MM-DD HH:MM:SS"; empty if none or all day.', $dt ),
+		'_vcc_all_day'  => array( '"1" for an all-day event (no set time), "" for a timed event.', '^(1)?$' ),
+		'_vcc_location' => array( 'Where the event takes place (plain text).', '' ),
+	);
+}
+
+/** "2026-11-10", "2026-11-10T17:00", "2026-11-10 17:00:00" -> "2026-11-10 17:00:00" (the format the box saves). */
+function vcc_normalize_event_datetime( $v ) {
+	$v = trim( str_replace( 'T', ' ', (string) $v ) );
+	if ( '' === $v ) { return ''; }
+	if ( preg_match( '/^(\d{4}-\d{2}-\d{2})$/', $v, $m ) ) { return $m[1] . ' 00:00:00'; }
+	if ( preg_match( '/^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2})$/', $v, $m ) ) { return $m[1] . ' ' . $m[2] . ':00'; }
+	if ( preg_match( '/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', $v ) ) { return $v; }
+	return '';
+}
+
+add_action( 'init', function () {
+	$auth = function () { return current_user_can( 'edit_posts' ); };
+	foreach ( vcc_event_meta_fields() as $key => $f ) {
+		list( $desc, $pattern ) = $f;
+		$schema = array( 'type' => 'string', 'description' => $desc );
+		if ( $pattern ) { $schema['pattern'] = $pattern; }
+		if ( '_vcc_all_day' === $key ) { $schema['enum'] = array( '', '1' ); }
+		register_post_meta( 'vc_event', $key, array(
+			'type'              => 'string',
+			'description'       => $desc,
+			'single'            => true,
+			'default'           => '',
+			'show_in_rest'      => array( 'schema' => $schema ),
+			'auth_callback'     => $auth,
+			'sanitize_callback' => function ( $v ) use ( $key ) {
+				if ( '_vcc_start' === $key || '_vcc_end' === $key ) { return vcc_normalize_event_datetime( $v ); }
+				if ( '_vcc_all_day' === $key ) { return ( '1' === (string) $v || true === $v ) ? '1' : ''; }
+				return sanitize_text_field( (string) $v );
+			},
+		) );
+	}
+}, 11 );
 
 /* ---------------------------------------------------------------- meta boxes */
 add_action( 'add_meta_boxes', function () {

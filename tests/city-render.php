@@ -22,7 +22,7 @@ function add_filter( $h, $cb, $p = 10, $n = 1 ) { $GLOBALS['S']['filters'][ $h ]
 function do_action( $h ) { $a = $GLOBALS['S']['actions'][ $h ] ?? array(); ksort( $a ); foreach ( $a as $cbs ) { foreach ( $cbs as $cb ) { call_user_func( $cb ); } } }
 function apply_filters( $h, $v, ...$args ) { $f = $GLOBALS['S']['filters'][ $h ] ?? array(); ksort( $f ); foreach ( $f as $cbs ) { foreach ( $cbs as $cb ) { $v = $cb( $v, ...$args ); } } return $v; }
 function add_theme_support() {} function register_nav_menus() {} function register_sidebar() {} function add_shortcode() {} function register_activation_hook() {} function register_deactivation_hook() {}
-function register_post_type() {} function register_taxonomy() {} function add_meta_box() {} function add_menu_page() {} function add_submenu_page() {} function wp_register_script() {}
+function register_post_type() {} function register_taxonomy() {} function register_post_meta() {} function add_meta_box() {} function add_menu_page() {} function add_submenu_page() {} function wp_register_script() {}
 function wp_localize_script() {} function flush_rewrite_rules() {} function add_post_type_support() {}
 function register_block_type( $name, $args ) { if ( is_dir( $name ) ) { $name = json_decode( file_get_contents( $name . '/block.json' ), true )['name']; } $GLOBALS['S']['blocks'][ $name ] = $args['render_callback']; }
 function wp_register_style() {} function get_bloginfo( $k = '' ) { return 'Vineyard City'; } function get_queried_object_id() { return $GLOBALS['S']['cur']; }

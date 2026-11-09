@@ -141,6 +141,30 @@ Day one the site looks the same as before. Remaining visible differences are lis
 5. **Pages → Home → Edit**: you should see the seven cards with previews and no warnings. If anything looks off, **Vineyard Site Content → Start here → Rebuild the home page sections**.
 6. Hard-refresh the editor tab (Ctrl+F5 / Cmd+Shift+R) if your browser still shows the old message – it may have kept the old script.
 
+### Importing events through the REST API (1.0.2)
+
+Events are at **`/wp-json/wp/v2/vc_event`**, categories at **`/wp-json/wp/v2/vc_event_cat`**. Authenticate as a user who can edit posts (an **Application Password**: *Users → Profile → Application Passwords*). The event details use the **same keys the “When and where” box saves**, so imported events appear in the editor, on the home page and on the Calendar page:
+
+| Meta key | Value |
+|---|---|
+| `_vcc_start` | `"2026-11-10 17:00:00"` – date and start time. All-day: `"2026-11-10 00:00:00"`. Also accepted: `"2026-11-10"`, `"2026-11-10 17:00"`, `"2026-11-10T17:00"` (stored as `Y-m-d H:i:s`). Anything else is rejected with HTTP 400. |
+| `_vcc_end` | `"2026-11-10 18:00:00"` – same day; `""` for no end time / all day |
+| `_vcc_all_day` | `"1"` all day (no set time) · `""` timed |
+| `_vcc_location` | plain text, e.g. `"125 S Main Street"` |
+
+Description = `content`; category = `vc_event_cat` (array of term IDs – look them up with `GET /wp-json/wp/v2/vc_event_cat`). Example:
+
+```bash
+curl -u 'clerk:APPLICATION PASSWORD' -H 'Content-Type: application/json' -X POST https://YOUR-SITE/wp-json/wp/v2/vc_event -d '{
+  "title": "City Council Meeting", "status": "publish",
+  "content": "<p>Regular meeting. Agenda on CivicClerk.</p>",
+  "vc_event_cat": [MEETINGS_TERM_ID],
+  "meta": { "_vcc_start": "2026-12-08 18:00:00", "_vcc_end": "2026-12-08 20:00:00", "_vcc_all_day": "", "_vcc_location": "125 S Main Street" }
+}'
+```
+
+Starter-content categories (name → slug): **Meetings → `meetings`**, **Recreation → `recreation`**, **Community → `community`**, **Utilities → `utilities`**, **Library → `library`**. The home page tabs show `meetings`, `community` and `recreation`.
+
 ### Upgrading an installed site to 1.0.1 (fixes the home page)
 
 **What went wrong in 1.0.0.** One copied page, *Business Directory*, had no title. WordPress Importer treats a page with an empty title as “already exists” whenever *any* page has the same date, so it merged it into **Home** and gave Home that page’s details. “Tidy the pages” then followed those details and wrote the whole directory (364 KB) into Home with the full-width template. In 1.0.1:
