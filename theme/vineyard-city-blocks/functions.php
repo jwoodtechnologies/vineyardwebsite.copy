@@ -120,6 +120,9 @@ add_action( 'init', function () {
 // The original site has no share or like buttons under the page text.
 add_filter( 'sharing_show', '__return_false', 99 );
 add_filter( 'wpl_is_likes_visible', '__return_false', 99 );
+add_filter( 'hooked_block_types', function ( $hooked ) {
+	return array_values( array_diff( (array) $hooked, array( 'jetpack/sharing-buttons', 'jetpack/like', 'jetpack/related-posts' ) ) );
+}, 99 );
 
 // Calendar: event titles with &, quotes or apostrophes show as typed (not as &#038;).
 add_action( 'wp_print_footer_scripts', function () {
