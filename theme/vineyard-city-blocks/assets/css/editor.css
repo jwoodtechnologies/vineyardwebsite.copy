@@ -1,0 +1,11 @@
+/* Editor only: show everything in place so it can be clicked and changed. */
+.editor-styles-wrapper .header-wrap,
+.editor-styles-wrapper .wp-block-template-part.header-wrap { position: relative; top: auto !important; }
+.editor-styles-wrapper .page-banner { padding-top: 20px; }
+.editor-styles-wrapper .home-hero { padding-top: 120px; }
+.editor-styles-wrapper .quick-links__track { flex-wrap: wrap !important; overflow: visible; row-gap: 20px !important; }
+.editor-styles-wrapper .quick-links .qlink { flex-basis: 25%; }
+.editor-styles-wrapper .quick-links .qlink:nth-child(4n+1) { border-left: 0; }
+.editor-styles-wrapper .photo-tile .tile-title a::after { display: none; }
+.editor-styles-wrapper .site-header__nav .wp-block-navigation__submenu-container { display: none; }
+.editor-styles-wrapper .vcb-related.is-empty { background: var(--wp--preset--color--primary); }
