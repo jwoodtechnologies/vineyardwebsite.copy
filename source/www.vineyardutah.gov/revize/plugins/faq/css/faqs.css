@@ -1,0 +1,15 @@
+.faqs-toggle{clear:both;overflow:hidden}
+.faqs-heading{padding:11px 55px;cursor:pointer;position:relative;border:1px solid #ddd;margin:3px 0 0 0;background:#f9f9f9 url(https://cdn1-global.revize.com/revize/plugins/faq/_images_/arrow-down.png) no-repeat 20px center;-webkit-transition:0.4s;-moz-transition:0.4s;-o-transition:0.4s;-webkit-backface-visibility:hidden;font-size:14px;line-height:1.5;color:#333}
+.faqs-heading.active{background:#2ECC71 url(https://cdn1-global.revize.com/revize/plugins/faq/_images_/arrow-up.png) no-repeat 20px center;border-color:#27AE60;color:#fff}
+.faqs-toggle-content{padding:20px 20px 0;border:1px solid #27AE60;border-top:none;margin:0 0 3px;background:#fff}
+.faqs-toggle-content p{margin:0 0 20px;font-size:14px;line-height:1.5}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {  
+.faqs-heading{background-image:url(https://cdn1-global.revize.com/revize/plugins/faq/_images_/arrow-down@2x.png);background-size: 22px 22px;}
+.faqs-heading.active{background-image:url(https://cdn1-global.revize.com/revize/plugins/faq/_images_/arrow-up@2x.png);background-size: 22px 22px;}
+}

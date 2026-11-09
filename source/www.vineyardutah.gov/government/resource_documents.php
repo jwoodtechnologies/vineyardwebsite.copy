@@ -1,0 +1,2774 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+
+	 
+	<!-- Metadata Area Starts -->
+	<title>Welcome to Vineyard UT</title>
+	<meta property="og:title" content="Welcome to Vineyard UT" />
+	<meta property="og:image" content="//cms3.revize.com/revize/vineyard/_assets_/images/logo.png" />
+	<meta name="robots" content="index, follow">
+
+
+	
+
+
+<link href="../revize/plugins/setup/css/revize.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../revize/plugins/document_center/document_center_styles.css">
+<script type="text/javascript" src="../revize/plugins/document_center/simple_accordian.js"></script>
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+
+
+
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+	<link rel="stylesheet" href="../_assets_/fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../_assets_/css/animate.min.css">
+	<link rel="stylesheet" href="../_assets_/plugins/ytplayer/jquery.mb.YTPlayer.min.css">
+	<link rel="stylesheet" href="../_assets_/css/layout.css">
+
+	<link rel="shortcut icon" href="../_assets_/images/favicon.ico">
+	<link rel="apple-touch-icon" href="../_assets_/images/touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../_assets_/images/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../_assets_/images/touch-icon-iphone4.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../_assets_/images/touch-icon-ipad2.png">
+
+
+
+	<link href="../revize/plugins/revize_calendar/core/main.css" rel="stylesheet" />
+<link href="../revize/plugins/revize_calendar/daygrid/main.min.css" rel="stylesheet" />
+<link href="../revize/plugins/revize_calendar/timegrid/main.min.css" rel="stylesheet" />
+<link href="../revize/plugins/revize_calendar/list/main.min.css" rel="stylesheet" />
+<link href="../_assets_/plugins/revizeCalendar/css/mini.css" rel="stylesheet" />
+<link href="../revize/plugins/revize_calendar/core/nav-panels.css" rel="stylesheet" /><script>
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'1' : { 'color' : '#114a76' , 'name' : 'Meetings' },
+'2' : { 'color' : '#087968' , 'name' : 'Recreation' },
+'3' : { 'color' : '#fcb215' , 'name' : 'Community' },
+'4' : { 'color' : '#4e606f' , 'name' : 'Utilities' },
+'6' : { 'color' : '#cc3232' , 'name' : 'Library' },
+};
+	var RZCalendarTimezone = "";
+</script>
+
+
+
+	<link rel="stylesheet" href="../revize/plugins/document_center/css/document-center-styles.css">
+
+	
+
+
+
+
+
+</head>
+<body id="freeform" >
+
+
+
+
+<script type="text/javascript">
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../'
+RZ.baseurlpath = 'government/'
+RZ.protocolRelativeRevizeBaseUrl='//cms3.revize.com'
+
+RZ.pagetemplatename = 'document_center'
+RZ.pagetemplateid = '2'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '1'
+RZ.pagerecordid = '228';
+
+RZ.pageid = 'links-228';
+RZ.pageparentid = '225';
+RZ.pagesectionid = '3';
+RZ.pagesectionname = 'government';
+RZ.pagesectionlevel = '1';
+RZ.pagesectionfolder = 'government/';
+RZ.pagesectionfilter = 'sectionid=3';
+RZ.pagelinkfilter = 'linklevel=2 and linksectionid=3';
+RZ.pagelinklevel = '2';
+RZ.pagelinkid = '228';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '228';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '2f294b80b4156b277c82b6c278350130ebd2f5c150d551a9c78853d2a432564e|b64ddaf56f28425490a596cd229c3aa173c0e38f1c4993398ea53b34b8853b40|9103420ed5e7810e1b046aec2fd490cef17ae468d13f0d3e76a3fb9ed16787b1|f6f6f76e19f2807c691ef2323e114c439392b22301d478f1089be3474b880a60|2bf2aff49261ce0b6ea16d730d1c1f31802a282b16661a30f3372f399f0fbdd4'
+RZ.page_key = 'document_center[228]'
+RZ.parent_key = 'freeform[225]'
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'vineyard'
+RZ.webspacedesc = "";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://cms3.revize.com/revize/vineyard';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@revize.com";
+RZ.webspace_config.calendar_options = "max_events=6";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=https://www.vineyardutah.gov/\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_options = "hide_text=no";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.store_form_submission_db = "yes";
+RZ.webspace_config.to_email = "webpageupdate_subscribers@revize.com";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,production';
+RZ.jsversion = 1.2</script>
+<script type="text/javascript" src="../revize/util/snippet_helper.js"></script>
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+<header>
+
+	<a href="../index.html#main" id="skip" tabindex="0" class="button">Skip to main content</a>
+				<div class="topnav">
+				
+	</div>
+
+
+
+
+	<div id="menu-content" class="d-none">
+	
+		
+			
+				 
+				 
+				<div class="nav-content">
+					<h2 class="nav-page-title"></h2>
+					<div class="nav-banner" style="background:url('../_assets_/images/nav-img.jpg') center/cover no-repeat"></div>
+					<p class="nav-page-text"></p>
+				</div>				
+			
+		
+			
+				 
+				 
+				<div class="nav-content">
+					<h2 class="nav-page-title"></h2>
+					<div class="nav-banner" style="background:url('../revize_photo_gallery/_DSC4715 - Copy.jpg?t=202402290935350') center/cover no-repeat"></div>
+					<p class="nav-page-text"></p>
+				</div>				
+			
+		
+			
+				 
+				 
+				<div class="nav-content">
+					<h2 class="nav-page-title"></h2>
+					<div class="nav-banner" style="background:url('../Headshots/IMG_1037 - Copy.jpg?t=202402290935350') center/cover no-repeat"></div>
+					<p class="nav-page-text"></p>
+				</div>				
+			
+		
+	
+	</div><!--/d-none-->
+	<div id="toggles" class="d-lg-none">
+		<div id="search-toggle" class="fa fa-search"></div>
+		<div id="nav-toggle" class="fa fa-bars"></div>
+	</div><!--/#toggles-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-2">
+				<a href="../index.php" id="logo"><img src="../_assets_/images/logo.png" alt="navigation logo"></a>
+			</div><!--/.col-lg-2-->
+			<nav class="col-lg-8">
+					
+
+
+
+
+
+
+
+ 
+<ul id="nav" class="v2_05-23-2012">
+	<li class="menuLI level0 menuDisplay li-1"><a class="menuA level0 menuDisplay" href="../index.php" target="_self">Home</a></li>
+	<li class="menuLI level0 menuDisplay li-3 children"><a class="menuA level0 menuDisplay" href="index.php" target="_self">Government</a>
+		<ul class="menuUL level1 menuHidden ul-463">
+			<li class="menuLI level1 menuHidden li-463 children"><a class="menuA level1 menuHidden" href="../../www.vineyardutah.org/government/mayors_office.php" target="_self">Mayor's Office</a>
+				<ul class="menuUL level2 menuHidden ul-442">
+					<li class="menuLI level2 menuHidden li-442"><a class="menuA level2 menuHidden" href="request_a_meeting_with_the_mayor.php" target="_self">Meet With the Mayor</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-140"><a class="menuA level1 menuHidden" href="city_council2.php" target="_self">City Council</a></li>
+			<li class="menuLI level1 menuHidden li-611"><a class="menuA level1 menuHidden" href="conflict_of_interest_forms.php" target="_self">Conflict of Interest Forms</a></li>
+			<li class="menuLI level1 menuHidden li-138"><a class="menuA level1 menuHidden" href="elections.php" target="_self">Elections</a></li>
+			<li class="menuLI level1 menuHidden li-137 children"><a class="menuA level1 menuHidden" href="recorder.php" target="_self">Recorder</a>
+				<ul class="menuUL level2 menuHidden ul-139">
+					<li class="menuLI level2 menuHidden li-139"><a class="menuA level2 menuHidden" href="records_request.php" target="_self">Records Request</a></li>
+					<li class="menuLI level2 menuHidden li-178"><a class="menuA level2 menuHidden" href="https://vineyard.municipalcodeonline.com/" target="_new">Municipal Code</a></li>
+					<li class="menuLI level2 menuHidden li-310"><a class="menuA level2 menuHidden" href="annual_meeting_schedule.php" target="_self">Annual Meeting Schedule</a></li>
+					<li class="menuLI level2 menuHidden li-1084"><a class="menuA level2 menuHidden" href="https://www.vineyardutah.gov/Recorder/2026 Vacancy/Fillable 2026 Vineyard City Council Vacancy Application - Combined 2.pdf" target="_new">Council Vacancy Application</a></li>
+					<li class="menuLI level2 menuHidden li-1085"><a class="menuA level2 menuHidden" href="agenda_minutes___public_notice.php#outer-473" target="_new">Public Notices</a></li>
+					<li class="menuLI level2 menuHidden li-1096"><a class="menuA level2 menuHidden" href="council_vacancy.php" target="_self">Council Vacancy</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-225 children"><a class="menuA level1 menuHidden" href="building.php" target="_self">Building</a>
+				<ul class="menuUL level2 menuHidden ul-280">
+					<li class="menuLI level2 menuHidden li-280"><a class="menuA level2 menuHidden" href="https://vineyard.cityinspect.com/login" target="_new">Apply for a Permit</a></li>
+					<li class="menuLI level2 menuHidden li-291"><a class="menuA level2 menuHidden" href="https://utah.cityinspect.com/register?registration_id=fDtjodKgzY" target="_new">Apply for a Permit (New User)</a></li>
+					<li class="menuLI level2 menuHidden li-293"><a class="menuA level2 menuHidden" href="resource_documents.php" target="_self">Resource Documents</a></li>
+					<li class="menuLI level2 menuHidden li-281"><a class="menuA level2 menuHidden" href="basement_finish.php" target="_self">Basement Finish</a></li>
+					<li class="menuLI level2 menuHidden li-517"><a class="menuA level2 menuHidden" href="water_meter_request.php" target="_self">Water Meter Request</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-102 children"><a class="menuA level1 menuHidden" href="public_works.php" target="_self">Public Works</a>
+				<ul class="menuUL level2 menuHidden ul-109">
+					<li class="menuLI level2 menuHidden li-109"><a class="menuA level2 menuHidden" href="streets.php" target="_self">Streets and Stormwater</a></li>
+					<li class="menuLI level2 menuHidden li-103"><a class="menuA level2 menuHidden" href="water___wastewater.php" target="_self">Water & Wastewater</a></li>
+					<li class="menuLI level2 menuHidden li-261"><a class="menuA level2 menuHidden" href="construction_projects.php" target="_self">Construction Projects</a></li>
+					<li class="menuLI level2 menuHidden li-313"><a class="menuA level2 menuHidden" href="grounds_maintenance.php" target="_self">Maintenance</a></li>
+					<li class="menuLI level2 menuHidden li-110"><a class="menuA level2 menuHidden" href="engineering.php" target="_self">Engineering</a></li>
+					<li class="menuLI level2 menuHidden li-1088"><a class="menuA level2 menuHidden" href="engineering_standards.php" target="_self">Engineering Standards</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-112 children"><a class="menuA level1 menuHidden" href="parks_and_recreation.php" target="_self">Parks and Recreation</a>
+				<ul class="menuUL level2 menuHidden ul-184">
+					<li class="menuLI level2 menuHidden li-184"><a class="menuA level2 menuHidden" href="events.php" target="_self">Events</a></li>
+					<li class="menuLI level2 menuHidden li-232"><a class="menuA level2 menuHidden" href="splash_pad.php" target="_self">Splash Pad</a></li>
+					<li class="menuLI level2 menuHidden li-113"><a class="menuA level2 menuHidden" href="recreation.php" target="_self">Recreation</a></li>
+					<li class="menuLI level2 menuHidden li-131"><a class="menuA level2 menuHidden" href="parks.php" target="_self">Parks</a></li>
+					<li class="menuLI level2 menuHidden li-969"><a class="menuA level2 menuHidden" href="concessions.php" target="_self">Concessions</a></li>
+					<li class="menuLI level2 menuHidden li-987"><a class="menuA level2 menuHidden" href="skatepark_fundraiser.php" target="_self">Skatepark Fundraiser</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-116 children"><a class="menuA level1 menuHidden" href="community_development.php" target="_self">Community Development</a>
+				<ul class="menuUL level2 menuHidden ul-118">
+					<li class="menuLI level2 menuHidden li-118"><a class="menuA level2 menuHidden" href="planning.php" target="_self">Planning & Zoning</a></li>
+					<li class="menuLI level2 menuHidden li-117"><a class="menuA level2 menuHidden" href="code_enforcement.php" target="_self">Code Enforcement</a></li>
+					<li class="menuLI level2 menuHidden li-119"><a class="menuA level2 menuHidden" href="parking.php" target="_self">Parking</a></li>
+					<li class="menuLI level2 menuHidden li-1017"><a class="menuA level2 menuHidden" href="short_term_rental.php" target="_self">Short Term Rental</a></li>
+					<li class="menuLI level2 menuHidden li-136"><a class="menuA level2 menuHidden" href="business_licensing_.php" target="_self">Business Licensing</a></li>
+					<li class="menuLI level2 menuHidden li-534"><a class="menuA level2 menuHidden" href="accessory_dwelling_unit_licensing.php" target="_self">Accessory Dwelling Unit Licensing</a></li>
+					<li class="menuLI level2 menuHidden li-120"><a class="menuA level2 menuHidden" href="economic_development.php" target="_self">Economic Development</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-509 children"><a class="menuA level1 menuHidden" href="utah_county_sheriff_s_office.php" target="_self">Utah County Sheriff's Office</a>
+				<ul class="menuUL level2 menuHidden ul-1083">
+					<li class="menuLI level2 menuHidden li-1083"><a class="menuA level2 menuHidden" href="rad_systems_of_self-defense_classes.php" target="_self">R.A.D. Systems of Self-Defense Classes</a></li>
+					<li class="menuLI level2 menuHidden li-1098"><a class="menuA level2 menuHidden" href="ucso_vineyard_citizens_academy.php" target="_self">UCSO Vineyard Citizens Academy</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-128 children"><a class="menuA level1 menuHidden" href="finance.php" target="_self">Finance</a>
+				<ul class="menuUL level2 menuHidden ul-132">
+					<li class="menuLI level2 menuHidden li-132"><a class="menuA level2 menuHidden" href="fee_schedule.php" target="_self">Fee Schedule</a></li>
+					<li class="menuLI level2 menuHidden li-375"><a class="menuA level2 menuHidden" href="budget.php" target="_self">Budget</a></li>
+					<li class="menuLI level2 menuHidden li-376"><a class="menuA level2 menuHidden" href="annual_financial_report.php" target="_self">Annual Financial Report</a></li>
+					<li class="menuLI level2 menuHidden li-146"><a class="menuA level2 menuHidden" href="../services/utility_billing.php" target="_self">Utility Billing</a></li>
+					<li class="menuLI level2 menuHidden li-377"><a class="menuA level2 menuHidden" href="../community_/library_reimbursement.php" target="_self">Library/Rec Center Reimbursement</a></li>
+					<li class="menuLI level2 menuHidden li-378"><a class="menuA level2 menuHidden" href="https://transparent.utah.gov/" target="_new">Transparent Utah</a></li>
+					<li class="menuLI level2 menuHidden li-1009"><a class="menuA level2 menuHidden" href="request_for_proposals_(rfp).php" target="_self">Request for Proposals (RFP)</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-144 children"><a class="menuA level1 menuHidden" href="city_staff.php" target="_self">City Staff</a>
+				<ul class="menuUL level2 menuHidden ul-543">
+					<li class="menuLI level2 menuHidden li-543"><a class="menuA level2 menuHidden" href="https://us-east-2.protection.sophos.com/?d=applicantpro.com&u=aHR0cHM6Ly92aW5leWFyZHV0YWguYXBwbGljYW50cHJvLmNvbS8=&p=m&i=NjVmYTA3ZTM3ZjU0ZjEyYjZlNDYyNjQz&t=UXBoSVFSa2t4OFdXeXJQdUZ1VDM2TzEvSEZuNUVBVjB3TVlCaXM1bzA2dz0=&h=5fad537fe8e14ea69751e0c583585997&s=AVNPUEhUT0NFTkNSWVBUSVYDyI-WjHN6wTKx7UnHIYYbp-oHiLflJZ5yS8drHuA79w" target="_new">Apply for Jobs</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-427"><a class="menuA level1 menuHidden" href="redevelopment_agency/index.php" target="_self">Redevelopment Agency</a></li>
+			<li class="menuLI level1 menuHidden li-256"><a class="menuA level1 menuHidden" href="board___commission_members.php" target="_self">Board & Commission Members</a></li>
+			<li class="menuLI level1 menuHidden li-1006"><a class="menuA level1 menuHidden" href="https://docs.google.com/forms/d/e/1FAIpQLSfiffKKZpmPRuXe5JCrEyKXonDhMwYSooOlDPvRJTyhqNs0CQ/viewform?usp=dialog" target="_new">Planning Commission Application Form</a></li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-4 children"><a class="menuA level0 menuDisplay" href="../community_/index.php" target="_self">Community</a>
+		<ul class="menuUL level1 menuHidden ul-253">
+			<li class="menuLI level1 menuHidden li-253"><a class="menuA level1 menuHidden" href="http://www.vineyardcares.org" target="_new">Vineyard Cares</a></li>
+			<li class="menuLI level1 menuHidden li-164 children"><a class="menuA level1 menuHidden" href="../community_/library_options.php" target="_self">Library</a>
+				<ul class="menuUL level2 menuHidden ul-151">
+					<li class="menuLI level2 menuHidden li-151"><a class="menuA level2 menuHidden" href="https://vineyard.lib.utah.gov/" target="_new">Vineyard Children's Library</a></li>
+					<li class="menuLI level2 menuHidden li-154"><a class="menuA level2 menuHidden" href="https://vineyard.lib.utah.gov/get-a-library-card/" target="_new">Get A Library Card</a></li>
+					<li class="menuLI level2 menuHidden li-393"><a class="menuA level2 menuHidden" href="../community_/interlibrary_loan.php" target="_self">Interlibrary Loan</a></li>
+					<li class="menuLI level2 menuHidden li-394"><a class="menuA level2 menuHidden" href="https://bookmobiles.utah.gov/utah/" target="_new">Bookmobile</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-1093 children"><a class="menuA level1 menuHidden" href="../community_/events.php" target="_self">Events</a>
+				<ul class="menuUL level2 menuHidden ul-1095">
+					<li class="menuLI level2 menuHidden li-1095"><a class="menuA level2 menuHidden" href="../community_/cocos_world.php" target="_self">Coco's World</a></li>
+					<li class="menuLI level2 menuHidden li-1099"><a class="menuA level2 menuHidden" href="../community_/vineyard_101_mini_academy.php" target="_self">Vineyard 101: Mini Academy</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-161"><a class="menuA level1 menuHidden" href="../community_/vineyard_community_garden.php" target="_self">Vineyard Community Garden</a></li>
+			<li class="menuLI level1 menuHidden li-153 children"><a class="menuA level1 menuHidden" href="../community_/vineyard_youth_council.php" target="_self">Vineyard Youth Council</a>
+				<ul class="menuUL level2 menuHidden ul-1076">
+					<li class="menuLI level2 menuHidden li-1076"><a class="menuA level2 menuHidden" href="../community_/vineyard_youth_council_candidacy_forms_.php" target="_self">Vineyard Youth Council Candidacy Forms</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-167 children"><a class="menuA level1 menuHidden" href="https://sheriff.utahcounty.gov/" target="_new">Police Programs</a>
+				<ul class="menuUL level2 menuHidden ul-168">
+					<li class="menuLI level2 menuHidden li-168"><a class="menuA level2 menuHidden" href="../community_/safewalk_program.php" target="_self">SafeWalk Program</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-257 children"><a class="menuA level1 menuHidden" href="../community_/boards___commissions.php" target="_self">Boards & Commissions</a>
+				<ul class="menuUL level2 menuHidden ul-264">
+					<li class="menuLI level2 menuHidden li-264"><a class="menuA level2 menuHidden" href="../community_/arch_commission.php" target="_self">ARCH Commission</a></li>
+					<li class="menuLI level2 menuHidden li-266"><a class="menuA level2 menuHidden" href="../community_/planning_commission.php" target="_self">Planning Commission</a></li>
+					<li class="menuLI level2 menuHidden li-267"><a class="menuA level2 menuHidden" href="../community_/library_board.php" target="_self">Library Board</a></li>
+					<li class="menuLI level2 menuHidden li-418"><a class="menuA level2 menuHidden" href="../community_/vineyard_cares_board.php" target="_self">Vineyard Cares Board</a></li>
+					<li class="menuLI level2 menuHidden li-419"><a class="menuA level2 menuHidden" href="../community_/development_review_commission.php" target="_self">Development Review Commission</a></li>
+					<li class="menuLI level2 menuHidden li-1100"><a class="menuA level2 menuHidden" href="../community_/pedestrian_safety_commission.php" target="_self">Pedestrian Safety Commission</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-156"><a class="menuA level1 menuHidden" href="../community_/newsletters.php" target="_self">Newsletters</a></li>
+			<li class="menuLI level1 menuHidden li-194"><a class="menuA level1 menuHidden" href="../community_/neighborhood_map.php" target="_self">Neighborhood Map</a></li>
+			<li class="menuLI level1 menuHidden li-214"><a class="menuA level1 menuHidden" href="../community_/trails.php" target="_self">Trails</a></li>
+			<li class="menuLI level1 menuHidden li-150"><a class="menuA level1 menuHidden" href="../community_/report-a-concern.php" target="_self">Report a Concern</a></li>
+			<li class="menuLI level1 menuHidden li-439"><a class="menuA level1 menuHidden" href="../community_/communication_resources.php" target="_self">Communication Resources</a></li>
+			<li class="menuLI level1 menuHidden li-467"><a class="menuA level1 menuHidden" href="../community_/plant_walk.php" target="_self">Plant Walk</a></li>
+			<li class="menuLI level1 menuHidden li-525"><a class="menuA level1 menuHidden" href="../community_/volunteer.php" target="_self">Volunteer</a></li>
+			<li class="menuLI level1 menuHidden li-548"><a class="menuA level1 menuHidden" href="../community_/city_dump_passes.php" target="_self">City Dump Passes</a></li>
+			<li class="menuLI level1 menuHidden li-999"><a class="menuA level1 menuHidden" href="../community_/bikemonth.php" target="_self">Bike Month</a></li>
+			<li class="menuLI level1 menuHidden li-559"><a class="menuA level1 menuHidden" href="../community_/one_kind_act_a_day.php" target="_self">One Kind Act a Day</a></li>
+			<li class="menuLI level1 menuHidden li-1008"><a class="menuA level1 menuHidden" href="../community_/fireworks.php" target="_self">Fireworks</a></li>
+			<li class="menuLI level1 menuHidden li-1078 children"><a class="menuA level1 menuHidden" href="../community_/school_safety.php" target="_self">School Safety</a>
+				<ul class="menuUL level2 menuHidden ul-1079">
+					<li class="menuLI level2 menuHidden li-1079"><a class="menuA level2 menuHidden" href="https://www.vineyardutah.gov/Vineyard Elementary Map Letterhead.pdf" target="_new">Vineyard Elementary Crossing Guard Map</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-96 children"><a class="menuA level0 menuDisplay" href="../services/index.php" target="_self">Services</a>
+		<ul class="menuUL level1 menuHidden ul-105">
+			<li class="menuLI level1 menuHidden li-105"><a class="menuA level1 menuHidden" href="../services/utility_billing.php" target="_self">Utility Billing</a></li>
+			<li class="menuLI level1 menuHidden li-157 children"><a class="menuA level1 menuHidden" href="../services/emergency_preparedness.php" target="_self">Emergency Preparedness</a>
+				<ul class="menuUL level2 menuHidden ul-158">
+					<li class="menuLI level2 menuHidden li-158"><a class="menuA level2 menuHidden" href="https://member.everbridge.net/1332612387832225/login" target="_new">Sign Up for Alerts</a></li>
+					<li class="menuLI level2 menuHidden li-160"><a class="menuA level2 menuHidden" href="https://experience.arcgis.com/experience/ddf7f451101e469c856c43e5f1a761bb" target="_new">Evacuation Maps</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-259 children"><a class="menuA level1 menuHidden" href="code_enforcement.php" target="_self">Code Enforcement</a>
+				<ul class="menuUL level2 menuHidden ul-1080">
+					<li class="menuLI level2 menuHidden li-1080"><a class="menuA level2 menuHidden" href="https://www.vineyardutah.gov/Vineyard City Appeal Form.pdf" target="_new">Appeal Form</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-188"><a class="menuA level1 menuHidden" href="https://utah.cityinspect.com/register?registration_id=fDtjodKgzY" target="_new">Apply for a Permit</a></li>
+			<li class="menuLI level1 menuHidden li-203"><a class="menuA level1 menuHidden" href="https://sheriff.utahcounty.gov/" target="_new">Utah County Sheriffs Office</a></li>
+			<li class="menuLI level1 menuHidden li-169"><a class="menuA level1 menuHidden" href="https://orem.org/fire/" target="_new">Fire Department</a></li>
+			<li class="menuLI level1 menuHidden li-170"><a class="menuA level1 menuHidden" href="../services/utah_county_resources.php" target="_self">Utah County Resources</a></li>
+			<li class="menuLI level1 menuHidden li-655"><a class="menuA level1 menuHidden" href="../services/uta_eco_pass.php" target="_self">UTA ECO Pass</a></li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-441 children"><a class="menuA level0 menuDisplay" href="../contact/index.php" target="_self">Contact</a>
+		<ul class="menuUL level1 menuHidden ul-576">
+			<li class="menuLI level1 menuHidden li-576"><a class="menuA level1 menuHidden" href="../contact/news.php" target="_self">News</a></li>
+			<li class="menuLI level1 menuHidden li-647"><a class="menuA level1 menuHidden" href="../contact/privacy.php" target="_self">Privacy</a></li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-1075"><a class="menuA level0 menuDisplay" href="../transparency_portal/index.php" target="_self">Transparency Portal</a></li>
+</ul>
+
+<style>.floating-alert {bottom:250px!important;}</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMHHVNQ10E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DMHHVNQ10E');
+</script>
+
+
+
+
+
+			</nav><!--/.col-lg-8-->
+			<div class="col-lg-2">
+				<div id="search">
+					<form class="search-form" method="GET" action="https://www.vineyardutah.gov/search.php" role="search" aria-label="sitewide">
+						<input name="q" class="form-control search-input" placeholder="Search ..." type="search" id="search-input">
+						<button><img src="../_assets_/images/search-icon.png" alt="search icon" /></button>
+					</form>
+				</div><!-- /#search -->
+			</div><!--/.col-lg-3-->
+		</div><!--/.row-->
+	</div><!--/.container-fluid-->
+</header>
+		
+<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+</script>
+<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'3.00'};
+</script>
+
+
+
+<section id="slider" class="tiny-slider-wrap" role="complementary" aria-label="page banner">
+	<ul class="tiny-slider">
+		<li class="tiny-item"><div class="tns-lazy-img tns-bg-slide" data-style="background:url('Vineyard%20Portrait%2020201121%201-2%20-%20Copy%20(2).jpg?t=202402290935260') center no-repeat;background-size:cover"></div></li><li class="tiny-item"><div class="tns-lazy-img tns-bg-slide" data-style="background:url('Departmnts/Rec/IMG_3155%20-%20Copy.jpg?t=202402290935270') center no-repeat;background-size:cover"></div></li>
+	</ul><!--/.tiny-slider-->
+	<h2 id="inner-caption" class="container">
+
+
+Resource Documents
+</h2>
+</section><!-- /#slider -->
+<div class="fslider">
+	<script language="JavaScript" type="text/JavaScript">
+		RZ.module = 'slider';
+		RZ.nexturl = 'editforms/slider_images-editlist.jsp?width=1600&height=440&pageid=3';
+		RZ.img = '<span class="rzBtn">Edit Slides</span>';
+		RZ.set = '';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	</script>
+	<script language="JavaScript" type="text/JavaScript">
+		RZ.module = 'freeform';
+		RZ.nexturl = "editforms/leftnav_title-editform.jsp";
+		RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+		RZ.img = '<span class="rzBtn ">Edit Title</span>';
+		RZ.set = 'freeform.pageid=captionlinks-228';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	</script>
+</div>
+
+
+
+
+<main id="main">
+	<div class="container">
+		 
+<div class="row">
+			<aside class="col-lg-3">
+				<nav id="flyout-wrap" aria-labelledby="flyout-header">
+					<h2 id="flyout-header">
+					<script language="JavaScript" type="text/JavaScript">
+							RZ.module = 'freeform';
+							RZ.nexturl = 'editforms/leftnav_title-editform.jsp';
+							RZ.img = '<span class="rzBtn noPush rzSmall">Edit Header</span>';
+							RZ.set = 'pageid=links-228';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editform');
+						</script>
+						Related Pages
+					</h2>
+					
+
+
+					<script language="JavaScript" type="text/JavaScript">
+						RZ.module = 'links';
+						RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-228&"
+								 + "linksfilter=linkplacement=leftnav and linkparentid=225&"
+								 + "numberoflevels=2&"
+								 + "linkoptions=url,template,file&"
+								 + "linknewsection=*all*";
+						RZ.img = '<span class="rzBtn rzSmall" style="margin-top:0">Edit Left Nav</span>';
+						RZ.caption = '';
+						RZ.set = "links.linkplacement=leftnav"
+						RZ.options = '';
+						if (typeof RZaction != 'undefined') RZaction('editlist');
+					</script>
+					
+ <ul  id="flyout" class="v08-30-2012">
+	<li id="li-226" class="menuLI level0 menuSelectedLevel first"><a class="menuA level0 menuSelectedLevel first" href="https://vineyard.cityinspect.com/login" target="_blank" >Apply for a Permit</a></li>
+	<li id="li-292" class="menuLI level0 menuSelectedLevel"><a class="menuA level0 menuSelectedLevel" href="https://utah.cityinspect.com/register?registration_id=fDtjodKgzY" target="_blank" >Apply for a Permit (New User)</a></li>
+	<li id="li-228" class="menuLI level0 menuSelectedItem"><a class="menuA level0 menuSelectedItem" href="resource_documents.php" target="_self" >Resource Documents</a></li>
+	<li id="li-242" class="menuLI level0 menuSelectedLevel"><a class="menuA level0 menuSelectedLevel" href="basement_finish.php" target="_self" >Basement Finish</a></li>
+	<li id="li-518" class="menuLI level0 menuSelectedLevel"><a class="menuA level0 menuSelectedLevel" href="water_meter_request.php" target="_self" >Water Meter Request</a></li>
+</ul>
+
+				</nav>
+				<div class="general_btn">
+				<script language="JavaScript" type="text/JavaScript">
+					RZ.module = 'global';
+					RZ.nexturl = 'editforms/generaldata-editform.jsp';
+					RZ.img = '<span class="rzBtn">Edit Contact Data</span>';
+					RZ.set = 'pageid=generaldatalinks-228';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				</script>
+				</div>
+				
+				<div id="contact-box">
+					<h2 class="box-header">Building Department</h2>		
+					<p class="contact-details">building@vineyardutah.org</p>
+					<a href="tel:801-226-1929" class="contact-link">801-226-1929</a>
+				</div>
+				
+			</aside>
+			<div class="col-lg-9">
+
+
+				<div id="entry">
+					<nav id="breadcrumbs" aria-label="breadcrumb">
+						<ul><li><a href="../index.html">Home</a> </li><li><a href="index.php">Government</a> </li><li><a href="building.php">Building</a> </li><li>Resource&nbsp;Documents</li></ul>
+					</nav><!-- /#breadcrumbs -->
+					<div id="freeform-main">
+						<h1 id="page-title">
+
+Resource Documents</h1>
+						<div class="enablerbtns">
+							<script language="JavaScript" type="text/JavaScript">
+								RZ.module = 'global';
+								RZ.nexturl = 'editforms/footer-links-editlist.jsp?pageid=deptqclinkslinks-228';
+								RZ.img = '<span class="rzBtn">Edit Button</span>';
+								RZ.set = '';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							</script>
+						</div>
+						<div id="inner-buttons">
+						
+                             
+
+                    
+					
+				  
+						</div>
+						
+<div id="post" class="clearfix">
+<div>
+	
+	<script language="JavaScript" type="text/JavaScript">
+		RZ.module = 'freeform';
+		RZ.nexturl = 'editforms/freeform-editform.jsp?';
+		RZ.img = '<span class="rzBtn">Edit Content</span>';
+		RZ.set = 'pageid=links-228';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	</script>
+	
+	
+	<script language="JavaScript" type="text/JavaScript">
+		RZ.module = 'freeform';
+		RZ.nexturl = 'editforms/metadata-editform.jsp?';
+		RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+		RZ.set = 'pageid=links-228';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	</script>
+	<script language="JavaScript" type="text/JavaScript">
+		RZ.nexturl = '';
+		RZ.img = '<span class="rzAdmin"><img src="../images/edit/permissions.jpg" alt="Permissions" border="0" class="rzBtn" /></span>';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('permissions');
+	</script>
+	
+</div>
+
+
+
+	<!-- // START of document_center_list_include code \\ -->
+
+<!--*******************************************************
+
+Document Center
+
+Alec Armstrong
+
+2017
+
+Revize.com
+
+*******************************************************-->
+<style>
+.file-group a i, .file-group a span{margin-right: 5px;font-size: 16px;}
+.file-edit i, .file-edit span {border: none;margin-left: 1px;}
+#doc-search-form label {margin: 0;background: transparent;}
+.outer-cat .cat-edit>a>i, .outer-cat .cat-edit>a>span {display: inline-block;font-size: 16px;line-height: 36px;width: 36px;text-align: center;}
+i.fa-pencil, span.fa-pencil{color:#3875c7;border-right: 1px solid #a0a0a0;}
+i.fa-trash, span.fa-trash{color:#e74c3c;margin-left: -5px;}
+.inner-cat .cat-edit>a>i, .inner-cat .cat-edit>a>span {line-height: 32px;border-left: 1px solid #a0a0a0;font-size: 17px;width: 35px;border-right: none!important;}
+.file-edit i, .file-edit span {border: none;margin-left: 1px;}
+#doc-search-form form {
+		border-radius: 0;
+    overflow: hidden;
+		border: 0;
+    position: relative;
+    background: transparent;
+}
+#doc-search-form input, #doc-search-form select {
+    height: 44px;
+    border-radius: 4px;
+}
+#file-search {
+    width: 100%;
+    padding-right: 129px;
+    border: 0;
+    border: 1px solid #22497d;
+}
+</style>
+<!----- sort=seq asc ----->
+
+
+<article id="document-center">
+	<section id="doc-center-header" class="clearfix">
+		<img class="pull-left" src="../revize/plugins/document_center/_images_/app.png" alt="Doc app">
+		<h2>Document Center</h2>
+		<p>The Document Center provides easy access to public documents. Click on one of the categories below to see related documents or use the search function.</p>
+	</section><!--/#doc-center-header-->
+	<section id="doc-search-form">
+		<form name="RZdocument_center_form" method="" action="../index.html">
+			<label for="file-search">
+				<h2>Search for file name:</h2>
+			</label>
+			<input id="file-search" type="search" name="q" placeholder="search here"><!--
+	  	--><input type="hidden"  name="sitesearch" value="" /><!--
+		--><input class="rz-doc-search-submit" type="submit" name="Submit" value="Search"/>
+		</form>
+
+
+  
+  
+  
+  <script language="JavaScript" type="text/JavaScript">
+	 RZ.module 			= 'revize_document_center'; RZ.linkname = '';
+	 RZ.template 		= '*none*'; RZ.recordid = 'new';
+	 RZ.nexturl 		= "/revize/plugins/document_center/document_center_category-editform.jsp";
+	 RZ.popupwidth 	= '820'; RZ.popupheight = '400'; RZ.popupscroll = 'yes';
+	 RZ.img 				= '<span class="rz-edit-btn"><span class="fa fa-plus" aria-hidden="true"></span> Add A New Category</span>';
+	 RZ.set 				= 'revize_document_center.placement=header-228';
+	 RZ.options 		= '@@nolink@@';
+	 if (typeof RZaction != 'undefined') RZaction('edititem');
+  </script>
+  
+
+  
+  
+  
+  <script language="JavaScript" type="text/JavaScript">
+	RZ.module 		= 'revize_document_center';
+	RZ.nexturl 	= "/revize/plugins/document_center/document_center_options-editform.jsp";
+	RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'yes';
+	RZ.img 				= '<span class="rz-edit-btn"><span class="fa fa-sort-amount-asc" aria-hidden="true"></span> Change Sort</span>';
+	RZ.set 			= 'revize_document_center.placement=options-228';
+	RZ.options 	= '';
+	if (typeof RZaction != 'undefined') RZaction('editform');
+  </script>
+  
+
+  <div class="user-logged-in seq-alert">
+    Categories always sorted by seq (sub-categories sorted within each category)
+    <br />Documents sorted by SEQ in Ascending Order within category
+  </section><!-- /.doc-search-form -->
+
+	<button class="rz-doc-search-reset">RESET</button>
+	<section id="categorties-wrap">
+	
+
+	<div class="outer-cat cat">
+		<div class="cat-edit">
+		 
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '275';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       </script>
+       
+       
+       
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '275';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       </script>
+	 </div><!--/.cat-edit-->
+		<a class="rz-doc-center-hash" name="outer-275"></a>
+		<h3 tabindex="0" class="docs-toggle clearfix">Building Permit Reports<span class="fa fa-caret-down" aria-hidden="true"></span><small class="doc-center-counter">1 document</small></h3>
+
+		<div class="inner-cat-wrap outer-275">
+
+
+				
+				
+				
+				<script language="JavaScript" type="text/javascript">
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload275,'
+										//+ 'revize_document_center.header=Building+Permit+Reports,'
+										+ 'revize_document_center.folder=government/,'
+										+ 'revize_document_center.parent_key=document_center[228]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				</script>
+				
+
+			
+
+
+			
+			
+			
+			<script language="JavaScript" type="text/javascript">
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=228";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-228,'
+									+ 'revize_document_center.parent_key=275';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			</script>
+			
+
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(7)
+</script>
+
+				
+						<ul class="file-group">
+					
+					<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(8)
+</script>
+
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Building Permit Reports/Active Building Permits 06.2026.pdf?t=202607011627540"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Active Building Permits 06.2026</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			0.00
+							 		</div>
+							
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz472"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '472';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '472';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+				<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_8']={field:'seq',seq:'1.00'};
+</script>
+
+						</ul><!--/.file-group-->
+					
+				
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_7']={field:'seq',seq:'1.00'};
+</script>
+<!--// inner category loop //-->
+		</div><!--/.inner-cat-wrap-->
+	</div><!--/.outer-cat.cat-->
+	
+
+	<div class="outer-cat cat">
+		<div class="cat-edit">
+		 
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '453';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       </script>
+       
+       
+       
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '453';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       </script>
+	 </div><!--/.cat-edit-->
+		<a class="rz-doc-center-hash" name="outer-453"></a>
+		<h3 tabindex="0" class="docs-toggle clearfix">Privacy Notice<span class="fa fa-caret-down" aria-hidden="true"></span><small class="doc-center-counter">1 document</small></h3>
+
+		<div class="inner-cat-wrap outer-453">
+
+
+				
+				
+				
+				<script language="JavaScript" type="text/javascript">
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload453,'
+										//+ 'revize_document_center.header=Privacy+Notice,'
+										+ 'revize_document_center.folder=government/,'
+										+ 'revize_document_center.parent_key=document_center[228]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				</script>
+				
+
+			
+
+
+			
+			
+			
+			<script language="JavaScript" type="text/javascript">
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=228";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-228,'
+									+ 'revize_document_center.parent_key=453';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			</script>
+			
+
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(10)
+</script>
+
+				
+						<ul class="file-group">
+					
+					<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(11)
+</script>
+
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Privacy Notice - Building Department.pdf?t=202512301145030"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Privacy Notice - Building</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			0.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Privacy Notice that details what private information the building department collects and retains.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz454"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '454';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '454';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+				<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_11']={field:'seq',seq:'1.00'};
+</script>
+
+						</ul><!--/.file-group-->
+					
+				
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_10']={field:'seq',seq:'1.00'};
+</script>
+<!--// inner category loop //-->
+		</div><!--/.inner-cat-wrap-->
+	</div><!--/.outer-cat.cat-->
+	
+
+	<div class="outer-cat cat">
+		<div class="cat-edit">
+		 
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '141';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       </script>
+       
+       
+       
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '141';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       </script>
+	 </div><!--/.cat-edit-->
+		<a class="rz-doc-center-hash" name="outer-141"></a>
+		<h3 tabindex="0" class="docs-toggle clearfix">Forms<span class="fa fa-caret-down" aria-hidden="true"></span><small class="doc-center-counter">9 documents</small></h3>
+
+		<div class="inner-cat-wrap outer-141">
+
+
+				
+				
+				
+				<script language="JavaScript" type="text/javascript">
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload141,'
+										//+ 'revize_document_center.header=Forms,'
+										+ 'revize_document_center.folder=government/,'
+										+ 'revize_document_center.parent_key=document_center[228]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				</script>
+				
+
+			
+
+
+			
+			
+			
+			<script language="JavaScript" type="text/javascript">
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=228";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-228,'
+									+ 'revize_document_center.parent_key=141';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			</script>
+			
+
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(13)
+</script>
+
+				
+						<ul class="file-group">
+					
+					<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(14)
+</script>
+
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/Building Application 03.2025.pdf?t=202503111539250"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Building Permit Application</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			1.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Paper form for building permit application
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz255"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '255';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '255';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="../Departmnts/Building/Forms/owner-builder-certification-agreement.pdf?t=202606021303530"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Owner Builder Certification Form</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			2.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Required form when owner is acting as contractor on residential project.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz256"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '256';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '256';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/2nd Kitchen Acknowledgement Form.pdf?t=202406241838450"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>2nd Kitchen Acknowledgement Form</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			3.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Acknowledgement of 2nd kitchen within a home.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz257"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '257';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '257';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/Special Inspection Agreement (2021 IBC).pdf?t=202503111540080"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Special Inspection Agreement</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			4.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Agreement form for special inspections required on commercial projects.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz258"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '258';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '258';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/Water Utility Agreement.pdf?t=202406241840210"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Set Water Meter Request</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			5.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Form required prior to setting a water meter on a new construction project.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz259"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '259';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '259';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/TSSD Pretreatment Survey.pdf?t=202406241834430"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>TSSD Pre-Treatment Survey</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			6.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							All commercial projects require Pre-Treatment surveys by TSSD
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz260"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '260';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '260';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/Exemption from Mechanical Ventilation Signed Policy (003).pdf?t=202406241913240"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Exemption from Mechanical Ventilation</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			7.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Request for exemption of the requirements for mechanical ventilation of appliances in commercial spaces.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz274"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '274';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '274';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+				<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_14']={field:'seq',seq:'8.00'};
+</script>
+
+						</ul><!--/.file-group-->
+					
+				
+			
+				
+						<div class="inner-cat cat">
+							<div class="cat-edit">
+							 
+					       
+					       
+					       <script language="JavaScript" type="text/JavaScript">
+					         RZ.module = 'revize_document_center'; RZ.linkname = '';
+					         RZ.template = '*none*'; RZ.recordid = '194';
+					         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+					         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+					         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+					         RZ.set = '';
+					         RZ.options = '@@nolink@@';
+					         if (typeof RZaction != 'undefined') RZaction('edititem');
+					       </script>
+					       
+					       
+					       
+					       
+					       
+					       <script language="JavaScript" type="text/JavaScript">
+					         RZ.module = 'revize_document_center';
+					         RZ.recordid = '194';
+					         RZ.name = 'RZdelete' + RZ.recordid;
+					         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+					         RZ.options = '<br>';
+					         if (typeof RZaction != 'undefined') RZaction('delete');
+						       </script>
+						 </div><!--/.cat-edit-->
+							<a class="rz-doc-center-sub-hash" name="sub-194"></a>
+							<h4 class="docs-toggle clearfix">ESPAÑOL DOCUMENTS<span class="fa fa-caret-down" aria-hidden="true"></span><small class="doc-center-counter">2 documents</small></h4>
+							<div class="add-file">
+								
+				            
+				            
+				            <script language="JavaScript" type="text/javascript">
+				              var subheader = "ESPAÑOL DOCUMENTS";
+				              RZ.module = 'revize_document_center'; RZ.linkname = '';
+				              RZ.template = '*none*'; RZ.recordid = 'new';
+				              RZ.nexturl = "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+				              RZ.popupwidth = '820'; RZ.popupheight = '675'; RZ.popupscroll = 'yes';
+		              		  RZ.img	= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document for "'+ subheader + '"</span>';
+								  RZ.set = 'revize_document_center.placement=upload141,'
+								   		//+ 'revize_document_center.header=Forms,'
+								   		+ 'revize_document_center.folder=government/,'
+								   		+ 'revize_document_center.parent_key=194';
+				            	RZ.options = '';
+				            	if (typeof RZaction != 'undefined') RZaction('newitem');
+				            </script>
+				            
+							</div><!--/.add-file-->
+							<ul class="file-group sub-194">
+					
+					<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(16)
+</script>
+
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/Forms - Spanish/Building Application (Espanol).pdf?t=202503111534410"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Certificaci&#243;n Para El Proprietario Constructor</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			0.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Owner/Builder Certification form translated into Spanish
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz249"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '249';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '249';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Forms/Forms - Spanish/Building Application (Espanol).pdf?t=202503111534410"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Solicitud Para Un Permiso de Construcci&#243;n</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			0.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Building Permit Application translated into Spanish
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz250"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '250';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '250';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+				<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_16']={field:'seq',seq:'1.00'};
+</script>
+
+						</ul><!--/.file-group-->
+						</div><!--/.inner-cat.cat-->
+					
+				
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_13']={field:'seq',seq:'1.00'};
+</script>
+<!--// inner category loop //-->
+		</div><!--/.inner-cat-wrap-->
+	</div><!--/.outer-cat.cat-->
+	
+
+	<div class="outer-cat cat">
+		<div class="cat-edit">
+		 
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '251';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       </script>
+       
+       
+       
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '251';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       </script>
+	 </div><!--/.cat-edit-->
+		<a class="rz-doc-center-hash" name="outer-251"></a>
+		<h3 tabindex="0" class="docs-toggle clearfix">Informational Handouts<span class="fa fa-caret-down" aria-hidden="true"></span><small class="doc-center-counter">5 documents</small></h3>
+
+		<div class="inner-cat-wrap outer-251">
+
+
+				
+				
+				
+				<script language="JavaScript" type="text/javascript">
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload251,'
+										//+ 'revize_document_center.header=Informational+Handouts,'
+										+ 'revize_document_center.folder=government/,'
+										+ 'revize_document_center.parent_key=document_center[228]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				</script>
+				
+
+			
+
+
+			
+			
+			
+			<script language="JavaScript" type="text/javascript">
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=228";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-228,'
+									+ 'revize_document_center.parent_key=251';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			</script>
+			
+
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(18)
+</script>
+
+				
+						<ul class="file-group">
+					
+					<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(19)
+</script>
+
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Informational Handouts/Design Criteria for Vineyard.pdf?t=202411051406130"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Design Criteria for Residential Construction</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			0.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Design criteria for residential construction in Vineyard City.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz307"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '307';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '307';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Informational Handouts/Registering a Builder Account.pdf?t=202503111559040"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Register account on building permit portal</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			1.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Helpful information on how to submit a new application through the building permit portal
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz261"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '261';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '261';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Informational Handouts/Builder - Submit new application.pdf?t=202503111536370"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Submit new application</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			2.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Guide to provide information on how to submit a new application through the building permit portal
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz262"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '262';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '262';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Informational Handouts/Builder Account Guide.pdf?t=202503111606190"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Account Guide</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			3.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Quick guide to navigate the building permit portal
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz263"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '263';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '263';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Builder - Request Inspection.pdf?t=202503111541100"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Request Inspection</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			4.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Information on how to request inspections through building permit portal
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz264"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '264';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '264';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+				<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_19']={field:'seq',seq:'5.00'};
+</script>
+
+						</ul><!--/.file-group-->
+					
+				
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_18']={field:'seq',seq:'1.00'};
+</script>
+<!--// inner category loop //-->
+		</div><!--/.inner-cat-wrap-->
+	</div><!--/.outer-cat.cat-->
+	
+
+	<div class="outer-cat cat">
+		<div class="cat-edit">
+		 
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '198';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       </script>
+       
+       
+       
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '198';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       </script>
+	 </div><!--/.cat-edit-->
+		<a class="rz-doc-center-hash" name="outer-198"></a>
+		<h3 tabindex="0" class="docs-toggle clearfix">Submittal Requirements<span class="fa fa-caret-down" aria-hidden="true"></span><small class="doc-center-counter">4 documents</small></h3>
+
+		<div class="inner-cat-wrap outer-198">
+
+
+				
+				
+				
+				<script language="JavaScript" type="text/javascript">
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload198,'
+										//+ 'revize_document_center.header=Submittal+Requirements,'
+										+ 'revize_document_center.folder=government/,'
+										+ 'revize_document_center.parent_key=document_center[228]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				</script>
+				
+
+			
+
+
+			
+			
+			
+			<script language="JavaScript" type="text/javascript">
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=228";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-228,'
+									+ 'revize_document_center.parent_key=198';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			</script>
+			
+
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(21)
+</script>
+
+				
+						<ul class="file-group">
+					
+					<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(22)
+</script>
+
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Submittal Requirements/Solar Submittal Requirements Updated.pdf?t=202503111709490"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Solar Submittal Requirements</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			1.00
+							 		</div>
+							
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz265"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '265';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '265';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Submittal Requirements/Pool Submittal Requirements.pdf?t=202503111607530"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Pool Submittal Requirements.pdf</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			2.00
+							 		</div>
+							
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz266"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '266';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '266';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Submittal Requirements/Generator Submittal Requirements.pdf?t=202503111606560"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Generator Submittal Requirements.pdf</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			3.00
+							 		</div>
+							
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz267"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '267';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '267';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Commercial Building Permit Submittal Req.pdf?t=202406241905490"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Commercial Submittal Requirements</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			4.00
+							 		</div>
+							
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz268"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '268';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '268';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+				<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_22']={field:'seq',seq:'5.00'};
+</script>
+
+						</ul><!--/.file-group-->
+					
+				
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_21']={field:'seq',seq:'1.00'};
+</script>
+<!--// inner category loop //-->
+		</div><!--/.inner-cat-wrap-->
+	</div><!--/.outer-cat.cat-->
+	
+
+	<div class="outer-cat cat">
+		<div class="cat-edit">
+		 
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '196';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       </script>
+       
+       
+       
+       
+       
+       <script language="JavaScript" type="text/JavaScript">
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '196';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       </script>
+	 </div><!--/.cat-edit-->
+		<a class="rz-doc-center-hash" name="outer-196"></a>
+		<h3 tabindex="0" class="docs-toggle clearfix">Policies<span class="fa fa-caret-down" aria-hidden="true"></span><small class="doc-center-counter">4 documents</small></h3>
+
+		<div class="inner-cat-wrap outer-196">
+
+
+				
+				
+				
+				<script language="JavaScript" type="text/javascript">
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload196,'
+										//+ 'revize_document_center.header=Policies,'
+										+ 'revize_document_center.folder=government/,'
+										+ 'revize_document_center.parent_key=document_center[228]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				</script>
+				
+
+			
+
+
+			
+			
+			
+			<script language="JavaScript" type="text/javascript">
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=228";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-228,'
+									+ 'revize_document_center.parent_key=196';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			</script>
+			
+
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(24)
+</script>
+
+				
+						<ul class="file-group">
+					
+					<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(25)
+</script>
+
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Policy/Basement Finish Valuation and Permit Fee Policy.pdf?t=202406241908050"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Basement Finish Valuation and Permit Fee Policy</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			1.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Policy outlining the reduction of fees for basement finish permits
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz269"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '269';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '269';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Policy/Basement Finished Without a Permit Policy.pdf?t=202406241909090"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Basement Finished Without a Permit</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			2.00
+							 		</div>
+							
+			            		<span class="doc-file-desc">
+           							Policy regarding requirements when a basement is finished without a valid permit.
+			            		</span><!--/.doc-file-desc-->
+			            
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz270"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '270';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '270';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Policy/Cold Weather Memo.pdf?t=202406241910180"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Cold Weather Policy</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			3.00
+							 		</div>
+							
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz271"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '271';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '271';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+					
+						<li>
+							<a target="_blank" href="https://www.vineyardutah.gov/Departmnts/Building/Policy/Architect Policy.pdf?t=202406241911130"><span class="fa fa-file-text-o dot-doc" aria-hidden="true"></span>Architect Policy.pdf</a>
+							<div class="rz-sort-options">
+									document seq
+									
+							 			4.00
+							 		</div>
+							
+							<div class="file-edit">
+								
+								
+								
+								<a name="revize_document_center_rz272"></a>
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '272';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								</script>
+								
+								
+								
+								
+								
+								<script language="JavaScript" type="text/JavaScript">
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '272';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								</script>
+								
+							</div><!--/.loginOnly.file-edit-->
+						</li>
+					
+					
+				<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_25']={field:'seq',seq:'5.00'};
+</script>
+
+						</ul><!--/.file-group-->
+					
+				
+			<script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_24']={field:'seq',seq:'1.00'};
+</script>
+<!--// inner category loop //-->
+		</div><!--/.inner-cat-wrap-->
+	</div><!--/.outer-cat.cat-->
+	
+	<!--/// outer loop ///-->
+	</section><!--/#categories-wrap-->
+</article>
+<!-- \\ END of document_center_list_include code // -->
+
+
+					</div><!-- /#main -->
+				</div>
+				
+			</div><!-- /.col-md-9 -->
+		</div><!-- /.row -->
+		
+	</div><!-- /.container -->
+</main>
+
+<div id="share-translate">
+	<!-- ENABLERS: update include statement with revize code -->
+	<section id="modal-section">
+		<button type="button" class="share-btn floating-share-btn" data-toggle="modal" data-target="#shareModal" >
+		<i class="fa fa-share-alt"></i>
+		<span>Share <span class="sr-only">this page</span></span>
+	</button>
+
+	<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title" id="myModalLabel">Share this page</h2>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="copylink">
+						<p>Copy and paste this code into your website.</p>
+						<pre class="py-3 px-4">&lt;a href="http://www.vineyardutah.gov/government/resource_documents.php">Your Link Name&lt;/a&gt;</pre>
+					</div><!-- /.copylink -->
+					<div class="share-btns">
+						<p>Share this page on your favorite Social network</p>
+						<div class="row">
+							<div class="col-sm-4">
+								<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.vineyardutah.gov/government/resource_documents.php" class="btn-facebook" onclick="return !window.open(this.href, 'facebook ', 'width=500,height=500')"
+								target="_blank">
+									<i class="fa fa-facebook"></i> Facebook
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="https://www.twitter.com/intent/tweet?url=http://www.vineyardutah.gov/government/resource_documents.php" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
+								target="_blank">
+									<i class="fa fa-twitter"></i> Twitter
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="https://www.reddit.com/submit?url=http://www.vineyardutah.gov/government/resource_documents.php" class="btn-reddit" onclick="return !window.open(this.href, 'redit ', 'width=500,height=500')"
+								target="_blank">
+									<i class="fa fa-reddit"></i> Reddit
+								</a>
+							</div>
+						</div><!-- /.row -->
+					</div><!-- /.share-btns -->
+					<button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Close</button>
+				</div><!-- /.modal-body -->
+			</div>
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</section><!-- /#modal-section -->
+<script>
+    (function(d){
+       var s = d.createElement("script");
+       s.setAttribute("data-position", 5);
+       s.setAttribute("data-color", '#fff');
+       s.setAttribute("data-account", "sudb1U5E4V");
+       s.setAttribute("src", "https://cdn.userway.org/widget.js");
+       (d.body || d.head).appendChild(s);})(document)
+   </script>
+<noscript>
+Please ensure Javascript is enabled for purposes of
+<a href="https://userway.org">website accessibility</a>
+</noscript>	<div id="google-translate" class="d-none">
+		<script>
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({pagelanguage: 'en',
+					layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+					'google-translate');
+			}
+		</script>
+	</div><!--/#google-translate-->
+	<ul id="translation-links">
+		<li><button type="button" id="translate-button" aria-label="translate website" aria-haspopup="true" aria-expanded="false"><img src="../_assets_/images/translate-icon.png" alt="translate icon"/></button>
+		<ul class="clearfix" aria-labelledby="translate-button">
+				<li><a href="resource_documents.php#" class="English" data-lang="English"><strong translate="no">English</strong></a></li>
+				<li><a href="resource_documents.php#" class="Afrikaans" data-lang="Afrikaans">Afrikaans</a></li>
+				<li><a href="resource_documents.php#" class="Albanian" data-lang="Albanian">Albanian</a></li>
+				<li><a href="resource_documents.php#" class="Arabic" data-lang="Arabic">Arabic</a></li>
+				<li><a href="resource_documents.php#" class="Armenian" data-lang="Armenian">Armenian</a></li>
+				<li><a href="resource_documents.php#" class="Azerbaijani" data-lang="Azerbaijani">Azerbaijani</a></li>
+				<li><a href="resource_documents.php#" class="Basque" data-lang="Basque">Basque</a></li>
+				<li><a href="resource_documents.php#" class="Belarusian" data-lang="Belarusian">Belarusian</a></li>
+				<li><a href="resource_documents.php#" class="Bengali" data-lang="Bengali">Bengali</a></li>
+				<li><a href="resource_documents.php#" class="Bosnian" data-lang="Bosnian">Bosnian</a></li>
+				<li><a href="resource_documents.php#" class="Bulgarian" data-lang="Bulgarian">Bulgarian</a></li>
+				<li><a href="resource_documents.php#" class="Catalan" data-lang="Catalan">Catalan</a></li>
+				<li><a href="resource_documents.php#" class="Cebuano" data-lang="Cebuano">Cebuano</a></li>
+				<li><a href="resource_documents.php#" class="Chinese" data-lang="Chinese (Simplified)">Chinese (Simplified)</a></li>
+				<li><a href="resource_documents.php#" class="Chinese" data-lang="Chinese (Traditional)">Chinese (Traditional)</a></li>
+				<li><a href="resource_documents.php#" class="Croatian" data-lang="Croatian">Croatian</a></li>
+				<li><a href="resource_documents.php#" class="Czech" data-lang="Czech">Czech</a></li>
+				<li><a href="resource_documents.php#" class="Danish" data-lang="Danish">Danish</a></li>
+				<li><a href="resource_documents.php#" class="Dutch" data-lang="Dutch">Dutch</a></li>
+				<li><a href="resource_documents.php#" class="Esperanto" data-lang="Esperanto">Esperanto</a></li>
+				<li><a href="resource_documents.php#" class="Estonian" data-lang="Estonian">Estonian</a></li>
+				<li><a href="resource_documents.php#" class="Filipino" data-lang="Filipino">Filipino</a></li>
+				<li><a href="resource_documents.php#" class="Finnish" data-lang="Finnish">Finnish</a></li>
+				<li><a href="resource_documents.php#" class="French" data-lang="French">French</a></li>
+				<li><a href="resource_documents.php#" class="Galician" data-lang="Galician">Galician</a></li>
+				<li><a href="resource_documents.php#" class="Georgian" data-lang="Georgian">Georgian</a></li>
+				<li><a href="resource_documents.php#" class="German" data-lang="German">German</a></li>
+				<li><a href="resource_documents.php#" class="Greek" data-lang="Greek">Greek</a></li>
+				<li><a href="resource_documents.php#" class="Gujarati" data-lang="Gujarati">Gujarati</a></li>
+				<li><a href="resource_documents.php#" class="Haitian Creole" data-lang="Haitian Creole">Haitian Creole</a></li>
+				<li><a href="resource_documents.php#" class="Hausa" data-lang="Hausa">Hausa</a></li>
+				<li><a href="resource_documents.php#" class="Hebrew" data-lang="Hebrew">Hebrew</a></li>
+				<li><a href="resource_documents.php#" class="Hindi" data-lang="">Hindi</a></li>
+				<li><a href="resource_documents.php#" class="Hmong" data-lang="Hmong">Hmong</a></li>
+				<li><a href="resource_documents.php#" class="Hungarian" data-lang="Hungarian">Hungarian</a></li>
+				<li><a href="resource_documents.php#" class="Icelandic" data-lang="Icelandic">Icelandic</a></li>
+				<li><a href="resource_documents.php#" class="Igbo" data-lang="Igbo">Igbo</a></li>
+				<li><a href="resource_documents.php#" class="Indonesian" data-lang="Indonesian">Indonesian</a></li>
+				<li><a href="resource_documents.php#" class="Irish" data-lang="Irish">Irish</a></li>
+				<li><a href="resource_documents.php#" class="Italian" data-lang="Italian">Italian</a></li>
+				<li><a href="resource_documents.php#" class="Japanese" data-lang="Japanese">Japanese</a></li>
+				<li><a href="resource_documents.php#" class="Javanese" data-lang="Javanese">Javanese</a></li>
+				<li><a href="resource_documents.php#" class="Kannada" data-lang="Kannada">Kannada</a></li>
+				<li><a href="resource_documents.php#" class="Khmer" data-lang="Khmer">Khmer</a></li>
+				<li><a href="resource_documents.php#" class="Korean" data-lang="Korean">Korean</a></li>
+				<li><a href="resource_documents.php#" class="Lao" data-lang="Lao">Lao</a></li>
+				<li><a href="resource_documents.php#" class="Latin" data-lang="Latin">Latin</a></li>
+				<li><a href="resource_documents.php#" class="Latvian" data-lang="Latvian">Latvian</a></li>
+				<li><a href="resource_documents.php#" class="Lithuanian" data-lang="Lithuanian">Lithuanian</a></li>
+				<li><a href="resource_documents.php#" class="Macedonian" data-lang="Macedonian">Macedonian</a></li>
+				<li><a href="resource_documents.php#" class="Malay" data-lang="Malay">Malay</a></li>
+				<li><a href="resource_documents.php#" class="Maltese" data-lang="Maltese">Maltese</a></li>
+				<li><a href="resource_documents.php#" class="Maori" data-lang="Maori">Maori</a></li>
+				<li><a href="resource_documents.php#" class="Marathi" data-lang="Marathi">Marathi</a></li>
+				<li><a href="resource_documents.php#" class="Mongolian" data-lang="Mongolian">Mongolian</a></li>
+				<li><a href="resource_documents.php#" class="Nepali" data-lang="Nepali">Nepali</a></li>
+				<li><a href="resource_documents.php#" class="Norwegian" data-lang="Norwegian">Norwegian</a></li>
+				<li><a href="resource_documents.php#" class="Persian" data-lang="Persian">Persian</a></li>
+				<li><a href="resource_documents.php#" class="Polish" data-lang="Polish">Polish</a></li>
+				<li><a href="resource_documents.php#" class="Portuguese" data-lang="Portuguese">Portuguese</a></li>
+				<li><a href="resource_documents.php#" class="Punjabi" data-lang="Punjabi">Punjabi</a></li>
+				<li><a href="resource_documents.php#" class="Romanian" data-lang="Romanian">Romanian</a></li>
+				<li><a href="resource_documents.php#" class="Russian" data-lang="Russian">Russian</a></li>
+				<li><a href="resource_documents.php#" class="Serbian" data-lang="Serbian">Serbian</a></li>
+				<li><a href="resource_documents.php#" class="Slovak" data-lang="Slovak">Slovak</a></li>
+				<li><a href="resource_documents.php#" class="Slovenian" data-lang="Slovenian">Slovenian</a></li>
+				<li><a href="resource_documents.php#" class="Somali" data-lang="Somali">Somali</a></li>
+				<li><a href="resource_documents.php#" class="Spanish" data-lang="Spanish">Spanish</a></li>
+				<li><a href="resource_documents.php#" class="Swahili" data-lang="Swahili">Swahili</a></li>
+				<li><a href="resource_documents.php#" class="Swedish" data-lang="Swedish">Swedish</a></li>
+				<li><a href="resource_documents.php#" class="Tamil" data-lang="Tamil">Tamil</a></li>
+				<li><a href="resource_documents.php#" class="Telugu" data-lang="Telugu">Telugu</a></li>
+				<li><a href="resource_documents.php#" class="Thai" data-lang="Thai">Thai</a></li>
+				<li><a href="resource_documents.php#" class="Turkish" data-lang="Turkish">Turkish</a></li>
+				<li><a href="resource_documents.php#" class="Ukrainian" data-lang="Ukrainian">Ukrainian</a></li>
+				<li><a href="resource_documents.php#" class="Urdu" data-lang="Urdu">Urdu</a></li>
+				<li><a href="resource_documents.php#" class="Vietnamese" data-lang="Vietnamese">Vietnamese</a></li>
+				<li><a href="resource_documents.php#" class="Welsh" data-lang="Welsh">Welsh</a></li>
+				<li><a href="resource_documents.php#" class="Yiddish" data-lang="Yiddish">Yiddish</a></li>
+				<li><a href="resource_documents.php#" class="Yoruba" data-lang="Yoruba">Yoruba</a></li>
+				<li><a href="resource_documents.php#" class="Zulu" data-lang="Zulu">Zulu</a></li>
+			</ul>
+		</li>
+	</ul><!--/#translation-links-->
+</div><!-- /#share-translate -->
+
+
+
+
+
+
+ 
+
+<footer>
+	<div id="footer-top">
+		<div class="container">
+					<div class="row">
+				<div class="col-lg-2">
+						<img id="footer-logo" src="../_assets_/images/footer-logo.png" alt="footer logo" />
+				</div><!--/.col-lg-3-->
+				<div class="col-lg-3">
+					<div class="footer-col first">
+					
+						<div class="footer-icon"><img src="../_assets_/images/phone-icon.png" alt="phone icon"/></div>
+						<a href="tel:801.226.1929" class="footer-link">801.226.1929</a>
+					
+					</div><!--/.footer-col-->
+				</div><!--/.col-lg-3-->
+				<div class="col-lg-3">
+					<div class="footer-col">
+					
+						<div class="footer-icon"><img src="../_assets_/images/location-icon.png" alt="location icon"/></div>
+						<a href="https://goo.gl/maps/cw4EoARDeM4t7DYr5" class="footer-link"target="_blank">125 S Main Street <br/> Vineyard, UT </a>
+					
+					</div><!--/.footer-col-->
+				</div><!--/.col-lg-3-->
+				<div class="col-lg-4">
+					<div class="footer-col justify-content-end">
+					
+						<div class="footer-icon"><img src="../_assets_/images/clock-icon.png" alt="clock icon"/></div>
+						<span class="footer-link">Monday - Thursday: 8am &#8211; 5pm <br/> Friday: 8am &#8211; 12pm</span>
+					
+					</div><!--/.footer-col-->
+				</div><!--/.col-lg-4-->
+			</div><!--/.row-->		
+		</div><!--/.container-->
+	</div><!--/.footer-top-->
+	<div id="footer-bottom">
+		<div class="container">
+					<div class="row">
+				<div class="col-lg-6">
+					<div id="copyright">
+						&copy; Vineyard UT
+					</div>
+				</div><!--/.col-lg-6-->
+				<div class="col-lg-6">
+					<div id="revize">
+						Powered by <a href="https://www.revize.com" id="revize-link"target="_blank">revize., </a> the Government Website Experts  <a href="https://cms3.revize.com/revize/security/index.jsp?webspace=vineyard&filename=/government/resource_documents.php" id="revize-login">Login</a>
+					</div><!--/#revize-->
+				</div><!--/.col-lg-6-->
+			</div><!--/.row-->
+		</div><!--/.container-->
+	</div><!--/.footer-bottom-->
+</footer>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="../_assets_/plugins/ytplayer/jquery.mb.YTPlayer.min.js"></script>
+<script src="../_assets_/plugins/modernizr/modernizr.custom.js"></script>
+<script src="../_assets_/plugins/tiny-slider/dist/min/tiny-slider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="../_assets_/plugins/matchHeight/dist/jquery.matchHeight-min.js"></script>
+<script src="../_assets_/js/scripts.js"></script>
+
+
+
+
+
+	<script src="../revize/plugins/document_center/js/document-center-scripts.js"></script>
+
+	<div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="modal-event-title" aria-hidden="true">
+  <div id="event-modal-dialog" class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+	  <div class="event-modal-header">
+		  <div class="modal-event-date-wrap">
+			<span class="modal-event-date-number"></span>
+			<span class="modal-event-date-month"></span>
+		  </div>
+      </div>
+	  <div class="modal-body" id="modal-event-body">
+		 <h2 class="modal-title" id="modal-event-title"></h2>
+		 <h3 class="modal-subtitle" id="modal-event-subtitle"></h3>
+		 <div class="modal-description clearfix" id="modal-event-description"></div>
+		 <div class="modal-location" id="modal-event-location"></div>
+	  </div>
+      <div class="modal-footer">
+        <button id="modal-close-button" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="resource_documents.php#" id="modal-event-readmore" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../revize/plugins/revize_calendar/moment.min.js"></script>
+<script src="../revize/plugins/revize_calendar/moment-timezone.min.js"></script>
+<script src="../revize/plugins/revize_calendar/rrule.js"></script>
+<script src="../revize/plugins/revize_calendar/ical.min.js"></script>
+<script src="../revize/plugins/revize_calendar/core/main.min.js"></script>
+<script src="../revize/plugins/revize_calendar/google-calendar/main.min.js"></script>
+<script src="../revize/plugins/revize_calendar/rrule/main.min.js"></script>
+<script src="../revize/plugins/revize_calendar/list/main.min.js"></script>
+<script src="../revize/plugins/revize_calendar/daygrid/main.min.js"></script>
+<script src="../revize/plugins/revize_calendar/timegrid/main.min.js"></script>
+<script src="../revize/plugins/revize_calendar/doT.min.js"></script>
+<script src="../revize/plugins/revize_calendar/ics/ics.deps.min.js"></script>
+<script src="../revize/plugins/revize_calendar/mini.js"></script>
+
+
+
+
+
+</body>
+</html>

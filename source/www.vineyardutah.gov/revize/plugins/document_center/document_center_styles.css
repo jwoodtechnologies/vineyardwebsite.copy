@@ -1,0 +1,137 @@
+#RZdocument_center input
+{
+	display:inline-block;
+	padding:8px;
+	margin-top:0;
+	border:1px solid #d1d1d1
+}
+
+#RZdocument_center select
+{
+	padding:7px;
+	border-width:2px;
+	border:1px solid #d1d1d1
+}
+
+.button,#RZdocument_center button,#RZdocument_center input[type="submit"],#RZdocument_center input[type="reset"],#RZdocument_center input[type="button"]
+{
+	background:#eee;
+	border:1px solid #d1d1d1;
+	color:#444;
+	font-size:12px;
+	text-shadow:none;
+	margin:0 0 ;
+	padding:8px 18px
+}
+
+#RZdocument_center .button:hover,#RZdocument_center button:hover,#RZdocument_center input[type="submit"]:hover,#RZdocument_center input[type="reset"]:hover,#RZdocument_center input[type="button"]:hover
+{
+	color:#222;
+	background:none
+}
+
+#RZdocument_center .button:active,#RZdocument_center button:active,#RZdocument_center input[type="submit"]:active,#RZdocument_center input[type="reset"]:active,#RZdocument_center input[type="button"]:active
+{
+	background:none
+}
+
+#msg
+{
+	background:#EED7A9;
+	padding:14px;
+	display:block;
+	border:1px solid #EEC169
+}
+
+.file_category
+{
+	margin-top:4px;
+	display:inline;
+	float:left;
+	border:1px solid #ADADAD;
+	width:455px
+}
+
+H3 A:link
+{
+	text-decoration:none;
+	font-size:21px
+}
+
+.login H3
+{
+	border-bottom:1px solid #d1d1d1!important;
+	padding-bottom:10px!important;
+	margin-bottom:10px!important;
+}
+
+.file_row
+{
+	display:none;
+	overflow:hidden;
+	border:1px solid #ccc;
+	width:97.8%;
+	float:left;
+	padding:10px 10px 10px 0;
+	margin:0 0 5px;
+}
+
+.file_icon
+{
+	float:left;
+	margin:0 10px 10px
+}
+
+#file_name
+{
+	overflow:hidden
+}
+
+#file_name a
+{
+	font-weight:700;
+	margin-bottom:5px;
+	display:block
+}
+
+.file_description
+{
+	overflow:hidden
+}
+/***********************************************/
+/*BOOKMARK -----sub-category plus enhancements*/
+/*********************************************/
+.RZdocument_center .debug {
+	white-space: nowrap;
+	display: none;
+}
+.RZdocument_center.debug td.debug {
+	display: table-cell;
+}
+/*BOOKMARK document_center_list*/
+#RZdocument_center .seq,
+#RZdocument_center .loginOnly,
+#RZdocument_center .empty {
+	font-weight: normal;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #0f9acb;
+	display: none;
+}
+#RZdocument_center .subcategory h3 {
+	font-style:italic;
+	margin-left: 20px;
+	display: none;
+}
+#RZdocument_center .subcategory h3 .seq,
+#RZdocument_center table h3:first-of-type .seq {
+	font-weight: normal;
+}
+#RZdocument_center.debug .debug,
+#RZdocument_center.login .seq,
+#RZdocument_center.login .empty,
+#RZdocument_center.login .loginOnly,
+#RZdocument_center .show .subcategory h3 {
+	display: block;
+}
+
+
