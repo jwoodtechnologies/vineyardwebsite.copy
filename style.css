@@ -1,0 +1,9 @@
+/*
+Theme Name: Vineyard City (Revize clone)
+Theme URI: https://www.vineyardutah.gov/
+Description: Classic WordPress theme that reproduces the Vineyard City, Utah government website (originally built on Revize). Original markup, class names, CSS and JS are preserved; the original stylesheet is enqueued unchanged from /_assets_/css/layout.css.
+Version: 1.0.0
+Author: Migration
+Text Domain: vineyard
+*/
+/* Intentionally empty: all site styling lives in _assets_/css/layout.css (original, unmodified). */
