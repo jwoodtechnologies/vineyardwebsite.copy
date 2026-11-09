@@ -139,7 +139,7 @@ function vcb_render_events() {
 		$ev = vcc_upcoming_events( 4, $slug );
 		foreach ( $ev as $e ) {
 			$o .= '<div class="cal-event"><div class="cal-content" data-href="' . esc_url( $e['url'] ) . '" tabindex="0" role="link"><div><time>' . esc_html( $e['month'] ) . '<span>' . esc_html( $e['day'] ) . '</span></time></div>'
-				. '<strong class="cal-event-title">' . esc_html( $e['title'] ) . ( 'recreation' !== $slug && $e['desc_short'] ? '<span class="cal-event-desc">' . esc_html( $e['desc_short'] ) . '</span>' : '' ) . '</strong></div></div>';
+				. '<strong class="cal-event-title">' . esc_html( html_entity_decode( $e['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ) . ( 'recreation' !== $slug && $e['desc_short'] ? '<span class="cal-event-desc">' . esc_html( $e['desc_short'] ) . '</span>' : '' ) . '</strong></div></div>';
 		}
 		if ( ! $ev ) {
 			$o .= '<p class="vcb-no-events">No upcoming ' . esc_html( strtolower( $name ) ) . ' events.</p>';
