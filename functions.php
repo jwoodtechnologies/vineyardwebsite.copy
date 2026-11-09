@@ -116,3 +116,35 @@ add_filter( 'render_block_core/site-logo', function ( $html, $block ) {
 add_action( 'init', function () {
 	register_block_pattern_category( 'vineyard', array( 'label' => 'Vineyard City' ) );
 } );
+
+// The original site has no share or like buttons under the page text.
+add_filter( 'sharing_show', '__return_false', 99 );
+add_filter( 'wpl_is_likes_visible', '__return_false', 99 );
+
+// Calendar: event titles with &, quotes or apostrophes show as typed (not as &#038;).
+add_action( 'wp_print_footer_scripts', function () {
+	$s = wp_scripts();
+	if ( empty( $s->registered['vcc-events'] ) ) {
+		return;
+	}
+	$before = $s->get_data( 'vcc-events', 'before' );
+	if ( ! is_array( $before ) ) {
+		return;
+	}
+	foreach ( $before as $i => $code ) {
+		if ( ! is_string( $code ) || ! preg_match( '/^window\.vccEvents=(.*);$/s', trim( $code ), $m ) ) {
+			continue;
+		}
+		$data = json_decode( $m[1], true );
+		if ( ! is_array( $data ) ) {
+			continue;
+		}
+		foreach ( $data as $k => $e ) {
+			if ( isset( $e['title'] ) ) {
+				$data[ $k ]['title'] = html_entity_decode( $e['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+			}
+		}
+		$before[ $i ] = 'window.vccEvents=' . wp_json_encode( $data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE ) . ';';
+	}
+	$s->registered['vcc-events']->extra['before'] = $before;
+}, 1 );
