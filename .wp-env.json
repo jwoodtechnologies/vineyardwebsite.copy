@@ -1,0 +1,15 @@
+{
+  "core": null,
+  "phpVersion": "8.2",
+  "port": 8888,
+  "themes": ["./theme/vineyard"],
+  "mappings": {
+    "wp-content/vineyard-import": "."
+  },
+  "config": {
+    "WP_DEBUG": true,
+    "WP_DEBUG_LOG": true,
+    "WP_MEMORY_LIMIT": "512M",
+    "DISALLOW_FILE_EDIT": false
+  }
+}

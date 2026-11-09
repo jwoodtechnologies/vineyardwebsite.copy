@@ -1,0 +1,152 @@
+<div class="clearfix" id="post">
+
+<span style="font-size: 24px;"><strong>ARCH GRANT<br/><img alt="Arch Grant Info" src="https://www.vineyardutah.gov/Boards &amp; Commissions/Arch Grant Info.png?t=202502111301310"/><br/><br/>ARCH COMMISSIONERS</strong><br/></span>Aljay Fuimaono<br/>Daniella Larsen<br/>Sherrie Kaye Miller<br/>Kyle Reyes<br/>Elizabeth Shelley<br/>Jarom Sidwell<br/>Bronson Tatton
+
+	<style>
+	/** New FAQ Styles **/
+	input#faq-filter {height: 34px;border-color: #193441;border-radius: 3px;font-size: 12px;width: 40%;color: #193441;padding: 0 15px 0 15px;margin-bottom: 5px;}
+	.faq-header {margin: 10px 0;font-size: 24px;font-weight: 700;padding: 10px;display:inline-block;text-decoration:none;color:#000!important}
+	.faq-answer{margin:0 15px;}
+	.faq-search{text-align:right}
+	.faq-item {margin-top: 20px;}
+	.faq-question, .faq-header {border-bottom: 1px solid rgba(25, 52, 65, 0.4);}
+	.faq-question .faq-question-header{text-decoration: none;font-size: 16px;font-weight: bold;color: #193441;cursor: pointer}
+	.faq-header:not(.collapsed)::before, .faq-question .faq-question-header.active-question:before{content: '\f107';}
+	.faq-header::before, .faq-question .faq-question-header:before{content: '\f105';font-family: 'FontAwesome';margin-right:8px;display:inline-block;color:#000;font-weight: 700;}
+	.faq-container .categorybtn {margin-bottom: 5px;/* display: none; */display: inline-block;}
+	#example a[href*="tel"],#example a[href*="mailto"] {white-space: nowrap;}
+	.faq-editbtns{float:right;line-height:0}
+	.rzFaqBtn>i{width:25px;height:25px;background:#fff;text-align:center;border-radius:5px;border:1px solid #99F;padding-top:4%}
+	.rzFaqBtn>i.fa-trash{color:#bb2727;border-color:#bb2727}
+	.seq-no{width:60px;display:inline-block;text-align:right}
+
+</style>
+<div class="faq-container">
+<div class="chooseBtn">
+
+</div>
+<div class="faq-search">
+<input class="text-input" id="faq-filter" placeholder="Search the FAQs..." type="text" value=""/>
+<div class="faq-filter-count"></div>
+</div>
+<div class="categorybtn">
+
+</div>
+
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    var $category = $('.faq-category'),
+	        $questionsAndAnswers = $('.faq-questions,.faq-answer'),
+	        $filterCount = $(".faq-filter-count"),
+	        $faqItem = $(".faq-item");
+
+	    // remove inline scripts on load so not caught in filter
+	    $(".faq-container script").remove();
+
+	    var $filter = $("#faq-filter").keyup(function(){
+	        $category.removeClass("has-search-result");
+
+	        // Retrieve the input field text and reset the count to zero
+	        var filter = $(this).val(),
+	            count = 0;
+
+	        // Loop through the questions list
+	        $faqItem.each(function(){
+	            var $this = $(this);
+	            // If the questions item does not contain the text phrase fade it out
+	            if ($this.text().search(new RegExp(filter, "i")) < 0) {
+	                $this.fadeOut();
+						 $this.find('.faq-question>a').attr('style','');
+						 $('.active-question').removeClass('active-question');
+	            // Show the questions item if the phrase matches and increase the count by 1
+	            } else {
+	                $this.fadeIn().closest(".faq-category").addClass("has-search-result");
+						 $this.find('.faq-question>a').addClass('active-question').css('pointer-events','none');
+	                count++;
+	            }
+	        });
+
+	        if( filter !== '' ) {
+	            $(".faq-category:not(.has-search-result)").fadeOut();
+	            $(".faq-category.has-search-result").fadeIn();
+
+	            // search should auto expand categories and answers when searching
+	            $questionsAndAnswers.css({"display":"block", "visibility": "visible", "height": "auto"});
+	            $filterCount.text(count + " items found. Please see below for details.");
+
+	        } else {
+	            // remove inline styles to revert classes back
+	            $category.fadeIn();
+	            $questionsAndAnswers.removeAttr("style");
+	            $filterCount.text(" ");
+					$('.active-question').removeClass('active-question');
+					$('.faq-item .faq-question>a').attr('style','');
+	        }
+	    });
+
+	    $filter.submit(function(e){
+	        return false;
+	    });
+
+		// //location hashing
+		$('.faq-question-header').on('click keypress', function(e) {
+			let url = window.location.href.split("#")[0];
+			console.log(url+this.dataset.target);
+			history.pushState({}, '',url+this.dataset.target);
+		});
+
+		$('.faq-header').on('click keypress', function(e) {
+			let url = window.location.href.split("#")[0];
+			console.log(url+this.dataset.target);
+			history.pushState({}, '',url+this.dataset.target);
+		});
+
+	    // disable toggling when searching
+	    function ifSearchingDoNothing() {
+	        if( $filter.val() !== '' ) {
+	            return false;
+	        }
+	    }
+	    $questionsAndAnswers.on("hide.bs.collapse show.bs.collapse", ifSearchingDoNothing);
+		$questionsAndAnswers.on("hide.bs.collapse",function(event){
+			$(event.target).siblings('.faq-question').find('a[data-toggle]').removeClass('active-question');
+		});
+
+		$questionsAndAnswers.on("show.bs.collapse",function(event){
+			$(event.target).siblings('.faq-question').find('a[data-toggle]').addClass('active-question');
+		});
+
+		setTimeout(function() {
+			if (window.location.hash != "") {
+				var tempHash = window.location.hash;
+				if (document.querySelector(tempHash) === null) { return; }
+				if (tempHash.indexOf("#collapse") === 0) {
+					var parent = document.querySelector(tempHash).parentElement.parentElement.parentElement;
+					if (!parent.querySelector(".faq-questions").classList.contains('show')) {
+						parent.querySelector("a.faq-header").click();
+					}
+					var el = document.querySelector(tempHash).parentElement.querySelector("a.faq-question-header");
+					el.click();
+					if ($) {
+						$('html,body').animate({
+							scrollTop: $(el).offset().top - 150
+						}, 1000)
+					}
+				} else if (tempHash.indexOf("#faq-questions-") === 0) {
+					var el = document.querySelector("a[data-target='"+tempHash+"']");
+					if (!el.parentElement.querySelector(".faq-questions").classList.contains('show')) {
+						el.click();
+					}
+					if ($) {
+						$('html,body').animate({
+							scrollTop: $(el).offset().top - 150
+						}, 1000)
+					}
+				}
+			}
+		},100);
+
+	});
+</script>
+</div>

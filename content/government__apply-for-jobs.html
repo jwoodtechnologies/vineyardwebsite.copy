@@ -1,0 +1,73 @@
+<div class="clearfix" id="post">
+
+Most up-to-date job listings can be found <a href="https://vineyardutah.applicantpro.com/jobs/">here.</a>
+<div id="jobs-container">
+<style>
+.jobs-edit{display:none;text-align:center}
+.user-logged-in .jobs-edit{display:table-cell;width:70px}
+.jobs-edit-buttons{border: 1px solid #a0a0a0;border-radius:3px}
+.jobs-edit-buttons i, .jobs-edit-buttons span{border:none;padding:0 5px;font-size:16px}
+i.fa-pencil, span.fa-pencil{color:#3875c7;border-right: 1px solid #a0a0a0}
+i.fa-trash, span.fa-trash{color:#e74c3c;margin-left:-5px}
+
+#jobs-table{width:100%}
+#jobs-table thead, #jobs-table tbody tr:nth-of-type(even){background:#eee}
+#jobs-table th, #jobs-table td{padding:0 5px}
+#jobs-container{border:1px solid #ccc;border-radius:3px;overflow:hidden}
+h3.jobs-title{margin:0}
+a.jobs-read-more{float:right;display:inline-block;margin:5px;display:none}
+#jobs-table td.jobs-dates{padding-left:15px;white-space:nowrap}
+
+#jobs-header{text-align:right;padding:5px}
+#jobs-search{max-width:300px;line-height:1;border:1px solid #555;border-radius:3px}
+</style>
+<div id="jobs-header">
+<label class="sr-only" for="jobs-search">Search Listings</label>
+<input id="jobs-search" placeholder="Search job listings..." type="text"/>
+</div>
+
+<table id="jobs-table">
+<thead>
+<tr>
+<th>Job Description</th>
+<th class="jobs-dates">Post Date</th>
+<th class="jobs-dates">Closing Date</th>
+<th class="jobs-edit"></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<script>
+	var searchTimeout;
+	window.addEventListener('load',function() {
+		$("#jobs-search").on('mousedown keyup', function() {
+			var ser = $("#jobs-search").val().toLowerCase();
+			if (ser.length > 1) {
+				clearTimeout(searchTimeout);
+				searchTimeout = setTimeout(function() {
+					$("#jobs-table tbody tr").each(function() {
+						
+						var $el = $(this);
+						var show = false;
+						
+						if ($el.find(".jobs-title").text().toLowerCase().indexOf(ser) != -1) { show = true; }
+						else if ($el.find(".jobs-brief").text().toLowerCase().indexOf(ser) != -1) { show = true; }
+						else if ($el.find(".jobs-dates").eq(0).text().toLowerCase().indexOf(ser) != -1) { show = true; }
+						else if ($el.find(".jobs-dates").eq(1).text().toLowerCase().indexOf(ser) != -1) { show = true; }
+						if (show) {
+							$(this).stop(true).slideDown(0);
+						} else {
+							$(this).stop(true).slideUp(0);
+						}
+					});
+				}, 100);
+			} else if (ser.trim() == "") {
+				clearTimeout(searchTimeout);
+				$("#jobs-table tbody tr").slideDown();
+			}
+		});
+	});
+	</script>
+</div>
+</div>

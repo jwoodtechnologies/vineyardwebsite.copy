@@ -1,0 +1,677 @@
+[
+  {
+    "title": "Home",
+    "url": "https://www.vineyardutah.gov/index.php",
+    "target": "_self",
+    "children": []
+  },
+  {
+    "title": "Government",
+    "url": "https://www.vineyardutah.gov/government/index.php",
+    "target": "_self",
+    "children": [
+      {
+        "title": "Mayor's Office",
+        "url": "https://www.vineyardutah.gov/government/mayors_office.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Meet With the Mayor",
+            "url": "https://www.vineyardutah.gov/government/request_a_meeting_with_the_mayor.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "City Council",
+        "url": "https://www.vineyardutah.gov/government/city_council2.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Conflict of Interest Forms",
+        "url": "https://www.vineyardutah.gov/government/conflict_of_interest_forms.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Elections",
+        "url": "https://www.vineyardutah.gov/government/elections.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Recorder",
+        "url": "https://www.vineyardutah.gov/government/recorder.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Records Request",
+            "url": "https://www.vineyardutah.gov/government/records_request.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Municipal Code",
+            "url": "https://vineyard.municipalcodeonline.com/",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Annual Meeting Schedule",
+            "url": "https://www.vineyardutah.gov/government/annual_meeting_schedule.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Council Vacancy Application",
+            "url": "https://www.vineyardutah.gov/Recorder/2026 Vacancy/Fillable 2026 Vineyard City Council Vacancy Application - Combined 2.pdf",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Public Notices",
+            "url": "https://www.vineyardutah.gov/government/agenda_minutes___public_notice.php#outer-473",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Council Vacancy",
+            "url": "https://www.vineyardutah.gov/government/council_vacancy.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Building",
+        "url": "https://www.vineyardutah.gov/government/building.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Apply for a Permit",
+            "url": "https://vineyard.cityinspect.com/login",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Apply for a Permit (New User)",
+            "url": "https://utah.cityinspect.com/register?registration_id=fDtjodKgzY",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Resource Documents",
+            "url": "https://www.vineyardutah.gov/government/resource_documents.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Basement Finish",
+            "url": "https://www.vineyardutah.gov/government/basement_finish.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Water Meter Request",
+            "url": "https://www.vineyardutah.gov/government/water_meter_request.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Public Works",
+        "url": "https://www.vineyardutah.gov/government/public_works.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Streets and Stormwater",
+            "url": "https://www.vineyardutah.gov/government/streets.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Water & Wastewater",
+            "url": "https://www.vineyardutah.gov/government/water___wastewater.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Construction Projects",
+            "url": "https://www.vineyardutah.gov/government/construction_projects.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Maintenance",
+            "url": "https://www.vineyardutah.gov/government/grounds_maintenance.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Engineering",
+            "url": "https://www.vineyardutah.gov/government/engineering.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Engineering Standards",
+            "url": "https://www.vineyardutah.gov/government/engineering_standards.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Parks and Recreation",
+        "url": "https://www.vineyardutah.gov/government/parks_and_recreation.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Events",
+            "url": "https://www.vineyardutah.gov/government/events.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Splash Pad",
+            "url": "https://www.vineyardutah.gov/government/splash_pad.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Recreation",
+            "url": "https://www.vineyardutah.gov/government/recreation.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Parks",
+            "url": "https://www.vineyardutah.gov/government/parks.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Concessions",
+            "url": "https://www.vineyardutah.gov/government/concessions.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Skatepark Fundraiser",
+            "url": "https://www.vineyardutah.gov/government/skatepark_fundraiser.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Community Development",
+        "url": "https://www.vineyardutah.gov/government/community_development.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Planning & Zoning",
+            "url": "https://www.vineyardutah.gov/government/planning.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Code Enforcement",
+            "url": "https://www.vineyardutah.gov/government/code_enforcement.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Parking",
+            "url": "https://www.vineyardutah.gov/government/parking.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Short Term Rental",
+            "url": "https://www.vineyardutah.gov/government/short_term_rental.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Business Licensing",
+            "url": "https://www.vineyardutah.gov/government/business_licensing_.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Accessory Dwelling Unit Licensing",
+            "url": "https://www.vineyardutah.gov/government/accessory_dwelling_unit_licensing.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Economic Development",
+            "url": "https://www.vineyardutah.gov/government/economic_development.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Utah County Sheriff's Office",
+        "url": "https://www.vineyardutah.gov/government/utah_county_sheriff_s_office.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "R.A.D. Systems of Self-Defense Classes",
+            "url": "https://www.vineyardutah.gov/government/rad_systems_of_self-defense_classes.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "UCSO Vineyard Citizens Academy",
+            "url": "https://www.vineyardutah.gov/government/ucso_vineyard_citizens_academy.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Finance",
+        "url": "https://www.vineyardutah.gov/government/finance.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Fee Schedule",
+            "url": "https://www.vineyardutah.gov/government/fee_schedule.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Budget",
+            "url": "https://www.vineyardutah.gov/government/budget.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Annual Financial Report",
+            "url": "https://www.vineyardutah.gov/government/annual_financial_report.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Utility Billing",
+            "url": "https://www.vineyardutah.gov/services/utility_billing.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Library/Rec Center Reimbursement",
+            "url": "https://www.vineyardutah.gov/community_/library_reimbursement.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Transparent Utah",
+            "url": "https://transparent.utah.gov/",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Request for Proposals (RFP)",
+            "url": "https://www.vineyardutah.gov/government/request_for_proposals_(rfp).php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "City Staff",
+        "url": "https://www.vineyardutah.gov/government/city_staff.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Apply for Jobs",
+            "url": "https://us-east-2.protection.sophos.com/?d=applicantpro.com&u=aHR0cHM6Ly92aW5leWFyZHV0YWguYXBwbGljYW50cHJvLmNvbS8=&p=m&i=NjVmYTA3ZTM3ZjU0ZjEyYjZlNDYyNjQz&t=UXBoSVFSa2t4OFdXeXJQdUZ1VDM2TzEvSEZuNUVBVjB3TVlCaXM1bzA2dz0=&h=5fad537fe8e14ea69751e0c583585997&s=AVNPUEhUT0NFTkNSWVBUSVYDyI-WjHN6wTKx7UnHIYYbp-oHiLflJZ5yS8drHuA79w",
+            "target": "_new",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Redevelopment Agency",
+        "url": "https://www.vineyardutah.gov/government/redevelopment_agency/index.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Board & Commission Members",
+        "url": "https://www.vineyardutah.gov/government/board___commission_members.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Planning Commission Application Form",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSfiffKKZpmPRuXe5JCrEyKXonDhMwYSooOlDPvRJTyhqNs0CQ/viewform?usp=dialog",
+        "target": "_new",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Community",
+    "url": "https://www.vineyardutah.gov/community_/index.php",
+    "target": "_self",
+    "children": [
+      {
+        "title": "Vineyard Cares",
+        "url": "http://www.vineyardcares.org",
+        "target": "_new",
+        "children": []
+      },
+      {
+        "title": "Library",
+        "url": "https://www.vineyardutah.gov/community_/library_options.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Vineyard Children's Library",
+            "url": "https://vineyard.lib.utah.gov/",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Get A Library Card",
+            "url": "https://vineyard.lib.utah.gov/get-a-library-card/",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Interlibrary Loan",
+            "url": "https://www.vineyardutah.gov/community_/interlibrary_loan.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Bookmobile",
+            "url": "https://bookmobiles.utah.gov/utah/",
+            "target": "_new",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Events",
+        "url": "https://www.vineyardutah.gov/community_/events.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Coco's World",
+            "url": "https://www.vineyardutah.gov/community_/cocos_world.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Vineyard 101: Mini Academy",
+            "url": "https://www.vineyardutah.gov/community_/vineyard_101_mini_academy.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Vineyard Community Garden",
+        "url": "https://www.vineyardutah.gov/community_/vineyard_community_garden.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Vineyard Youth Council",
+        "url": "https://www.vineyardutah.gov/community_/vineyard_youth_council.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Vineyard Youth Council Candidacy Forms",
+            "url": "https://www.vineyardutah.gov/community_/vineyard_youth_council_candidacy_forms_.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Police Programs",
+        "url": "https://sheriff.utahcounty.gov/",
+        "target": "_new",
+        "children": [
+          {
+            "title": "SafeWalk Program",
+            "url": "https://www.vineyardutah.gov/community_/safewalk_program.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Boards & Commissions",
+        "url": "https://www.vineyardutah.gov/community_/boards___commissions.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "ARCH Commission",
+            "url": "https://www.vineyardutah.gov/community_/arch_commission.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Planning Commission",
+            "url": "https://www.vineyardutah.gov/community_/planning_commission.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Library Board",
+            "url": "https://www.vineyardutah.gov/community_/library_board.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Vineyard Cares Board",
+            "url": "https://www.vineyardutah.gov/community_/vineyard_cares_board.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Development Review Commission",
+            "url": "https://www.vineyardutah.gov/community_/development_review_commission.php",
+            "target": "_self",
+            "children": []
+          },
+          {
+            "title": "Pedestrian Safety Commission",
+            "url": "https://www.vineyardutah.gov/community_/pedestrian_safety_commission.php",
+            "target": "_self",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Newsletters",
+        "url": "https://www.vineyardutah.gov/community_/newsletters.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Neighborhood Map",
+        "url": "https://www.vineyardutah.gov/community_/neighborhood_map.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Trails",
+        "url": "https://www.vineyardutah.gov/community_/trails.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Report a Concern",
+        "url": "https://www.vineyardutah.gov/community_/report-a-concern.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Communication Resources",
+        "url": "https://www.vineyardutah.gov/community_/communication_resources.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Plant Walk",
+        "url": "https://www.vineyardutah.gov/community_/plant_walk.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Volunteer",
+        "url": "https://www.vineyardutah.gov/community_/volunteer.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "City Dump Passes",
+        "url": "https://www.vineyardutah.gov/community_/city_dump_passes.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Bike Month",
+        "url": "https://www.vineyardutah.gov/community_/bikemonth.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "One Kind Act a Day",
+        "url": "https://www.vineyardutah.gov/community_/one_kind_act_a_day.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Fireworks",
+        "url": "https://www.vineyardutah.gov/community_/fireworks.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "School Safety",
+        "url": "https://www.vineyardutah.gov/community_/school_safety.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Vineyard Elementary Crossing Guard Map",
+            "url": "https://www.vineyardutah.gov/Vineyard Elementary Map Letterhead.pdf",
+            "target": "_new",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Services",
+    "url": "https://www.vineyardutah.gov/services/index.php",
+    "target": "_self",
+    "children": [
+      {
+        "title": "Utility Billing",
+        "url": "https://www.vineyardutah.gov/services/utility_billing.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Emergency Preparedness",
+        "url": "https://www.vineyardutah.gov/services/emergency_preparedness.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Sign Up for Alerts",
+            "url": "https://member.everbridge.net/1332612387832225/login",
+            "target": "_new",
+            "children": []
+          },
+          {
+            "title": "Evacuation Maps",
+            "url": "https://experience.arcgis.com/experience/ddf7f451101e469c856c43e5f1a761bb",
+            "target": "_new",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Code Enforcement",
+        "url": "https://www.vineyardutah.gov/government/code_enforcement.php",
+        "target": "_self",
+        "children": [
+          {
+            "title": "Appeal Form",
+            "url": "https://www.vineyardutah.gov/Vineyard City Appeal Form.pdf",
+            "target": "_new",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Apply for a Permit",
+        "url": "https://utah.cityinspect.com/register?registration_id=fDtjodKgzY",
+        "target": "_new",
+        "children": []
+      },
+      {
+        "title": "Utah County Sheriffs Office",
+        "url": "https://sheriff.utahcounty.gov/",
+        "target": "_new",
+        "children": []
+      },
+      {
+        "title": "Fire Department",
+        "url": "https://orem.org/fire/",
+        "target": "_new",
+        "children": []
+      },
+      {
+        "title": "Utah County Resources",
+        "url": "https://www.vineyardutah.gov/services/utah_county_resources.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "UTA ECO Pass",
+        "url": "https://www.vineyardutah.gov/services/uta_eco_pass.php",
+        "target": "_self",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Contact",
+    "url": "https://www.vineyardutah.gov/contact/index.php",
+    "target": "_self",
+    "children": [
+      {
+        "title": "News",
+        "url": "https://www.vineyardutah.gov/contact/news.php",
+        "target": "_self",
+        "children": []
+      },
+      {
+        "title": "Privacy",
+        "url": "https://www.vineyardutah.gov/contact/privacy.php",
+        "target": "_self",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Transparency Portal",
+    "url": "https://www.vineyardutah.gov/transparency_portal/index.php",
+    "target": "_self",
+    "children": []
+  }
+]

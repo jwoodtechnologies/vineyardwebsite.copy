@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
-<body id="<?php echo is_front_page() ? 'homepage' : 'innerpage'; ?>" <?php body_class(); ?>>
+<body id="<?php echo esc_attr( is_front_page() ? 'homepage' : ( is_singular() ? vineyard_meta( 'vc_body_id', 'freeform' ) : 'freeform' ) ); ?>" <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <header>
 	<a href="#main" id="skip" tabindex="0" class="button">Skip to main content</a>

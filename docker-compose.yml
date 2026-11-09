@@ -1,0 +1,45 @@
+# Alternative to wp-env: plain Docker.  docker compose up -d && docker compose run --rm wpcli bash /project/scripts/import.sh
+services:
+  db:
+    image: mariadb:10.11
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: root
+    volumes: [dbdata:/var/lib/mysql]
+  wordpress:
+    image: wordpress:6-php8.2-apache
+    depends_on: [db]
+    ports: ["8888:80"]
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_MEMORY_LIMIT','512M');
+    volumes:
+      - wpdata:/var/www/html
+      - ./theme/vineyard:/var/www/html/wp-content/themes/vineyard
+      - .:/project
+    command: >
+      bash -c "echo 'upload_max_filesize=256M\npost_max_size=256M\nmemory_limit=512M' > /usr/local/etc/php/conf.d/uploads.ini && docker-entrypoint.sh apache2-foreground"
+  wpcli:
+    image: wordpress:cli-php8.2
+    depends_on: [wordpress]
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      ROOT: /project
+      WP: "wp --path=/var/www/html"
+    volumes:
+      - wpdata:/var/www/html
+      - ./theme/vineyard:/var/www/html/wp-content/themes/vineyard
+      - .:/project
+    profiles: ["cli"]
+    entrypoint: ["bash"]
+volumes: {dbdata: {}, wpdata: {}}

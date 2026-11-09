@@ -1,0 +1,37 @@
+<div class="clearfix" id="post">
+
+<ul class="clearfix" id="calendar-filters">
+<li class="calendar-tab-filter-all">
+<a class="calendar-tab-filter" data-calendar-id="clear" href="#">Show All</a>
+</li>
+
+<li style="background-color:#114a76;border:1px solid #114a76">
+<a class="calendar-name-filter" data-calendar-id="1" href="#">Meetings</a>
+</li>
+<li style="background-color:#087968;border:1px solid #087968">
+<a class="calendar-name-filter" data-calendar-id="2" href="#">Recreation</a>
+</li>
+<li style="background-color:#fcb215;border:1px solid #fcb215">
+<a class="calendar-name-filter" data-calendar-id="3" href="#">Community</a>
+</li>
+<li style="background-color:#4e606f;border:1px solid #4e606f">
+<a class="calendar-name-filter" data-calendar-id="4" href="#">Utilities</a>
+</li>
+<li style="background-color:#cc3232;border:1px solid #cc3232">
+<a class="calendar-name-filter" data-calendar-id="6" href="#">Library</a>
+</li>
+
+</ul>
+<script>
+    var ACTIVE_CALENDAR_IDS = "|1|2|3|4|6|";
+	function addGoogleFeed(key, feed) {
+		var el = document.querySelector("#calendar");
+		el.setAttribute("data-google-api",key);
+		el.setAttribute("data-google-feed",feed);
+	}
+</script>
+<div class="button-group" id="calendar-search-wrap">
+<input class="form-control" id="calendar-search" placeholder="Search for Events..." type="text"/><a href="#" id="calendar-submit"><i class="fa fa-search"></i></a>
+</div>
+<div id="calendar"></div>
+</div>
