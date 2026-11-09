@@ -154,7 +154,7 @@ function vcb_navigation_id() {
 		return 0;
 	}
 	$content = preg_replace( '/"className":"[^"]*",/', '', $content ); // drop leftover classic-menu classes
-	$id = wp_insert_post( array( 'post_type' => 'wp_navigation', 'post_status' => 'publish', 'post_title' => 'Main menu', 'post_content' => $content ), true );
+	$id = wp_insert_post( array( 'post_type' => 'wp_navigation', 'post_status' => 'publish', 'post_title' => 'Main menu', 'post_content' => wp_slash( $content ) ), true );
 	if ( is_wp_error( $id ) ) {
 		return 0;
 	}
