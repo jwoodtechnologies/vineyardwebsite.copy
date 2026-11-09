@@ -54,36 +54,19 @@ function vineyard_url( $old_path ) {
 }
 
 /**
- * Media Library URL for a file that lived at the site root of the old site
- * (e.g. "Headshots/IMG_1037 - Copy.jpg"). import.sh stores the old path in the
- * attachment meta "_vc_old_path". Falls back to the theme copy, then empty string.
+ * URL of a document/image that lived at the site root of the old site (e.g. "Headshots/IMG_1037 - Copy.jpg").
+ * Files are deployed (GitHub Deployments, branch deploy/files) to wp-content/uploads/vineyard-files/<old path>,
+ * so the URL is derived from the old path and needs no database lookup. Override the folder with the
+ * VINEYARD_FILES_DIR constant if you deploy the files elsewhere.
  */
 function vineyard_media_url( $old_path ) {
-	static $index = null;
 	$old_path = ltrim( rawurldecode( $old_path ), '/' );
-	if ( null === $index ) {
-		$index = get_transient( 'vineyard_media_index' );
-		if ( ! is_array( $index ) ) {
-			global $wpdb;
-			$index = array();
-			$rows  = $wpdb->get_results( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_vc_old_path'" ); // phpcs:ignore
-			foreach ( (array) $rows as $r ) {
-				$index[ $r->meta_value ] = (int) $r->post_id;
-			}
-			set_transient( 'vineyard_media_index', $index, HOUR_IN_SECONDS );
-		}
+	if ( '' === $old_path ) {
+		return '';
 	}
-	if ( isset( $index[ $old_path ] ) ) {
-		$url = wp_get_attachment_url( $index[ $old_path ] );
-		if ( $url ) {
-			return $url;
-		}
-	}
-	// Fallback: legacy file copied next to the theme (scripts/import.sh does not need it).
-	$local = get_template_directory() . '/_assets_/' . $old_path;
-	return file_exists( $local ) ? vineyard_asset( $old_path ) : '';
+	$dir = defined( 'VINEYARD_FILES_DIR' ) ? VINEYARD_FILES_DIR : 'vineyard-files';
+	return content_url( 'uploads/' . $dir . '/' . implode( '/', array_map( 'rawurlencode', explode( '/', $old_path ) ) ) );
 }
-add_action( 'add_attachment', function () { delete_transient( 'vineyard_media_index' ); } );
 
 /* ------------------------------------------------------------- enqueues */
 add_action( 'wp_enqueue_scripts', function () {
