@@ -1,0 +1,163 @@
+[
+ {
+  "title": "Junior Jazz & Ski/Snowboarding Registration Closes",
+  "primary_calendar_name": "Recreation",
+  "calendar_displays": [
+   "2"
+  ],
+  "start": "2026-10-31T00:00:00",
+  "url": "",
+  "location": "",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "168",
+  "id": "168",
+  "desc": "",
+  "color": "#087968",
+  "allDay": true,
+  "options": ""
+ },
+ {
+  "title": "Toddler Sports Registration Opens",
+  "primary_calendar_name": "Recreation",
+  "calendar_displays": [
+   "2"
+  ],
+  "start": "2026-10-01T00:00:00",
+  "url": "",
+  "location": "",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "169",
+  "id": "169",
+  "desc": "",
+  "color": "#087968",
+  "allDay": true,
+  "options": ""
+ },
+ {
+  "title": "Toddler Sports Registration Closes",
+  "primary_calendar_name": "Recreation",
+  "calendar_displays": [
+   "2"
+  ],
+  "start": "2026-11-30T00:00:00",
+  "url": "",
+  "location": "",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "170",
+  "id": "170",
+  "desc": "",
+  "color": "#087968",
+  "allDay": true,
+  "options": ""
+ },
+ {
+  "title": "Blizzard 5K & 1K",
+  "primary_calendar_name": "Recreation",
+  "calendar_displays": [
+   "2"
+  ],
+  "start": "2026-11-07T08:30:00",
+  "url": "",
+  "location": "Vineyard Grove Park",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "184",
+  "id": "184",
+  "desc": "",
+  "color": "#087968",
+  "end": "2026-11-07T09:30:00",
+  "duration": "01:00",
+  "options": ""
+ },
+ {
+  "title": "Special Joint City Council Coordination Meeting with Orem City",
+  "primary_calendar_name": "Meetings",
+  "calendar_displays": [
+   "1"
+  ],
+  "start": "2026-11-17T12:30:00",
+  "url": "https://vineyardut.portal.civicclerk.com/",
+  "location": "56 N State Street, Orem,",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "193",
+  "id": "193",
+  "desc": "On%20November%2017%2C%202026%2C%20the%20Vineyard%20City%20Council%20and%20Administrative%20Staff%20will%20meet%20with%20Orem%20City%20to%20coordinate%20on%20regional%20issues%20affecting%20both%20cities.%26nbsp%3B%20They%20will%20meet%20at%20Orem%20City%20Hall%2C%2056%20N.%20State%20Street%2C%20Orem%2C%20in%20the%20Orem%20City%20Council%20Chambers%20at%2012%3A30%20pm.",
+  "color": "#114a76",
+  "end": "2026-11-17T16:00:00",
+  "duration": "03:30",
+  "options": ""
+ },
+ {
+  "title": "City Council Meeting",
+  "primary_calendar_name": "Meetings",
+  "calendar_displays": [
+   "1"
+  ],
+  "start": "2026-10-27T18:00:00",
+  "url": "https://vineyardut.portal.civicclerk.com/",
+  "location": "125 S Main Street, Vineyard",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "213",
+  "id": "213",
+  "desc": "The%20City%20Council%20will%20convene%20at%206%20pm.%20%3Cbr%20%2F%3E%3Cbr%20%2F%3EAll%20are%20welcome.%20%3Cbr%20%2F%3E%3Cbr%20%2F%3EPublic%20Comments%20can%20be%20given%20during%20the%20meeting%20%28up%20to%203%20minutes%29%20or%20emailed%20to%20the%20City%20Recorder%20at%20robinr%40vineyardutah.gov.",
+  "color": "#114a76",
+  "end": "2026-10-27T21:00:00",
+  "duration": "03:00",
+  "options": ""
+ },
+ {
+  "title": "ARCH Commission Meeting",
+  "primary_calendar_name": "Meetings",
+  "calendar_displays": [
+   "1"
+  ],
+  "start": "2026-10-29T18:00:00",
+  "url": "https://vineyardut.portal.civicclerk.com/",
+  "location": "125 S Main Street, Vineyard",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "216",
+  "id": "216",
+  "desc": "ARCH%20%28Arts%2C%20Recreation%2C%20Culture%2C%20%26amp%3B%20History%29%20Commission%20Meeting%3Cbr%20%2F%3E125%20S%20Main%3Cbr%20%2F%3ECouncil%20Chambers%3Cbr%20%2F%3E6%20pm%3Cbr%20%2F%3E%3Cbr%20%2F%3ESee%20the%20posted%20Agenda.%26nbsp%3B%3Cbr%20%2F%3EEveryone%20is%20welcome.%26nbsp%3B",
+  "color": "#114a76",
+  "end": "2026-10-29T20:00:00",
+  "duration": "02:00",
+  "options": ""
+ },
+ {
+  "title": "Coco's World | Vineyard's Halloween Event",
+  "primary_calendar_name": "Community",
+  "calendar_displays": [
+   "3",
+   "6",
+   "2"
+  ],
+  "start": "2026-10-24T16:00:00",
+  "url": "https://www.facebook.com/share/1DqYn2GGJj/",
+  "location": "Vineyard Grove Park, 350 N 100 E, Vineyard, UT 84059",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "217",
+  "id": "217",
+  "desc": "%3Cdiv%20class%3D%22xdj266r%20x14z9mp%20xat24cr%20x1lziwak%20x1vvkbs%22%3E%3Cstrong%3E%3Cspan%20style%3D%22text-decoration%3A%20underline%3B%22%3EVineyard%27s%20Halloween%20Event%3Cbr%20%2F%3E%3C%2Fspan%3E%3Cbr%20%2F%3EYou%26rsquo%3Bre%20invited%20to%20experience%20Coco%26rsquo%3Bs%20World%20with%20Vineyard%20City%20and%20Utah%20Latina%21%3C%2Fstrong%3E%3Cbr%20%2F%3E%3Cbr%20%2F%3E%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22x14z9mp%20xat24cr%20x1lziwak%20x1vvkbs%20xtlvy1s%22%3EBring%20your%20family%20to%20Vineyard%20Grove%20Park%20for%20an%20evening%20celebrating%20Halloween%20and%20D%26iacute%3Ba%20de%20los%20Muertos.%20Enjoy%20trick-or-treating%20from%20decorated%20booths%2C%20live%20music%2C%20games%2C%20entertainment%20and%20festive%20fun%20at%20Vineyard%26rsquo%3Bs%20biggest%20Halloween%20celebration%21%3Cbr%20%2F%3E%3Cbr%20%2F%3E%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22x14z9mp%20xat24cr%20x1lziwak%20x1vvkbs%20xtlvy1s%22%3E%3Cstrong%3ESaturday%2C%20October%2024%2C%202026%3C%2Fstrong%3E%3Cbr%20class%3D%22html-br%22%20%2F%3E%3Cstrong%3E4%3A00%26ndash%3B7%3A00%20PM%3C%2Fstrong%3E%3Cbr%20class%3D%22html-br%22%20%2F%3E%3Cstrong%3EVineyard%20Grove%20Park%3C%2Fstrong%3E%3Cbr%20class%3D%22html-br%22%20%2F%3E%3Cstrong%3E350%20N%20100%20E%2C%20Vineyard%2C%20UT%2084059%3C%2Fstrong%3E%3Cbr%20%2F%3E%3Cbr%20%2F%3E%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22x14z9mp%20xat24cr%20x1lziwak%20x1vvkbs%20xtlvy1s%22%3E%3Cstrong%3EWHAT%20TO%20EXPECT%3A%3C%2Fstrong%3E%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22x14z9mp%20xat24cr%20x1lziwak%20x1vvkbs%20xtlvy1s%22%3E-%20Trick-or-treating%3Cbr%20class%3D%22html-br%22%20%2F%3E-%20Live%20music%3Cbr%20class%3D%22html-br%22%20%2F%3E-%20Games%20and%20activities%3Cbr%20class%3D%22html-br%22%20%2F%3E-%20Entertainment%3Cbr%20class%3D%22html-br%22%20%2F%3E-%20Local%20food%20and%20vendors%3Cbr%20class%3D%22html-br%22%20%2F%3E-%20Halloween%20and%20D%26iacute%3Ba%20de%20los%20Muertos%20celebrations%3Cbr%20class%3D%22html-br%22%20%2F%3E-%20Family-friendly%20fun%3C%2Fdiv%3E",
+  "color": "#fcb215",
+  "end": "2026-10-24T19:00:00",
+  "duration": "03:00",
+  "options": ""
+ },
+ {
+  "title": "Special Planning Commission Meeting",
+  "primary_calendar_name": "Meetings",
+  "calendar_displays": [
+   "1"
+  ],
+  "start": "2026-11-10T17:00:00",
+  "url": "",
+  "location": "125 S Main",
+  "image": "<img src=\"/revize/plugins/_editforms_/v2/images/placeholder.png\" alt=\"Revize update image\"/>",
+  "rid": "220",
+  "id": "220",
+  "desc": "%3Cstrong%3ESpecial%20Planning%20Commission%20Meeting%3C%2Fstrong%3E%3Cbr%20%2F%3E%3Cstrong%3EAnd%3C%2Fstrong%3E%3Cbr%20%2F%3E%3Cstrong%3EPublic%20Hearing%20for%20Zoning%20Changes%20to%20FOI%20%28Flex%20Office%20and%20Industry%29%20and%20RC%20%28Regional%20Commercial%29%20Zones%3C%2Fstrong%3E%3Cbr%20%2F%3E5%20pm%3Cbr%20%2F%3E125%20S%20Main%3Cbr%20%2F%3ECouncil%20Chambers%3Cbr%20%2F%3E%3Ca%20rel%3D%22noopener%22%20href%3D%22https%3A%2F%2Fvineyardut.portal.civicclerk.com%2Fevent%2F1718%2Ffiles%22%20target%3D%22_blank%22%3ESpecial%20Planning%20Commission%20%26bull%3B%20%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3BAgendas%20%26amp%3B%20Minutes%20%26bull%3B%20CivicClerk%3C%2Fa%3E",
+  "color": "#114a76",
+  "end": "2026-11-10T18:00:00",
+  "duration": "01:00",
+  "options": ""
+ }
+]

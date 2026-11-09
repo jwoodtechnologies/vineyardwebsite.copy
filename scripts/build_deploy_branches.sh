@@ -27,14 +27,14 @@ fi
 git -C "$WT" add -A
 git -C "$WT" diff --cached --quiet || git -C "$WT" commit -q -m "Update theme
 
-Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_0182QwimvgWX9ecFFcR5XiXR"
 
 python3 -I - "$WT" "$BATCH_MB" "$MAXFILE_MB" "${NO_PUSH:-0}" "$REMOTE" <<'PY'
 import csv, os, shutil, subprocess, sys
 wt, batch_mb, max_mb, no_push, remote = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4] == "1", sys.argv[5]
 def git(*a): return subprocess.run(["git", "-C", wt, *a], check=True, capture_output=True, text=True).stdout
-MSG = "\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_0182QwimvgWX9ecFFcR5XiXR"
+MSG = "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_0182QwimvgWX9ecFFcR5XiXR"
 def push():
     if not no_push: git("push", "-q", "-u", remote, "deploy/site")   # normal push, never --force
 rows = list(csv.DictReader(open("content/media.csv", newline="", encoding="utf-8")))
@@ -64,7 +64,7 @@ for i, b in enumerate(batches, 1):
 imp = os.path.join(wt, "files", "_import"); os.makedirs(imp, exist_ok=True)
 import glob
 extra = [("vineyard-import.xml", "content/vineyard-import.xml"), ("vineyard-import-missing.xml", "content/vineyard-import-missing.xml"),
-         ("missing-pages.tsv", "content/missing-pages.tsv"), ("media-manifest.csv", "content/media-manifest.csv"), ("redirects.csv", "redirects.csv")]
+         ("missing-pages.tsv", "content/missing-pages.tsv"), ("media-manifest.csv", "content/media-manifest.csv"), ("vineyard-city-theme.zip", "content/vineyard-city-theme.zip"), ("vineyard-city-content.zip", "content/vineyard-city-content.zip"), ("redirects.csv", "redirects.csv")]
 extra += [(os.path.basename(f), f) for f in sorted(glob.glob("content/media-import-*.xml"))]
 for name, src in extra:
     shutil.copy2(src, os.path.join(imp, name))

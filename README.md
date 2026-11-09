@@ -111,25 +111,56 @@ python3 -I tests/validate_wxr.py        # well-formed + parent/menu IDs resolve
 scripts/build_deploy_branches.sh        # (re)builds deploy/site (theme + files/ + files/_import/) and pushes it with normal pushes
 ```
 
-## Editing guide for the City Clerk (no coding)
+## Install the editable theme + plugin (one time, no code)
 
-Sign in at `https://YOUR-SITE/wp-admin`. You will mostly use the menu on the left.
+Two small zips are on the server after `deploy/site` is deployed (and in this repo under `content/`):
+`/wp-content/themes/vineyard/files/_import/vineyard-city-content.zip` (the plugin that **owns your content**) and
+`/wp-content/themes/vineyard/files/_import/vineyard-city-theme.zip` (a **display-only** theme, no 1.6 GB files).
+Do **not** delete or disconnect the old `vineyard` theme folder: it still hosts the documents (`…/themes/vineyard/files/…`). You simply never activate it.
 
-**What you can change yourself**
-* **Page text** – *Pages → All Pages*, hover the page, **Edit**. Change the words, fix a date, add a sentence, then click **Update**. Use the **Visual** tab for ordinary text. Many pages were copied from the old site and contain boxes and lists; if you are not sure what a piece of text belongs to, change the words only and leave the surrounding blocks alone. If something looks wrong, open **History/Revisions** (right‑hand panel) and restore the previous version.
-* **A new page** – *Pages → Add New*. Pick a **Parent page** (for example *Government*) so it appears in the right section, then **Publish**.
-* **Documents (PDF, Word, images)** – *Media → Add New* and drag the file in. To put a link in a page: edit the page, place the cursor, click **Add Media**, choose the file, and click **Insert into page**. To replace an *old* link inside an existing page, edit the page, select the link text, click the link button, and paste the new file's address (copy it from *Media → Library → the file → "Copy URL"*). To search for a document use *Media → Library* and the search box. The existing documents also have a copy under `/wp-content/themes/vineyard/files/…`; those are what current pages point to – uploading a newer version in the Media Library does not update old links, so update the link on the page.
-* **Menus** – *Appearance → Menus*. Drag items to re‑order or indent them (indent = drop‑down), add a page from the left box, or add an outside website with **Custom Links**. Click **Save Menu**. The top bar is the menu called **Primary**.
-* **Page title and web address** – on the edit screen change the title; the address ("slug") is under **Permalink**. If you change a slug, tell your web person so a redirect can be added.
-* **Staff/board profile pages and the document lists** (Budget, Fee Schedule, Water Quality Reports, …) are ordinary pages – edit them like any other. Adding a *new* year to a document list means editing that page's text, because the old "Document Center" tool is not part of WordPress.
+1. Open each zip's address in your browser and save it to your computer.
+2. **Plugins → Add New Plugin → Upload Plugin → Choose File → `vineyard-city-content.zip` → Install Now → Activate Plugin.**
+3. **Appearance → Themes → Add New Theme → Upload Theme → `vineyard-city-theme.zip` → Install Now → Activate.**
+4. Left menu **Vineyard Site Content → Start here → “Load the starter content”**, wait for the green message, then **“Tidy the pages”** (keep the tab open; it counts up to 621).
+5. **Appearance → Menus → Manage Locations** → set **Main menu (top of every page)** to **Primary** → Save.
+6. Make sure Jetpack is active (it is on WordPress.com Business), then **send a test message through each form** (list below). Replies arrive by email and are kept under **Feedback** in the left menu.
 
-**What needs a developer (code changes)**
-* The **home page**: big hero photo and Transparency Portal button, the row of **quick‑link tiles**, the three photo tiles (Mayor & Council, Recreation, Library), the social icons and the newsletter box.
-* The **header** (logo, search box, the drop‑down mega‑menu pictures) and the **footer** (phone, address, hours) – they live in the theme files `header.php` and `footer.php`.
-* The **events/calendar** area on the home page and the Calendar page – this needs a calendar plugin to be chosen and set up (see `docs/dynamic-features.md`).
-* The **banner picture, "Related Pages" list and the contact box** on the left/top of each inner page – they are stored as hidden page settings, not in the text you edit.
-* **Forms** (volunteer, water meter request, meeting with the mayor, …) – they still point to the old Revize system and need to be rebuilt with a form plugin.
-* Turning on Google Analytics, the accessibility button or the text‑us chat widget.
+Day one the site looks the same as before. Remaining visible differences are listed at the end of this section.
+
+## How to edit your website (one-page guide for the City Clerk)
+
+Sign in at `https://YOUR-SITE/wp-admin`. Everything below is point-and-click.
+
+| I want to… | Exact clicks |
+|---|---|
+| **1. Change the words on a page** | **Pages → All Pages** → move the mouse over the page title → **Edit** → click in the text and type → blue **Update** button (top right). |
+| **2. Add a document (PDF/Word)** | **Media → Add New Media File** → drag the file in. Then open the page (**Pages → All Pages → Edit**), click where it should go, click the black **+** button → type **File** → **File** → **Media Library** → click your file → **Select** → **Update**. |
+| **3. Replace a document** | Upload the new file as in task 2. Open the page, click the old document’s name, click the **pencil/Edit** button, paste the new file’s address (**Media → Library → click the file → Copy URL**) → **Update**. Optionally delete the old file in **Media → Library**. |
+| **4. Change the menu** | **Appearance → Menus** → choose **Primary** → drag an item up/down (drag it slightly right to put it *inside* a drop-down) → to add a page, tick it under **Pages** on the left → **Add to Menu** → **Save Menu**. |
+| **5. Post (or remove) an alert** | **Vineyard Site Content → Alerts → Post an Alert** → type a title and the message → (optional dates) → **Publish**. It shows in a corner box on every page. To remove: **Alerts →** hover it → **Trash**. |
+| **6. Add an event** | **Vineyard Site Content → Events → Add an Event** → title, details, **Date**, times, **Where**, tick a **Category** (Meetings, Community, Recreation …) → **Publish**. It appears on the home page and the Calendar page, and drops off by itself after the day. |
+| **7. Change the home page banner photo** | **Pages → All Pages → Home → Edit** → right column **Featured image → Set featured image** (or **Replace**) → choose/upload the photo → **Update**. Button/logo words: **Vineyard Site Content → Home page**. Same trick for any page’s top banner. |
+| **8. Edit the footer (phone, address, hours, social links)** | **Vineyard Site Content → Footer** → change the boxes → **Save changes**. |
+| **9. Add a page** | **Pages → Add New Page** → title and text → right column **Page → Parent** (pick *Government*, *Community*… so the address is right) → **Featured image** for the banner → **Publish**. Then **Appearance → Menus** to put it in the menu. |
+| **10. Change the look (theme)** | **Appearance → Themes** → hover another theme → **Activate**. Your pages, menus, documents, events, alerts and Footer/Home settings all stay because they live in WordPress and the Vineyard City Content plugin, not in the theme. (Another theme shows its own header/footer, so re-check **Appearance → Menus → Manage Locations**.) |
+
+More places you may need:
+* **Header** (logo, search box, drop-down pictures): **Vineyard Site Content → Header**.
+* **Home page tiles**: **Quick Links** (the blue icon strip) and **Photo Tiles** (three big photos) – click one, change title/picture/link, **Update**; use the **Order** number to re-arrange.
+* **Left-hand “Related Pages” box, contact box and the buttons under a page title**: on the page’s edit screen, look in the right column (*Left-hand “Related Pages” box*, *Contact box*) and below the text (*Buttons under the page title*). The lists themselves are menus named **“Related Pages: …”** under **Appearance → Menus**.
+* **Re-arrange or remove a home page section** (events, tiles, social, newsletter): **Pages → Home → Edit** – click the section and use the arrows or the three-dot menu → **Remove**. Add one back with **+ → “Vineyard City”**.
+* **Footer extras / left column extras**: **Appearance → Widgets**.
+* **Staff/board directory pages** (City Council, City Staff …): edit the page like any other; they keep the original structure.
+
+### Forms that now work (Jetpack Forms; replies by email and in **Feedback**)
+Converted from the dead Revize forms: Join the ARCH Commission · Join the Active Transportation Commission (ATC) · Join the Library Board · Youth Council interest · Community Garden · Volunteer application · Water Meter Request · Meeting with the Mayor · Parking Permit Petition · Traffic Calming · Stormwater Management comment.
+**Added** (these pages had no form): Contact (“Send us a message”) · GRAMA Records Request · Report a Concern.
+Replies go to the site owner’s email by default. To send a form elsewhere, edit the page, click the form, and change the **to=** address in the grey text (or ask your web person).
+
+### What is editable now vs. not
+**Editable in wp-admin without code:** page text, page banner (Featured Image), documents (Media), main menu and every “Related Pages” list (Menus), logo, search words, drop-down menu pictures, footer phone/address/hours/copyright/social links, home hero button and logo, all home-page headings, Quick Links, Photo Tiles, Alerts, Events (home + calendar page), contact box, page buttons, home-page section order, forms (Jetpack), widgets in the left column/footer.
+**Still needs a developer:** colours, fonts and layout (the stylesheet); the 100-language “translate” popup and the “share” popup; the three drop-down picture slots only exist for Government and Community; the staff-directory live-search box; Google Calendar feeds the old calendar pulled in (add those events by hand under **Events**); the old “search for file name” box on document pages (use the site search instead); Google Analytics, the accessibility button and the “Text us” chat (install their own WordPress plugins); the page-order/arrows inside each document group (edit the page text).
+**Visible differences from the old site on day one:** the “Powered by Revize / Login” credit is gone; document pages lose the non-working search box; the small calendar only shows events you have added; Jetpack forms use their own styling.
 
 ## Run a local WordPress
 

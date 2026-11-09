@@ -1,0 +1,1505 @@
+{
+ "settings": {
+  "logo": {
+   "asset": "images/logo.png"
+  },
+  "search_placeholder": "Search ...",
+  "menu_image_2": {
+   "file": "revize_photo_gallery/_DSC4715 - Copy.jpg"
+  },
+  "menu_image_3": {
+   "file": "Headshots/IMG_1037 - Copy.jpg"
+  },
+  "footer_logo": {
+   "asset": "images/footer-logo.png"
+  },
+  "phone": "801.226.1929",
+  "address_line1": "125 S Main Street",
+  "address_line2": "Vineyard, UT",
+  "address_link": "https://goo.gl/maps/cw4EoARDeM4t7DYr5",
+  "hours_line1": "Monday - Thursday: 8am – 5pm",
+  "hours_line2": "Friday: 8am – 12pm",
+  "copyright": "© Vineyard UT",
+  "facebook": "https://www.facebook.com/vineyardcity",
+  "instagram": "https://www.instagram.com/vineyardcity",
+  "twitter": "https://www.Twitter.com/vineyardcity",
+  "hero_logo": {
+   "file": "revize_photo_gallery/slider-logo.png"
+  },
+  "hero_button_label": "Transparency Portal",
+  "hero_button_url": "/transparency-portal/",
+  "events_small": "CHECK OUT OUR",
+  "events_title": "UPCOMING EVENTS",
+  "events_button_label": "See All Events",
+  "events_button_url": "/calendar/",
+  "social_small": "EXPLORE OUR",
+  "social_title": "SOCIAL MEDIA",
+  "newsletter_small": "SIGN UP FOR OUR",
+  "newsletter_title": "NEWSLETTER",
+  "newsletter_placeholder": "Your information here...",
+  "newsletter_button": "Go",
+  "newsletter_action": "/community/newsletters/"
+ },
+ "home_banner": {
+  "file": "links/Vineyard City Sunset_KendallBowman - Copy.jpg"
+ },
+ "quicklinks": [
+  {
+   "title": "AGENDAS , MINUTES & PUBLIC NOTICES",
+   "title2": "",
+   "url": "https://vineyardut.portal.civicclerk.com/",
+   "new_tab": true,
+   "image": {
+    "asset": "images/qlink-1.png"
+   }
+  },
+  {
+   "title": "Vineyard 101: Mini Academy",
+   "title2": "",
+   "url": "/community/vineyard-101-mini-academy/",
+   "new_tab": true,
+   "image": {
+    "file": "Vineyard 101 (6).png"
+   }
+  },
+  {
+   "title": "UTILITY",
+   "title2": "INFO",
+   "url": "/services/utility-billing/",
+   "new_tab": false,
+   "image": {
+    "file": "qlinks/qlink-2.png"
+   }
+  },
+  {
+   "title": "Rent a Pavilion",
+   "title2": "",
+   "url": "https://vineyardrec.activityreg.com/selectfacility_t2.wcs",
+   "new_tab": true,
+   "image": {
+    "file": "qlinks/gazebo (1).png"
+   }
+  },
+  {
+   "title": "Water Quality Reports",
+   "title2": "",
+   "url": "/government/water-quality-reports/",
+   "new_tab": false,
+   "image": {
+    "file": "qlinks/qlink-6.png"
+   }
+  },
+  {
+   "title": "Vineyard Library",
+   "title2": "",
+   "url": "https://vineyard.lib.utah.gov/",
+   "new_tab": true,
+   "image": {
+    "file": "Copy of Year in Review Website Links (1).png"
+   }
+  },
+  {
+   "title": "Report a Concern",
+   "title2": "",
+   "url": "/community/report-a-concern/",
+   "new_tab": true,
+   "image": {
+    "file": "bus-directory/warning.png"
+   }
+  },
+  {
+   "title": "Newsletter",
+   "title2": "",
+   "url": "/community/newsletters/",
+   "new_tab": false,
+   "image": {
+    "file": "qlinks/mail.png"
+   }
+  },
+  {
+   "title": "Parks & Rec",
+   "title2": "",
+   "url": "/government/parks-and-recreation/",
+   "new_tab": true,
+   "image": {
+    "file": "qlinks/gazebo (1).png"
+   }
+  },
+  {
+   "title": "Municipal Code, Ordinances, Resolutions, etc.",
+   "title2": "",
+   "url": "https://vineyard.municipalcodeonline.com/",
+   "new_tab": true,
+   "image": {
+    "asset": "images/qlink-1.png"
+   }
+  },
+  {
+   "title": "PRIVACY POLICY",
+   "title2": "",
+   "url": "/contact/privacy/",
+   "new_tab": true,
+   "image": {
+    "file": "qlinks/qlink-3.png"
+   }
+  }
+ ],
+ "tiles": [
+  {
+   "title": "Mayor & City Council",
+   "url": "/government/city-council2/",
+   "new_tab": true,
+   "image": {
+    "file": "Misc Photos/City Hall - Copy - Copy.jpg"
+   }
+  },
+  {
+   "title": "RECREATION Department",
+   "url": "/government/recreation/",
+   "new_tab": false,
+   "image": {
+    "file": "Headshots/IMG_0132 - Copy.jpg"
+   }
+  },
+  {
+   "title": "VINEYARD LIBRARY",
+   "url": "https://vineyard.lib.utah.gov/",
+   "new_tab": true,
+   "image": {
+    "file": "links/IMG_7595 - Copy.jpg"
+   }
+  }
+ ],
+ "events": [
+  {
+   "title": "City Council Meeting",
+   "start": "2026-11-10T00:00:00",
+   "end": "",
+   "location": "",
+   "description": "",
+   "categories": [
+    "Meetings"
+   ],
+   "all_day": true
+  },
+  {
+   "title": "Special Planning Commission Meeting",
+   "start": "2026-11-10T17:00:00",
+   "end": "2026-11-10T18:00:00",
+   "location": "125 S Main",
+   "description": "<strong>Special Planning Commission Meeting</strong><br /><strong>And</strong><br /><strong>Public Hearing for Zoning Changes to FOI (Flex Office and Industry) and RC (Regional Commercial) Zones</strong><br />5 pm<br />125 S Main<br />Council Chambers<br /><a rel=\"noopener\" href=\"https://vineyardut.portal.civicclerk.com/event/1718/files\" target=\"_blank\">Special Planning Commission &bull; &nbsp;&nbsp;&nbsp;&nbsp;Agendas &amp; Minutes &bull; CivicClerk</a>",
+   "categories": [
+    "Meetings"
+   ]
+  },
+  {
+   "title": "Active Transportation Commission Meeting",
+   "start": "2026-11-12T00:00:00",
+   "end": "",
+   "location": "",
+   "description": "",
+   "categories": [
+    "Meetings"
+   ],
+   "all_day": true
+  },
+  {
+   "title": "Special Joint City Council Coordination Meeting with Orem City",
+   "start": "2026-11-17T12:30:00",
+   "end": "2026-11-17T16:00:00",
+   "location": "56 N State Street, Orem,",
+   "description": "On November 17, 2026, the Vineyard City Council and Administrative Staff will meet with Orem City to coordinate on regional issues affecting both cities.&nbsp; They will meet at Orem City Hall, 56 N. State Street, Orem, in the Orem City Council Chambers at 12:30 pm.",
+   "categories": [
+    "Meetings"
+   ]
+  },
+  {
+   "title": "Toddler Sports Registration Closes",
+   "start": "2026-11-30T00:00:00",
+   "end": "",
+   "location": "",
+   "description": "",
+   "categories": [
+    "Recreation"
+   ]
+  }
+ ],
+ "related_menus": [
+  {
+   "name": "Related Pages: Recorder",
+   "items": [
+    {
+     "title": "Recorder",
+     "url": "/government/recorder/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Agenda Minutes & Public Notice",
+     "url": "/government/agenda-minutes-public-notice/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Building",
+     "url": "/government/building/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Public Works",
+     "url": "/government/public-works/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Parks and Recreation",
+     "url": "/government/parks-and-recreation/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Community Development",
+     "url": "/government/community-development/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Apply for Jobs",
+     "url": "https://vineyardutah.applicantpro.com/jobs/",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Finance",
+     "url": "/government/finance/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Press",
+   "items": [
+    {
+     "title": "Press",
+     "url": "/contact/press/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Privacy",
+     "url": "/contact/privacy/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Voter Information",
+   "items": [
+    {
+     "title": "Voter Information",
+     "url": "/government/voter-information/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "2023 Election Information",
+     "url": "/government/2023-election-information/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "2024 Election Information",
+     "url": "/government/2024-election-information/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "2025 Election Information",
+     "url": "/government/2025-election-information/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Mayoral Candidates",
+       "url": "/government/mayoral-candidates/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "City Council Candidates",
+       "url": "/government/city-council-candidates/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "The Uniformed and Overseas Citizens Absentee Voting Act (UOCAVA) Election Notice",
+       "url": "/government/the-uniformed-and-overseas-citizens-absentee-voting-act-uocava-election-noticenew-page/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    },
+    {
+     "title": "2026 Council Vacancy Election",
+     "url": "/government/2026-council-vacancy-election/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Records Request",
+   "items": [
+    {
+     "title": "Records Request",
+     "url": "/government/records-request/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Municipal Code",
+     "url": "https://vineyard.municipalcodeonline.com/",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Agenda, Minutes & Public Notice",
+     "url": "/government/agenda-minutes-public-notice/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Annual Meeting Schedule",
+     "url": "/government/annual-meeting-schedule/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Election Information",
+     "url": "/government/elections/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Apply for a Permit",
+   "items": [
+    {
+     "title": "Apply for a Permit",
+     "url": "https://vineyard.cityinspect.com/login",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Apply for a Permit (New User)",
+     "url": "https://utah.cityinspect.com/register?registration_id=fDtjodKgzY",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Resource Documents",
+     "url": "/government/resource-documents/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Basement Finish",
+     "url": "/government/basement-finish/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Water Meter Request",
+     "url": "/government/water-meter-request/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Streets",
+   "items": [
+    {
+     "title": "Streets",
+     "url": "/government/streets/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Water & Wastewater",
+     "url": "/government/water-wastewater/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Construction Projects",
+     "url": "/government/construction-projects/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Grounds Maintenance",
+     "url": "/government/grounds-maintenance/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Engineering",
+     "url": "/government/engineering/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Stormwater & Floodplain Management",
+     "url": "/government/stormwater-floodplain-management/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Stormwater Management",
+       "url": "/government/stormwater-management/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Floodplain Management",
+       "url": "/government/floodplain-management/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    },
+    {
+     "title": "Master Plans",
+     "url": "/government/master-plans/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Report a Concern",
+     "url": "/government/report-a-concern/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Streets (2)",
+   "items": [
+    {
+     "title": "Streets",
+     "url": "/government/streets/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Water & Wastewater",
+     "url": "/government/water-wastewater/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Construction Projects",
+     "url": "/government/construction-projects/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Maintenance",
+     "url": "/government/grounds-maintenance/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Engineering",
+     "url": "/government/engineering/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Events",
+   "items": [
+    {
+     "title": "Events",
+     "url": "/government/events/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Splash Pad",
+     "url": "/government/splash-pad/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Recreation",
+     "url": "/government/recreation/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Parks",
+     "url": "/government/parks/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Events (2)",
+   "items": [
+    {
+     "title": "Events",
+     "url": "/government/events/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Splash Pad",
+     "url": "/government/splash-pad/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Recreation",
+     "url": "https://vineyardrec.activityreg.com/selectactivity_t2.wcs",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Parks",
+     "url": "/government/parks/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Adaptive Programs",
+   "items": [
+    {
+     "title": "Adaptive Programs",
+     "url": "/government/adaptive-programs/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Adaptive Street Hockey",
+       "url": "/government/adaptive-street-hockey/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    },
+    {
+     "title": "Junior Jazz",
+     "url": "/government/junior-jazz/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Kindergarten",
+       "url": "/government/kindergarten/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "1st & 2nd Grade",
+       "url": "/government/1st-2nd-grade/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "3rd & 4th Grade",
+       "url": "/government/3rd-4th-grade/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "5th & 6th Grade",
+       "url": "/government/5th-6th-grade/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    },
+    {
+     "title": "PeeWee Sports",
+     "url": "/government/peewee-sports/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Ski/Snowboard Lessons",
+     "url": "/government/vineyard-days-tournaments/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Planning and Zoning",
+   "items": [
+    {
+     "title": "Planning and Zoning",
+     "url": "/government/planning/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Code Enforcement",
+     "url": "/government/code-enforcement/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Parking",
+     "url": "/government/parking/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Business Licensing",
+     "url": "/government/business-licensing/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Vineyard Center",
+     "url": "/government/vineyard-center/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Finance",
+       "url": "/government/financing/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Partners",
+       "url": "/government/partners/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Site Design",
+       "url": "/government/site-design/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Impact Statement",
+       "url": "/government/impact-statement/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Planning & Zoning",
+   "items": [
+    {
+     "title": "Planning & Zoning",
+     "url": "/government/planning/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Code Enforcement",
+     "url": "/government/code-enforcement/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Parking",
+     "url": "/government/parking/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Business Licensing",
+     "url": "/government/business-licensing/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Economic Development",
+     "url": "/government/economic-development/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Fee Schedule",
+   "items": [
+    {
+     "title": "Fee Schedule",
+     "url": "/government/fee-schedule/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Budget",
+     "url": "/government/budget/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Annual Financial Report",
+     "url": "/government/annual-financial-report/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Utility Billing",
+     "url": "/services/utility-billing/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Transparent Utah",
+     "url": "https://transparent.utah.gov/",
+     "new_tab": true,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Fee Schedule (2)",
+   "items": [
+    {
+     "title": "Fee Schedule",
+     "url": "/government/fee-schedule/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Budget",
+     "url": "/government/budget/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Annual Financial Report",
+     "url": "/government/annual-financial-report/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Utility Billing",
+     "url": "/services/utility-billing/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Transparent Utah",
+     "url": "https://transparent.utah.gov/",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Privacy Notice",
+     "url": "/services/privacy-notice/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Vineyard Children's Library",
+   "items": [
+    {
+     "title": "Vineyard Children's Library",
+     "url": "https://vineyard.lib.utah.gov/",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Get a Library Card",
+     "url": "https://vineyard.lib.utah.gov/get-a-library-card/",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Interlibrary Loan",
+     "url": "/community/interlibrary-loan/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Bookmobile",
+     "url": "https://bookmobiles.utah.gov/utah/",
+     "new_tab": true,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Project Plan",
+   "items": [
+    {
+     "title": "Project Plan",
+     "url": "/government/project-plan/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Plan Progress",
+       "url": "/government/plan-progress/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    },
+    {
+     "title": "FAQs",
+     "url": "/government/faqs/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "RDA Meetings",
+     "url": "/government/rda-meetings/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Annual Reports",
+     "url": "/government/annual-reports/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Join the Youth Council",
+   "items": [
+    {
+     "title": "Join the Youth Council",
+     "url": "https://vineyard.rja.revize.com/forms/11406",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Executive Youth Council",
+     "url": "/community/executive-youth-council/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Neighborhood Watch",
+   "items": [
+    {
+     "title": "Neighborhood Watch",
+     "url": "/community/neighborhood-watch/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "SafeWalk Program",
+     "url": "/community/safewalk-program/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: ARCH Commission",
+   "items": [
+    {
+     "title": "ARCH Commission",
+     "url": "/community/arch-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Active Transportation Commission",
+     "url": "/community/active-transportation-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Planning Commission",
+     "url": "/community/planning-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Library Board",
+     "url": "/community/library-board/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Vineyard Cares Board",
+     "url": "/community/vineyard-cares-board/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Development Review Commission",
+     "url": "/community/development-review-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Executive Youth Council",
+     "url": "/community/vineyard-youth-council/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Redevelopment Agency",
+     "url": "/government/redevelopment-agency/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Sign Up for Our Newsletter",
+   "items": [
+    {
+     "title": "Sign Up for Our Newsletter",
+     "url": "http://eepurl.com/gqeOKA",
+     "new_tab": true,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Evacuation Maps",
+   "items": [
+    {
+     "title": "Evacuation Maps",
+     "url": "https://vineyard.maps.arcgis.com/apps/webappviewer/index.html?id=2a8b5848256f4ab7bea85bce092632d7",
+     "new_tab": true,
+     "children": []
+    },
+    {
+     "title": "Sign Up for Alerts",
+     "url": "https://member.everbridge.net/1332612387832225/login",
+     "new_tab": true,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Utility Billing",
+   "items": [
+    {
+     "title": "Utility Billing",
+     "url": "/services/utility-billing/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Public Works",
+     "url": "/government/public-works/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Report a Concern",
+     "url": "/community/report-a-concern/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Join the ATC",
+   "items": [
+    {
+     "title": "Join the ATC",
+     "url": "/community/join-the-atc/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: ARCH Commission (2)",
+   "items": [
+    {
+     "title": "ARCH Commission",
+     "url": "/community/arch-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Bicycle Advisory Commission",
+     "url": "/community/bike-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Planning Commission",
+     "url": "/community/planning-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Library Board",
+     "url": "/community/library-board/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "CTC Commission",
+     "url": "/community/ctc-board/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Development Review Commission",
+     "url": "/community/development-review-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Executive Youth Council",
+     "url": "/community/vineyard-youth-council/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Redevelopment Agency",
+     "url": "https://www.vineyardutah.gov/community_/redevelopment_agency.php",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: ARCH Commission (3)",
+   "items": [
+    {
+     "title": "ARCH Commission",
+     "url": "/community/arch-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Active Transportation Commission",
+     "url": "/community/active-transportation-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Planning Commission",
+     "url": "/community/planning-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Library Board",
+     "url": "/community/library-board/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "CTC Commission",
+     "url": "/community/ctc-board/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Development Review Commission",
+     "url": "/community/development-review-commission/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Executive Youth Council",
+     "url": "/community/vineyard-youth-council/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Redevelopment Agency",
+     "url": "https://www.vineyardutah.gov/community_/redevelopment_agency.php",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Adaptive Street Hockey",
+   "items": [
+    {
+     "title": "Adaptive Street Hockey",
+     "url": "/government/adaptive-street-hockey/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Kindergarten",
+   "items": [
+    {
+     "title": "Kindergarten",
+     "url": "/government/kindergarten/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "1st & 2nd Grade",
+     "url": "/government/1st-2nd-grade/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "3rd & 4th Grade",
+     "url": "/government/3rd-4th-grade/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "5th & 6th Grade",
+     "url": "/government/5th-6th-grade/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Streets (3)",
+   "items": [
+    {
+     "title": "Streets",
+     "url": "/government/streets/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Water & Wastewater",
+     "url": "/government/water-wastewater/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Construction Projects",
+     "url": "/government/construction-projects/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Maintenance",
+     "url": "/government/maintenance/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Engineering",
+     "url": "/government/engineering/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Report a Concern",
+     "url": "/government/report-a-concern/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Streets (4)",
+   "items": [
+    {
+     "title": "Streets",
+     "url": "/government/streets/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Water & Wastewater",
+     "url": "/government/water-wastewater/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Construction Projects",
+     "url": "/government/construction-projects/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Maintenance",
+     "url": "/government/maintenance/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Engineering",
+     "url": "/government/engineering/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Stormwater",
+   "items": [
+    {
+     "title": "Stormwater",
+     "url": "/government/stormwater/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Streets",
+     "url": "/government/streets/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Water & Wastewater",
+     "url": "/government/water-wastewater/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Construction Projects",
+     "url": "/government/construction-projects/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Maintenance",
+     "url": "/government/grounds-maintenance/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Engineering",
+     "url": "/government/engineering/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Floodplain Management Program",
+   "items": [
+    {
+     "title": "Floodplain Management Program",
+     "url": "/government/floodplain-management-program/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Utah Floodplain Management",
+     "url": "/government/utah-floodplain-management/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Federal Emergency Management Agency (FEMA)",
+     "url": "/government/federal-emergency-management-agency-fema/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Floodplain Mapping",
+     "url": "/government/floodplain-mapping/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Flood Insurance",
+     "url": "/government/flood-insurance/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Floodplain Development Permits",
+     "url": "/government/floodplain-development-permits/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Stormwater Management",
+   "items": [
+    {
+     "title": "Stormwater Management",
+     "url": "/government/stormwater-management/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Stormwater Management Program",
+       "url": "/government/stormwater-management-program/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Public Outreach & Education",
+       "url": "/government/public-outreach-education/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Public Involvement & Participation",
+       "url": "/government/public-involvement-participation/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Illicit Discharge Detection & Elimination",
+       "url": "/government/illicit-discharge-detection-elimination/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Construction Stormwater Management",
+       "url": "/government/construction-stormwater-management/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Long-Term Stormwater Management",
+       "url": "/government/long-term-stormwater-management/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Pollution Prevention & Good Housekeeping",
+       "url": "/government/pollution-prevention-good-housekeeping/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    },
+    {
+     "title": "Floodplain Management",
+     "url": "/government/floodplain-management/",
+     "new_tab": false,
+     "children": [
+      {
+       "title": "Floodplain Management Program",
+       "url": "/government/floodplain-management-program/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Utah Floodplain Management",
+       "url": "/government/utah-floodplain-management/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Federal Emergency Management Agency (FEMA)",
+       "url": "/government/federal-emergency-management-agency-fema/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Floodplain Mapping",
+       "url": "/government/floodplain-mapping/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Flood Insurance",
+       "url": "/government/flood-insurance/",
+       "new_tab": false,
+       "children": []
+      },
+      {
+       "title": "Floodplain Development Permits",
+       "url": "/government/floodplain-development-permits/",
+       "new_tab": false,
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Related Pages: Stormwater Management Program",
+   "items": [
+    {
+     "title": "Stormwater Management Program",
+     "url": "/government/stormwater-management-program/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Public Outreach & Education",
+     "url": "/government/public-outreach-education/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Public Involvement & Participation",
+     "url": "/government/public-involvement-participation/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Illicit Discharge Detection & Elimination",
+     "url": "/government/illicit-discharge-detection-elimination/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Construction Stormwater Management",
+     "url": "/government/construction-stormwater-management/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Long-Term Stormwater Management",
+     "url": "/government/long-term-stormwater-management/",
+     "new_tab": false,
+     "children": []
+    },
+    {
+     "title": "Pollution Prevention & Good Housekeeping",
+     "url": "/government/pollution-prevention-good-housekeeping/",
+     "new_tab": false,
+     "children": []
+    }
+   ]
+  }
+ ],
+ "categories": [
+  {
+   "name": "Meetings",
+   "color": "#114a76"
+  },
+  {
+   "name": "Recreation",
+   "color": "#087968"
+  },
+  {
+   "name": "Community",
+   "color": "#fcb215"
+  },
+  {
+   "name": "Utilities",
+   "color": "#4e606f"
+  },
+  {
+   "name": "Library",
+   "color": "#cc3232"
+  }
+ ],
+ "home_content": "<!-- wp:vineyard-city-content/quick-links /-->\n\n<!-- wp:vineyard-city-content/events /-->\n\n<!-- wp:vineyard-city-content/photo-tiles /-->\n\n<!-- wp:vineyard-city-content/social /-->\n\n<!-- wp:vineyard-city-content/newsletter /-->",
+ "calendar_pages": [
+  "calendar.php",
+  "government/events.php",
+  "community_/events.php"
+ ],
+ "calendar_block": "<!-- wp:vineyard-city-content/events-calendar /-->"
+}
