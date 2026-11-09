@@ -1,17 +1,21 @@
 <?php
 /**
- * Home page. The big photo is the Featured Image of the page "Home"; the button and logo come from Vineyard Site Content → Home page;
- * everything below it is the Home page's own content (blocks you can move or delete in the editor).
+ * Home page. Everything is the Home page's own content: blocks (Home Banner, Quick Links, Upcoming Events, Photo Tiles, Social,
+ * Newsletter, Alerts) the clerk can move or remove in the editor. The banner photo is the Home page's Featured Image.
  */
 get_header();
-$btn_url = vcity_opt( 'hero_button_url' );
-?>
+$front_content = (string) get_post_field( 'post_content', get_queried_object_id() );
+$banner_block  = false !== strpos( $front_content, 'wp:vineyard-city-content/home-banner' ) && function_exists( 'vcc_render_home_banner' );
+if ( ! $banner_block ) : // older Home pages (before the banner became a block) – draw the banner here as before
+	$btn_url = vcity_opt( 'hero_button_url' );
+	?>
 <section id="slider" class="tiny-slider-wrap">
 	<ul class="tiny-slider"><li class="tiny-item"><div class="tns-lazy-img tns-bg-slide" data-style="background:url('<?php echo esc_url( vcity_hero_url() ); ?>') center no-repeat;background-size:cover"></div></li></ul>
 	<img src="<?php echo esc_url( vcity_asset( 'images/slider-mask.png' ) ); ?>" class="slider-mask" alt="">
 	<img src="<?php echo esc_url( vcity_image( 'hero_logo' ) ); ?>" id="slider-logo" alt="<?php bloginfo( 'name' ); ?>">
 	<?php if ( vcity_opt( 'hero_button_label' ) ) : ?><a href="<?php echo esc_url( vcity_url( $btn_url ) ); ?>" class="slider-button-link"><span class="btn slider-button"><?php echo esc_html( vcity_opt( 'hero_button_label' ) ); ?></span></a><?php endif; ?>
 </section>
+<?php endif; ?>
 <main id="main">
 	<?php
 	while ( have_posts() ) {

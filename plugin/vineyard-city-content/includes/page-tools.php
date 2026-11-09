@@ -4,11 +4,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_action( 'add_meta_boxes', function () {
+add_action( 'add_meta_boxes', function ( $post_type = '', $post = null ) {
+	if ( $post && function_exists( 'vcc_home_id' ) && (int) $post->ID === vcc_home_id() ) {
+		return; // the Home page is built from its blocks; these inner-page boxes do not apply to it
+	}
 	add_meta_box( 'vcc_page_related', 'Left-hand “Related Pages” box', 'vcc_box_related', 'page', 'side', 'default' );
 	add_meta_box( 'vcc_page_contact', 'Contact box (left column)', 'vcc_box_contact', 'page', 'side', 'default' );
 	add_meta_box( 'vcc_page_buttons', 'Buttons under the page title (optional)', 'vcc_box_buttons', 'page', 'normal', 'default' );
-} );
+}, 10, 2 );
 
 function vcc_related_menus() {
 	$out = array();

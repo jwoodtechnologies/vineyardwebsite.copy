@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vineyard-city-content/newsletter",
+	"title": "Newsletter Sign-up",
+	"category": "vineyard",
+	"icon": "email",
+	"description": "The “Sign up for our newsletter” box. Its words are set on Vineyard Site Content → Home page.",
+	"keywords": [
+		"newsletter",
+		"email",
+		"signup"
+	],
+	"textdomain": "vineyard-city-content",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"customClassName": false,
+		"className": false,
+		"lock": true
+	},
+	"editorScript": "vcc-blocks-editor",
+	"editorStyle": "vcc-blocks-editor"
+}

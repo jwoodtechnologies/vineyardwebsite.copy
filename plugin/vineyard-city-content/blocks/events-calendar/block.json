@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vineyard-city-content/events-calendar",
+	"title": "Events Calendar and List",
+	"category": "vineyard",
+	"icon": "calendar",
+	"description": "A full month calendar with category buttons and the list of all upcoming events (used on the Calendar page).",
+	"keywords": [
+		"calendar",
+		"events",
+		"month"
+	],
+	"textdomain": "vineyard-city-content",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"multiple": true,
+		"reusable": false,
+		"customClassName": false,
+		"className": false,
+		"lock": true
+	},
+	"editorScript": "vcc-blocks-editor",
+	"editorStyle": "vcc-blocks-editor"
+}

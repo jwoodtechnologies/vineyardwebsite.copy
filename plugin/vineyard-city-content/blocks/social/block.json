@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vineyard-city-content/social",
+	"title": "Social Media Icons",
+	"category": "vineyard",
+	"icon": "share",
+	"description": "The Facebook, Instagram and X icons. The links are set on Vineyard Site Content → Footer.",
+	"keywords": [
+		"facebook",
+		"instagram",
+		"twitter"
+	],
+	"textdomain": "vineyard-city-content",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"customClassName": false,
+		"className": false,
+		"lock": true
+	},
+	"editorScript": "vcc-blocks-editor",
+	"editorStyle": "vcc-blocks-editor"
+}

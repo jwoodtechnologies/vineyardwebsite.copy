@@ -114,18 +114,32 @@ scripts/build_deploy_branches.sh        # (re)builds deploy/site (theme + files/
 ## Install the editable theme + plugin (one time, no code)
 
 Two small zips are on the server after `deploy/site` is deployed (and in this repo under `content/`):
-`/wp-content/themes/vineyard/files/_import/vineyard-city-content-1.0.1.zip` (the plugin that **owns your content**) and
-`/wp-content/themes/vineyard/files/_import/vineyard-city-theme-1.0.1.zip` (a **display-only** theme, no 1.6 GB files).
+`/wp-content/themes/vineyard/files/_import/vineyard-city-content-1.0.2.zip` (the plugin that **owns your content**) and
+`/wp-content/themes/vineyard/files/_import/vineyard-city-theme-1.0.2.zip` (a **display-only** theme, no 1.6 GB files).
 Do **not** delete or disconnect the old `vineyard` theme folder: it still hosts the documents (`…/themes/vineyard/files/…`). You simply never activate it.
 
 1. Open each zip's address in your browser and save it to your computer.
-2. **Plugins → Add New Plugin → Upload Plugin → Choose File → `vineyard-city-content-1.0.1.zip` → Install Now → Activate Plugin.**
-3. **Appearance → Themes → Add New Theme → Upload Theme → `vineyard-city-theme-1.0.1.zip` → Install Now → Activate.**
+2. **Plugins → Add New Plugin → Upload Plugin → Choose File → `vineyard-city-content-1.0.2.zip` → Install Now → Activate Plugin.**
+3. **Appearance → Themes → Add New Theme → Upload Theme → `vineyard-city-theme-1.0.2.zip` → Install Now → Activate.**
 4. Left menu **Vineyard Site Content → Start here → “Load the starter content”**, wait for the green message, then **“Tidy the pages”** (keep the tab open; it counts up to 621).
 5. **Appearance → Menus → Manage Locations** → set **Main menu (top of every page)** to **Primary** → Save.
 6. Make sure Jetpack is active (it is on WordPress.com Business), then **send a test message through each form** (list below). Replies arrive by email and are kept under **Feedback** in the left menu.
 
-Day one the site looks the same as before. Remaining visible differences are listed at the end of this section.
+Day one the site looks the same as before. Remaining visible differences are listed at the end of this section. (Upgrading from an earlier version? See *Upgrading … to 1.0.2* below.)
+
+### Upgrading an installed site to 1.0.2 (home page sections in the editor)
+
+**What went wrong in 1.0.1.** In the editor, the five home sections showed *“Your site doesn’t include support for the vineyard-city-content/… block”*. The blocks were registered only in PHP, with one shared editor script that WordPress evidently did not load on the site (the same script registers all five blocks correctly when it does run – tested with WordPress’s own block library). In 1.0.2 every section is a standard block with its own `block.json` (so WordPress knows which editor script to load) and the script is also loaded whenever the editor opens.
+
+**What you get in the editor (Pages → Home → Edit):** the page title, the Featured Image (= banner photo) in the right-hand sidebar, and one **card per section**: a blue title bar, an **“Edit … ↗”** button that opens the right Vineyard Site Content screen in a new tab, a one-line help text, and a **live preview** of that section. Sections: **Home Banner, Quick Links, Upcoming Events, Photo Tiles, Social Media Icons, Newsletter Sign-up, Alerts** (and **Events Calendar and List** for the Calendar page). Drag a card up/down (or use the arrows), remove it with the ⋮ menu → *Delete*, add it back with **+ → Vineyard City**. Each section can be on the page once.
+
+**Clicks (about 2 minutes):**
+1. Download `https://YOUR-SITE/wp-content/themes/vineyard/files/_import/vineyard-city-content-1.0.2.zip` and `…/vineyard-city-theme-1.0.2.zip`.
+2. **Plugins → Add New Plugin → Upload Plugin → `vineyard-city-content-1.0.2.zip` → Install Now → “Replace current with uploaded”.**
+3. **Appearance → Themes → Add New Theme → Upload Theme → `vineyard-city-theme-1.0.2.zip` → Install Now → “Replace active with uploaded”.**
+4. Open any wp-admin page once: the plugin moves an **unchanged** 1.0.1 home page to the new layout by itself (banner and alerts become movable blocks; the old text is kept as a revision). If you had already re-arranged the home page, your order is kept and only the Alerts block is added at the end.
+5. **Pages → Home → Edit**: you should see the seven cards with previews and no warnings. If anything looks off, **Vineyard Site Content → Start here → Rebuild the home page sections**.
+6. Hard-refresh the editor tab (Ctrl+F5 / Cmd+Shift+R) if your browser still shows the old message – it may have kept the old script.
 
 ### Upgrading an installed site to 1.0.1 (fixes the home page)
 
@@ -165,7 +179,7 @@ More places you may need:
 * **Header** (logo, search box, drop-down pictures): **Vineyard Site Content → Header**.
 * **Home page tiles**: **Quick Links** (the blue icon strip) and **Photo Tiles** (three big photos) – click one, change title/picture/link, **Update**; use the **Order** number to re-arrange.
 * **Left-hand “Related Pages” box, contact box and the buttons under a page title**: on the page’s edit screen, look in the right column (*Left-hand “Related Pages” box*, *Contact box*) and below the text (*Buttons under the page title*). The lists themselves are menus named **“Related Pages: …”** under **Appearance → Menus**.
-* **Re-arrange or remove a home page section** (events, tiles, social, newsletter): **Pages → Home → Edit** – click the section and use the arrows or the three-dot menu → **Remove**. Add one back with **+ → “Vineyard City”**.
+* **Re-arrange or remove a home page section** (banner, quick links, events, tiles, social, newsletter, alerts): **Pages → Home → Edit** – each section is a card with a live preview. Drag it (or click it and use the ↑ ↓ arrows), remove it with ⋮ → **Delete**, add it back with **+ → Vineyard City**. The **“Edit … ↗”** button on each card opens the screen where its items are changed.
 * **Footer extras / left column extras**: **Appearance → Widgets**.
 * **Staff/board directory pages** (City Council, City Staff …): edit the page like any other; they keep the original structure.
 

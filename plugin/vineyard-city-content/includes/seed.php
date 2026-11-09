@@ -122,8 +122,37 @@ function vcc_rebuild_home() {
 	update_option( 'page_on_front', $home );
 	return array( 'ok' => true, 'home' => $home, 'removed' => strlen( $before ), 'backup' => $backup,
 		'message' => ( $before === $seed['home_content'] ? 'The home page already shows the standard sections – nothing needed changing.' :
-			sprintf( 'The home page now shows Quick Links, Upcoming Events, Photo Tiles, Social Media and the Newsletter box.%s', $backup ? ' The previous text is saved under Pages → Home → Revisions.' : ' The previous text was saved with the page.' ) ) );
+			sprintf( 'The home page now shows the Home Banner, Quick Links, Upcoming Events, Photo Tiles, Social Media, Newsletter and Alerts sections – open Pages → Home to move or remove them.%s', $backup ? ' The previous text is saved under Pages → Home → Revisions.' : ' The previous text was saved with the page.' ) ) );
 }
+
+/** Home page layouts shipped by earlier versions (unchanged by the clerk = safe to move to the new layout). */
+function vcc_previous_home_layouts() {
+	return array(
+		"<!-- wp:vineyard-city-content/quick-links /-->\n\n<!-- wp:vineyard-city-content/events /-->\n\n<!-- wp:vineyard-city-content/photo-tiles /-->\n\n<!-- wp:vineyard-city-content/social /-->\n\n<!-- wp:vineyard-city-content/newsletter /-->",
+	);
+}
+
+/**
+ * Runs once after the plugin is updated. 1.0.2: the home banner and alerts became blocks. A Home page still holding the
+ * 1.0.1 layout gets the new layout (old text kept as a revision). A Home page the clerk re-arranged keeps her order; only the
+ * Alerts block is added at the end so alerts keep showing there (the banner keeps being drawn by the theme until she adds it).
+ */
+function vcc_maybe_upgrade() {
+	$done = (string) get_option( 'vcc_db_version', '' );
+	if ( version_compare( $done, '1.0.2', '>=' ) ) { return; }
+	$home = vcc_home_id();
+	if ( $home ) {
+		$c = (string) get_post_field( 'post_content', $home );
+		if ( in_array( trim( $c ), array_map( 'trim', vcc_previous_home_layouts() ), true ) ) {
+			vcc_rebuild_home();
+		} elseif ( false !== strpos( $c, 'wp:vineyard-city-content/' ) && false === strpos( $c, 'wp:vineyard-city-content/alerts' ) ) {
+			wp_save_post_revision( $home );
+			wp_update_post( array( 'ID' => $home, 'post_content' => wp_slash( rtrim( $c ) . "\n\n<!-- wp:vineyard-city-content/alerts /-->" ) ) );
+		}
+	}
+	update_option( 'vcc_db_version', VCC_VERSION );
+}
+add_action( 'admin_init', 'vcc_maybe_upgrade' );
 
 /** Pages from the old site that are not on this site (the importer can merge an untitled page into another one). */
 function vcc_create_missing_pages( $pages ) {

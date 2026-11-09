@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vineyard-city-content/events",
+	"title": "Upcoming Events",
+	"category": "vineyard",
+	"icon": "calendar-alt",
+	"description": "The Meetings / Community / Recreation tabs with the small calendar and the next events. Events are added under Vineyard Site Content → Events.",
+	"keywords": [
+		"calendar",
+		"meetings",
+		"tabs"
+	],
+	"textdomain": "vineyard-city-content",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"customClassName": false,
+		"className": false,
+		"lock": true
+	},
+	"editorScript": "vcc-blocks-editor",
+	"editorStyle": "vcc-blocks-editor"
+}

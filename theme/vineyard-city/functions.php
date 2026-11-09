@@ -6,7 +6,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-define( 'VCITY_VERSION', '1.0.1' );
+define( 'VCITY_VERSION', '1.0.2' );
 require_once get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/class-walkers.php';
 require_once get_template_directory() . '/inc/redirects.php';
@@ -68,6 +68,7 @@ add_action( 'wp_head', function () {
 // No tracking or chat widgets are loaded by the theme. Add Google Analytics (Jetpack / Site Kit), an accessibility button or a chat widget with their own WordPress plugins.
 
 add_filter( 'body_class', function ( $c ) {
+	$c[] = 'vineyard-city-theme'; // lets the companion plugin skip its any-theme fallback styling
 	if ( ! is_front_page() && is_page_template( 'template-fullwidth.php' ) ) { $c[] = 'fullwidth'; }
 	return $c;
 } );

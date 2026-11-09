@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vineyard-city-content/home-banner",
+	"title": "Home Banner",
+	"category": "vineyard",
+	"icon": "format-image",
+	"description": "The big photo at the top with the logo and the yellow button. The photo is this page’s Featured Image (right-hand sidebar).",
+	"keywords": [
+		"hero",
+		"banner",
+		"photo",
+		"transparency"
+	],
+	"textdomain": "vineyard-city-content",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"customClassName": false,
+		"className": false,
+		"lock": true
+	},
+	"editorScript": "vcc-blocks-editor",
+	"editorStyle": "vcc-blocks-editor"
+}

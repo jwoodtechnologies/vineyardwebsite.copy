@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vineyard-city-content/alerts",
+	"title": "Alerts",
+	"category": "vineyard",
+	"icon": "warning",
+	"description": "Shows any published alert in the corner of the screen. Post or remove alerts under Vineyard Site Content → Alerts.",
+	"keywords": [
+		"alert",
+		"notice",
+		"closure",
+		"emergency"
+	],
+	"textdomain": "vineyard-city-content",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"customClassName": false,
+		"className": false,
+		"lock": true
+	},
+	"editorScript": "vcc-blocks-editor",
+	"editorStyle": "vcc-blocks-editor"
+}

@@ -32,12 +32,14 @@ function vcity_default_image( $url, $key ) {
 	$map = array(
 		'logo' => vcity_asset( 'images/logo.png' ), 'footer_logo' => vcity_asset( 'images/footer-logo.png' ),
 		'hero_logo' => vcity_files_url( 'revize_photo_gallery/slider-logo.png' ),
+		'hero_photo' => vcity_files_url( 'links/Vineyard City Sunset_KendallBowman - Copy.jpg' ),
 		'menu_image_2' => vcity_files_url( 'revize_photo_gallery/_DSC4715 - Copy.jpg' ), 'menu_image_3' => vcity_files_url( 'Headshots/IMG_1037 - Copy.jpg' ),
 	);
 	return isset( $map[ $key ] ) ? $map[ $key ] : $url;
 }
 add_filter( 'vcc_default_image', 'vcity_default_image', 10, 2 );
 add_filter( 'vcc_social_icon', function ( $u, $net ) { return vcity_asset( 'images/' . $net . '-icon.png' ); }, 10, 2 );
+add_filter( 'vcc_banner_mask', function () { return vcity_asset( 'images/slider-mask.png' ); } );
 add_filter( 'vcc_newsletter_shape', function () { return vcity_asset( 'images/newsletter-shape.png' ); } );
 
 /** Banner picture of an inner page = its Featured Image (falls back to the original default banner). */

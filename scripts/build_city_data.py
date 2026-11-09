@@ -411,7 +411,7 @@ def main():
         "quicklinks": ql, "tiles": tiles, "events": events, "related_menus": menus,
         "categories": [{"name": "Meetings", "color": "#114a76"}, {"name": "Recreation", "color": "#087968"}, {"name": "Community", "color": "#fcb215"},
                        {"name": "Utilities", "color": "#4e606f"}, {"name": "Library", "color": "#cc3232"}],
-        "home_content": "<!-- wp:vineyard-city-content/quick-links /-->\n\n<!-- wp:vineyard-city-content/events /-->\n\n<!-- wp:vineyard-city-content/photo-tiles /-->\n\n<!-- wp:vineyard-city-content/social /-->\n\n<!-- wp:vineyard-city-content/newsletter /-->",
+        "home_content": "\n\n".join("<!-- wp:vineyard-city-content/%s /-->" % b for b in ("home-banner", "quick-links", "events", "photo-tiles", "social", "newsletter", "alerts")),
         "calendar_pages": ["calendar.php", "government/events.php", "community_/events.php"],
         "calendar_block": "<!-- wp:vineyard-city-content/events-calendar /-->",
     }

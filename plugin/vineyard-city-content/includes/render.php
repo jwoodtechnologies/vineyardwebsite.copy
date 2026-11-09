@@ -168,49 +168,67 @@ function vcc_render_events_calendar() {
 	return $o . '</ul></div>';
 }
 
-/* ------------------------------------------------------------------ blocks (no code needed: Add block → "Vineyard") */
-add_filter( 'block_categories_all', function ( $cats ) {
-	array_unshift( $cats, array( 'slug' => 'vineyard', 'title' => 'Vineyard City' ) );
-	return $cats;
-} );
-function vcc_blocks() {
-	return array(
-		'quick-links'     => array( 'Quick Links (row of icon tiles)', 'vcc_render_quick_links', 'Shows the Quick Links from Vineyard Site Content → Quick Links.' ),
-		'events'          => array( 'Upcoming Events (home page)', 'vcc_render_events', 'Shows the next events with a small calendar. Add events under Vineyard Site Content → Events.' ),
-		'photo-tiles'     => array( 'Photo Tiles (three big pictures)', 'vcc_render_tiles', 'Shows the Photo Tiles from Vineyard Site Content → Photo Tiles.' ),
-		'social'          => array( 'Social Media Icons', 'vcc_render_social', 'Shows the social media links from Vineyard Site Content → Footer.' ),
-		'newsletter'      => array( 'Newsletter Sign-up', 'vcc_render_newsletter', 'Shows the sign-up box. Words come from Vineyard Site Content → Home page.' ),
-		'events-calendar' => array( 'Events Calendar and List', 'vcc_render_events_calendar', 'Shows a monthly calendar and the list of all upcoming events.' ),
-	);
-}
-add_action( 'init', function () {
-	wp_register_script( 'vcc-blocks', VCC_URL . 'assets/blocks.js', array( 'wp-blocks', 'wp-element', 'wp-server-side-render', 'wp-block-editor' ), VCC_VERSION, true );
-	wp_localize_script( 'vcc-blocks', 'vccBlocks', array( 'blocks' => vcc_blocks() ) );
-	foreach ( vcc_blocks() as $slug => $b ) {
-		$cb = $b[1];
-		register_block_type( 'vineyard-city-content/' . $slug, array( 'api_version' => 2, 'title' => $b[0], 'category' => 'vineyard', 'editor_script' => 'vcc-blocks', 'render_callback' => function () use ( $cb ) { return call_user_func( $cb ); } ) );
-	}
-} );
-
 /* ------------------------------------------------------------------ alerts (shown on every page, any theme) */
-add_action( 'wp_footer', function () {
+function vcc_current_alerts() {
 	$today = current_time( 'Y-m-d' );
 	$posts = get_posts( array( 'post_type' => 'vc_alert', 'post_status' => 'publish', 'numberposts' => 5, 'orderby' => 'date', 'order' => 'DESC' ) );
-	$shown = array();
-	foreach ( $posts as $p ) {
+	return array_values( array_filter( $posts, function ( $p ) use ( $today ) {
 		$from = get_post_meta( $p->ID, '_vcc_from', true ); $until = get_post_meta( $p->ID, '_vcc_until', true );
-		if ( ( $from && $today < $from ) || ( $until && $today > $until ) ) { continue; }
-		$shown[] = $p;
-	}
-	if ( ! $shown ) { return; }
-	wp_enqueue_script( 'vcc-front', VCC_URL . 'assets/front.js', array(), VCC_VERSION, true );
-	wp_print_scripts( 'vcc-front' );
-	foreach ( $shown as $p ) {
+		return ! ( ( $from && $today < $from ) || ( $until && $today > $until ) );
+	} ) );
+}
+
+function vcc_alerts_html( $posts ) {
+	$o = '';
+	foreach ( $posts as $p ) {
 		$bl = get_post_meta( $p->ID, '_vcc_btn_label', true ); $bu = get_post_meta( $p->ID, '_vcc_btn_url', true );
-		echo '<div class="floating-alert vcc-alert" role="alert" data-alert="' . (int) $p->ID . '"><button type="button" class="close vcc-alert-close" aria-label="Close alert">&times;</button><h2>' . esc_html( $p->post_title ) . '</h2><div class="vcc-alert-body">' . wp_kses_post( wpautop( $p->post_content ) ) . '</div>'
+		$o .= '<div class="floating-alert vcc-alert" role="alert" data-alert="' . (int) $p->ID . '"><button type="button" class="close vcc-alert-close" aria-label="Close alert">&times;</button><h2>' . esc_html( $p->post_title ) . '</h2><div class="vcc-alert-body">' . wp_kses_post( wpautop( $p->post_content ) ) . '</div>'
 			. ( $bl && $bu ? '<a class="btn rz-btn vcc-alert-btn" href="' . esc_url( $bu ) . '">' . esc_html( $bl ) . '</a>' : '' ) . '</div>';
 	}
+	return $o;
+}
+
+/** "Alerts" block: where it sits on a page decides whether that page shows alerts (they still float in the corner). */
+function vcc_render_alerts_block() {
+	$posts = vcc_current_alerts();
+	if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) { // editor preview
+		if ( ! $posts ) { return '<div class="vcc-preview-empty">No alert is showing right now. When you publish one under Vineyard Site Content → Alerts, it appears in the corner of every page.</div>'; }
+		return '<div class="vcc-alert-preview">' . vcc_alerts_html( $posts ) . '</div>';
+	}
+	$GLOBALS['vcc_alerts_done'] = true;
+	if ( ! $posts ) { return ''; }
+	wp_enqueue_script( 'vcc-front', VCC_URL . 'assets/front.js', array(), VCC_VERSION, true );
+	return vcc_alerts_html( $posts );
+}
+
+/** Every other page shows alerts automatically. The home page shows them where its "Alerts" block is (none if removed). */
+add_action( 'wp_footer', function () {
+	if ( ! empty( $GLOBALS['vcc_alerts_done'] ) ) { return; }
+	$front = (int) get_option( 'page_on_front' );
+	if ( is_front_page() && $front && has_block( 'vineyard-city-content/home-banner', $front ) && ! has_block( 'vineyard-city-content/alerts', $front ) ) { return; } // removed by the clerk
+	$posts = vcc_current_alerts();
+	if ( ! $posts ) { return; }
+	wp_enqueue_script( 'vcc-front', VCC_URL . 'assets/front.js', array(), VCC_VERSION, true );
+	wp_print_scripts( 'vcc-front' );
+	echo vcc_alerts_html( $posts ); // phpcs:ignore
 }, 5 );
+
+/** "Home Banner" block: the big photo (the front page's Featured Image), the logo over it and the button. */
+function vcc_render_home_banner() {
+	$front = (int) get_option( 'page_on_front' );
+	$photo = $front ? get_the_post_thumbnail_url( $front, 'full' ) : '';
+	$photo = $photo ? $photo : (string) apply_filters( 'vcc_default_image', '', 'hero_photo' );
+	$mask  = (string) apply_filters( 'vcc_banner_mask', '' );
+	$logo  = vcc_image( 'hero_logo' );
+	$label = vcc_opt( 'hero_button_label' );
+	$bg    = "background:url('" . esc_url( $photo ) . "') center no-repeat;background-size:cover";
+	$edit  = defined( 'REST_REQUEST' ) && REST_REQUEST; // the editor preview cannot run the slider script: show the photo directly
+	return '<section id="slider" class="tiny-slider-wrap"><ul class="tiny-slider"><li class="tiny-item"><div class="tns-lazy-img tns-bg-slide" data-style="' . esc_attr( $bg ) . '"' . ( $edit ? ' style="' . esc_attr( $bg ) . '"' : '' ) . '></div></li></ul>'
+		. ( $mask ? '<img src="' . esc_url( $mask ) . '" class="slider-mask" alt="">' : '' )
+		. ( $logo ? '<img src="' . esc_url( $logo ) . '" id="slider-logo" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">' : '' )
+		. ( $label ? '<a href="' . esc_url( vcc_url( vcc_opt( 'hero_button_url' ) ) ) . '" class="slider-button-link"><span class="btn slider-button">' . esc_html( $label ) . '</span></a>' : '' )
+		. '</section>';
+}
 
 add_action( 'wp_enqueue_scripts', function () { // load the calendar files early (in the page head) when the page contains an events block
 	if ( is_singular() && ( has_block( 'vineyard-city-content/events' ) || has_block( 'vineyard-city-content/events-calendar' ) ) ) {

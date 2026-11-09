@@ -1,0 +1,429 @@
+{
+    "scripts": {
+        "vcc-blocks-editor": {
+            "src": "https://example.test/wp-content/plugins/vineyard-city-content/assets/blocks-editor.js",
+            "deps": [
+                "wp-blocks",
+                "wp-element",
+                "wp-block-editor",
+                "wp-components",
+                "wp-server-side-render",
+                "wp-i18n"
+            ]
+        }
+    },
+    "styles": {
+        "vcc-blocks-editor": "https://example.test/wp-content/plugins/vineyard-city-content/assets/blocks-editor.css"
+    },
+    "blocks": {
+        "vineyard-city-content/home-banner": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/home-banner",
+            "title": "Home Banner",
+            "category": "vineyard",
+            "icon": "format-image",
+            "description": "The big photo at the top with the logo and the yellow button. The photo is this page’s Featured Image (right-hand sidebar).",
+            "keywords": [
+                "hero",
+                "banner",
+                "photo",
+                "transparency"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": false,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        },
+        "vineyard-city-content/quick-links": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/quick-links",
+            "title": "Quick Links",
+            "category": "vineyard",
+            "icon": "screenoptions",
+            "description": "The blue strip of round icons. Add, change or re-order the icons under Vineyard Site Content → Quick Links.",
+            "keywords": [
+                "icons",
+                "tiles",
+                "links"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": false,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        },
+        "vineyard-city-content/events": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/events",
+            "title": "Upcoming Events",
+            "category": "vineyard",
+            "icon": "calendar-alt",
+            "description": "The Meetings / Community / Recreation tabs with the small calendar and the next events. Events are added under Vineyard Site Content → Events.",
+            "keywords": [
+                "calendar",
+                "meetings",
+                "tabs"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": false,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        },
+        "vineyard-city-content/photo-tiles": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/photo-tiles",
+            "title": "Photo Tiles",
+            "category": "vineyard",
+            "icon": "format-gallery",
+            "description": "The three big photo tiles (Mayor & City Council, Recreation, Library). Change them under Vineyard Site Content → Photo Tiles.",
+            "keywords": [
+                "tiles",
+                "photos",
+                "council",
+                "library"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": false,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        },
+        "vineyard-city-content/social": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/social",
+            "title": "Social Media Icons",
+            "category": "vineyard",
+            "icon": "share",
+            "description": "The Facebook, Instagram and X icons. The links are set on Vineyard Site Content → Footer.",
+            "keywords": [
+                "facebook",
+                "instagram",
+                "twitter"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": false,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        },
+        "vineyard-city-content/newsletter": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/newsletter",
+            "title": "Newsletter Sign-up",
+            "category": "vineyard",
+            "icon": "email",
+            "description": "The “Sign up for our newsletter” box. Its words are set on Vineyard Site Content → Home page.",
+            "keywords": [
+                "newsletter",
+                "email",
+                "signup"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": false,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        },
+        "vineyard-city-content/alerts": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/alerts",
+            "title": "Alerts",
+            "category": "vineyard",
+            "icon": "warning",
+            "description": "Shows any published alert in the corner of the screen. Post or remove alerts under Vineyard Site Content → Alerts.",
+            "keywords": [
+                "alert",
+                "notice",
+                "closure",
+                "emergency"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": false,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        },
+        "vineyard-city-content/events-calendar": {
+            "$schema": "https://schemas.wp.org/trunk/block.json",
+            "apiVersion": 3,
+            "name": "vineyard-city-content/events-calendar",
+            "title": "Events Calendar and List",
+            "category": "vineyard",
+            "icon": "calendar",
+            "description": "A full month calendar with category buttons and the list of all upcoming events (used on the Calendar page).",
+            "keywords": [
+                "calendar",
+                "events",
+                "month"
+            ],
+            "textdomain": "vineyard-city-content",
+            "attributes": [],
+            "supports": {
+                "html": false,
+                "multiple": true,
+                "reusable": false,
+                "customClassName": false,
+                "className": false,
+                "lock": true
+            },
+            "editorScript": "vcc-blocks-editor",
+            "editorStyle": "vcc-blocks-editor"
+        }
+    },
+    "localized": {
+        "handle": "vcc-blocks-editor",
+        "var": "vccBlocksEditor",
+        "data": {
+            "blocks": [
+                {
+                    "name": "vineyard-city-content/home-banner",
+                    "title": "Home Banner",
+                    "description": "The big photo at the top with the logo and the yellow button. The photo is this page’s Featured Image (right-hand sidebar).",
+                    "icon": "format-image",
+                    "category": "vineyard",
+                    "keywords": [
+                        "hero",
+                        "banner",
+                        "photo",
+                        "transparency"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": false,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/admin.php?page=vcc-home",
+                    "editLabel": "Edit banner logo & button"
+                },
+                {
+                    "name": "vineyard-city-content/quick-links",
+                    "title": "Quick Links",
+                    "description": "The blue strip of round icons. Add, change or re-order the icons under Vineyard Site Content → Quick Links.",
+                    "icon": "screenoptions",
+                    "category": "vineyard",
+                    "keywords": [
+                        "icons",
+                        "tiles",
+                        "links"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": false,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/edit.php?post_type=vc_quicklink",
+                    "editLabel": "Edit Quick Links"
+                },
+                {
+                    "name": "vineyard-city-content/events",
+                    "title": "Upcoming Events",
+                    "description": "The Meetings / Community / Recreation tabs with the small calendar and the next events. Events are added under Vineyard Site Content → Events.",
+                    "icon": "calendar-alt",
+                    "category": "vineyard",
+                    "keywords": [
+                        "calendar",
+                        "meetings",
+                        "tabs"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": false,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/edit.php?post_type=vc_event",
+                    "editLabel": "Edit Events"
+                },
+                {
+                    "name": "vineyard-city-content/photo-tiles",
+                    "title": "Photo Tiles",
+                    "description": "The three big photo tiles (Mayor & City Council, Recreation, Library). Change them under Vineyard Site Content → Photo Tiles.",
+                    "icon": "format-gallery",
+                    "category": "vineyard",
+                    "keywords": [
+                        "tiles",
+                        "photos",
+                        "council",
+                        "library"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": false,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/edit.php?post_type=vc_tile",
+                    "editLabel": "Edit Photo Tiles"
+                },
+                {
+                    "name": "vineyard-city-content/social",
+                    "title": "Social Media Icons",
+                    "description": "The Facebook, Instagram and X icons. The links are set on Vineyard Site Content → Footer.",
+                    "icon": "share",
+                    "category": "vineyard",
+                    "keywords": [
+                        "facebook",
+                        "instagram",
+                        "twitter"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": false,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/admin.php?page=vcc-footer",
+                    "editLabel": "Edit social media links"
+                },
+                {
+                    "name": "vineyard-city-content/newsletter",
+                    "title": "Newsletter Sign-up",
+                    "description": "The “Sign up for our newsletter” box. Its words are set on Vineyard Site Content → Home page.",
+                    "icon": "email",
+                    "category": "vineyard",
+                    "keywords": [
+                        "newsletter",
+                        "email",
+                        "signup"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": false,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/admin.php?page=vcc-home",
+                    "editLabel": "Edit newsletter words"
+                },
+                {
+                    "name": "vineyard-city-content/alerts",
+                    "title": "Alerts",
+                    "description": "Shows any published alert in the corner of the screen. Post or remove alerts under Vineyard Site Content → Alerts.",
+                    "icon": "warning",
+                    "category": "vineyard",
+                    "keywords": [
+                        "alert",
+                        "notice",
+                        "closure",
+                        "emergency"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": false,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/edit.php?post_type=vc_alert",
+                    "editLabel": "Edit Alerts"
+                },
+                {
+                    "name": "vineyard-city-content/events-calendar",
+                    "title": "Events Calendar and List",
+                    "description": "A full month calendar with category buttons and the list of all upcoming events (used on the Calendar page).",
+                    "icon": "calendar",
+                    "category": "vineyard",
+                    "keywords": [
+                        "calendar",
+                        "events",
+                        "month"
+                    ],
+                    "supports": {
+                        "html": false,
+                        "multiple": true,
+                        "reusable": false,
+                        "customClassName": false,
+                        "className": false,
+                        "lock": true
+                    },
+                    "editUrl": "https://example.test/wp-admin/edit.php?post_type=vc_event",
+                    "editLabel": "Edit Events"
+                }
+            ]
+        }
+    },
+    "categories": [
+        {
+            "slug": "vineyard",
+            "title": "Vineyard City",
+            "icon": null
+        },
+        {
+            "slug": "text",
+            "title": "Text"
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+/* Editor only: the card around each Vineyard City section and a faithful, compact preview of each section. */
+.vcc-card{border:1px solid #c3c4c7;border-radius:6px;background:#fff;margin:14px 0;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.vcc-card__head{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#0d4a76;color:#fff;padding:8px 12px}
+.vcc-card__title{font-weight:600;font-size:15px;display:flex;align-items:center;gap:6px}
+.vcc-card__title:before{font-size:18px;width:18px;height:18px}
+.vcc-card .vcc-card__edit{background:#fff;color:#0d4a76;border-radius:4px;text-decoration:none;white-space:nowrap}
+.vcc-card__help{margin:0;padding:8px 12px;font-size:13px;color:#3c434a;background:#f0f6fc;border-bottom:1px solid #dcdcde}
+.vcc-card__preview{padding:0;max-height:560px;overflow:hidden;position:relative}
+.vcc-card__loading{padding:20px;color:#646970}
+.vcc-preview-empty{padding:18px;color:#646970;font-style:italic}
+/* --- previews (the website's own stylesheet is not loaded in the editor, so these approximate it) --- */
+.vcc-preview img{max-width:100%}
+.vcc-preview #slider{position:relative;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 10px;overflow:hidden}
+.vcc-preview #slider .tiny-slider{list-style:none;margin:0;padding:0;position:absolute;inset:0}
+.vcc-preview #slider .tiny-item,.vcc-preview #slider .tns-bg-slide{height:100%;width:100%}
+.vcc-preview #slider .slider-mask{position:absolute;left:0;right:0;bottom:0;width:100%}
+.vcc-preview #slider-logo{position:relative;max-width:280px;z-index:2}
+.vcc-preview .slider-button-link{position:relative;z-index:2;margin-top:14px}
+.vcc-preview .slider-button{display:inline-block;background:#fcb215;color:#000;font-weight:700;padding:8px 60px;border-radius:2px}
+.vcc-preview #quick-links{background:#0d4a76;padding:14px 10px}
+.vcc-preview .tiny-carousel{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.vcc-preview .tiny-carousel .tiny-item{width:110px;text-align:center}
+.vcc-preview .qlink{color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:4px}
+.vcc-preview .qlink-icon{height:36px;width:auto}
+.vcc-preview .qlink-title{font-size:10px;font-weight:600;text-transform:uppercase;line-height:1.25}
+.vcc-preview #events{padding:14px}
+.vcc-preview .section-header{text-align:center;font-weight:400;font-size:22px;text-transform:uppercase;margin:4px 0 10px}
+.vcc-preview .section-header span{display:block;font-size:12px;color:#6f88a5}
+.vcc-preview .events-buttons{display:flex}
+.vcc-preview .events-buttons .tab{flex:1;background:#4e606f;color:#fff;border:0;padding:6px;font-size:11px;text-transform:uppercase}
+.vcc-preview .events-buttons .tab.active{background:#0d4a76;color:#fcb215}
+.vcc-preview .tab-event{display:none;background:#f5f6f8;padding:10px}
+.vcc-preview .tab-event.active{display:block}
+.vcc-preview .mini-calendar{display:none}
+.vcc-preview .cal-event{background:#fff;margin:0 0 6px;padding:8px}
+.vcc-preview .cal-content{display:flex;gap:12px;align-items:center}
+.vcc-preview time{font-size:10px;text-transform:uppercase;text-align:center;min-width:34px}
+.vcc-preview time span{display:block;font-size:18px}
+.vcc-preview .cal-event-title{font-size:13px}
+.vcc-preview .cal-event-desc{display:block;font-weight:400;font-size:11px;color:#555}
+.vcc-preview .section-link{display:inline-block;margin-top:8px;background:#0d4a76;color:#fff;padding:5px 16px;font-size:11px;text-transform:uppercase;text-decoration:none}
+.vcc-preview #subsites-inner{display:grid;grid-template-columns:1.3fr .9fr 1.3fr}
+.vcc-preview .subsite-link{min-height:150px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.vcc-preview .subsite-name{margin:0;width:100%;background:rgba(13,74,118,.75);color:#fff;text-align:center;font-weight:400;font-size:16px;text-transform:uppercase;padding:14px 6px}
+.vcc-preview #social{padding:14px;text-align:center}
+.vcc-preview #social-wrapper{display:flex;justify-content:center;gap:24px}
+.vcc-preview .social-link{display:inline-flex;width:54px;height:54px;border-radius:50%;align-items:center;justify-content:center}
+.vcc-preview .social-link img{width:26px;height:26px}
+.vcc-preview .social-link.facebook{background:#1877f2}.vcc-preview .social-link.instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.vcc-preview .social-link.twitter{background:#1da1f2}
+.vcc-preview #newsletter{background:#f5f6f8;padding:16px}
+.vcc-preview #newsletter .row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.vcc-preview #newsletter .col-lg-6{flex:1 1 240px}
+.vcc-preview .newsletter-shape{max-width:160px}
+.vcc-preview #newsletter .section-header{color:#fcb215;text-align:left}
+.vcc-preview .newsletter-form{display:flex}
+.vcc-preview .newsletter-input{flex:1;padding:8px;border:1px solid #ccc}
+.vcc-preview .newsletter-form button{background:#fcb215;border:0;padding:8px 16px;color:#fff}
+.vcc-preview .vcc-alert-preview .floating-alert{position:static;background:rgba(0,0,0,.9);color:#fff;padding:14px 18px;margin:12px;border:3px solid #fff;max-width:420px}
+.vcc-preview .vcc-alert-preview h2{color:#ffc140;font-size:16px;margin:0 0 6px;text-transform:uppercase}
+.vcc-preview .vcc-alert-preview .close{display:none}
+.vcc-preview .vcc-calendar-page{padding:12px}
+.vcc-preview #calendar-filters{list-style:none;padding:0;margin:0 0 10px;display:flex;flex-wrap:wrap;gap:6px}
+.vcc-preview #calendar-filters li{padding:3px 10px}
+.vcc-preview #calendar-filters a{color:#fff;text-decoration:none;font-size:12px}
+.vcc-preview #calendar-filters .calendar-tab-filter-all{background:#444;border:1px solid #444}
+.vcc-preview .vcc-full-calendar{display:none}
+.vcc-preview .vcc-upcoming{list-style:none;padding:0}

@@ -8,3 +8,10 @@
 #calendar-filters{list-style:none;margin:0 0 15px;padding:0}#calendar-filters li{display:inline-block;margin:0 6px 6px 0;padding:4px 12px}#calendar-filters a{color:#fff;text-decoration:none}
 .vcc-calendar-page .calendar-tab-filter-all{background:#444;border:1px solid #444}
 .cal-content[data-href]{cursor:pointer}
+/* social icons are white pictures: give them coloured circles in OTHER themes (the Vineyard City theme has its own styling) */
+body:not(.vineyard-city-theme) #social-wrapper{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+body:not(.vineyard-city-theme) #social-wrapper .social-link{display:inline-flex;width:64px;height:64px;border-radius:50%;align-items:center;justify-content:center}
+body:not(.vineyard-city-theme) #social-wrapper .social-link img{width:30px;height:30px}
+body:not(.vineyard-city-theme) #social-wrapper .social-link.facebook{background:#1877f2}
+body:not(.vineyard-city-theme) #social-wrapper .social-link.instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+body:not(.vineyard-city-theme) #social-wrapper .social-link.twitter{background:#1da1f2}

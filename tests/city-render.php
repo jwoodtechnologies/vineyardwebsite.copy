@@ -24,7 +24,8 @@ function apply_filters( $h, $v, ...$args ) { $f = $GLOBALS['S']['filters'][ $h ]
 function add_theme_support() {} function register_nav_menus() {} function register_sidebar() {} function add_shortcode() {} function register_activation_hook() {} function register_deactivation_hook() {}
 function register_post_type() {} function register_taxonomy() {} function add_meta_box() {} function add_menu_page() {} function add_submenu_page() {} function wp_register_script() {}
 function wp_localize_script() {} function flush_rewrite_rules() {} function add_post_type_support() {}
-function register_block_type( $name, $args ) { $GLOBALS['S']['blocks'][ $name ] = $args['render_callback']; }
+function register_block_type( $name, $args ) { if ( is_dir( $name ) ) { $name = json_decode( file_get_contents( $name . '/block.json' ), true )['name']; } $GLOBALS['S']['blocks'][ $name ] = $args['render_callback']; }
+function wp_register_style() {} function get_bloginfo( $k = '' ) { return 'Vineyard City'; } function get_queried_object_id() { return $GLOBALS['S']['cur']; }
 function plugin_dir_path( $f ) { return dirname( $f ) . '/'; }
 function plugin_dir_url( $f ) { return $GLOBALS['SITE'] . '/wp-content/plugins/vineyard-city-content/'; }
 function get_template_directory() { return $GLOBALS['ROOT'] . '/theme/vineyard-city'; }
@@ -43,7 +44,8 @@ function wp_enqueue_script( $h, $src = '', $d = array(), $v = null, $f = false )
 function wp_add_inline_script( $h, $code, $pos = 'after' ) { $GLOBALS['S']['inline'][ $h ][] = array( $pos, $code ); }
 function wp_style_is( $h, $w ) { return isset( $GLOBALS['S']['styles'][ $h ] ); }
 function wp_print_scripts() {} function wp_body_open() {} function language_attributes() { echo 'lang="en-US"'; } function bloginfo( $w ) { echo 'Vineyard City'; }
-function body_class() { echo 'class="page' . ( ! empty( $GLOBALS['S']['body'] ) ? ' ' . $GLOBALS['S']['body'] : '' ) . '"'; }
+function body_class() { $c = apply_filters( 'body_class', array_filter( array( 'page', $GLOBALS['S']['body'] ?? '' ) ) ); echo 'class="' . esc_attr( implode( ' ', array_unique( $c ) ) ) . '"'; }
+function is_page_template( $t ) { return 'fullwidth' === ( $GLOBALS['S']['body'] ?? '' ) && 'template-fullwidth.php' === $t; }
 function get_option( $k, $d = false ) { return array_key_exists( $k, $GLOBALS['S']['options'] ) ? $GLOBALS['S']['options'][ $k ] : $d; }
 function update_option( $k, $v ) { $GLOBALS['S']['options'][ $k ] = $v; }
 function wp_get_attachment_url( $id ) { return $GLOBALS['S']['att'][ $id ] ?? false; }
@@ -69,7 +71,7 @@ function has_block( $n ) { return false !== strpos( $GLOBALS['S']['content'] ?? 
 function wp_list_pluck( $a, $f ) { return array_map( function ( $o ) use ( $f ) { return is_object( $o ) ? $o->$f : $o[ $f ]; }, $a ); }
 function is_wp_error( $x ) { return $x instanceof WP_Error; }
 function is_front_page() { return $GLOBALS['S']['front']; } function is_singular() { return true; } function in_the_loop() { return true; } function is_main_query() { return true; }
-function is_search() { return false; } function is_page_template( $t ) { return false; } function get_search_query() { return ''; } function is_404() { return false; } function is_active_sidebar() { return false; } function dynamic_sidebar() {}
+function is_search() { return false; } function get_search_query() { return ''; } function is_404() { return false; } function is_active_sidebar() { return false; } function dynamic_sidebar() {}
 function get_pages( $a ) { return array(); } function wp_parse_url( $u, $c = -1 ) { return parse_url( $u, $c ); } function is_admin() { return false; } function current_user_can( $c ) { return false; } function admin_url( $p = '' ) { return $GLOBALS['SITE'] . '/wp-admin/' . $p; }
 function wp_head() { do_action( 'wp_enqueue_scripts' ); echo '<title>' . esc_html( $GLOBALS['S']['title'] ?? 'Vineyard City' ) . "</title>\n"; foreach ( $GLOBALS['S']['styles'] as $h => $s ) { echo '<link rel="stylesheet" href="' . esc_url( $s ) . '">' . "\n"; } do_action( 'wp_head' ); }
 function wp_footer() {
@@ -180,3 +182,19 @@ foreach ( $man as $m ) {
 	$dir = $out . '/' . $m['new_path']; @mkdir( $dir, 0777, true ); file_put_contents( $dir . 'index.html', $html ); $n++;
 }
 echo "rendered home + $n pages to $out\n";
+
+// ---- editor preview: what each block's card shows in the block editor (ServerSideRender asks the site with REST_REQUEST)
+define( 'REST_REQUEST', true );
+$S['content'] = $seed['home_content']; $S['cur'] = $home_id;
+$cards = '';
+foreach ( json_decode( file_get_contents( $root . '/tests/editor/editor-data.json' ), true )['localized']['data']['blocks'] as $b ) {
+	$html   = call_user_func( $S['blocks'][ $b['name'] ] );
+	$cards .= '<div class="vcc-card"><div class="vcc-card__head"><span class="vcc-card__title dashicons-before dashicons-' . esc_attr( $b['icon'] ) . '">' . esc_html( $b['title'] ) . '</span>'
+		. '<a class="components-button is-secondary vcc-card__edit" href="' . esc_url( $b['editUrl'] ) . '">' . esc_html( $b['editLabel'] ) . ' ↗</a></div><p class="vcc-card__help">' . esc_html( $b['description'] ) . '</p>'
+		. '<div class="vcc-card__preview vcc-preview">' . $html . '</div></div>';
+}
+@mkdir( "$out/editor-preview", 0777, true );
+file_put_contents( "$out/editor-preview/index.html", '<!doctype html><meta charset="utf-8"><title>Home – Edit Page</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dashicons/0.9.0/css/dashicons.min.css">'
+	. '<link rel="stylesheet" href="' . $GLOBALS['SITE'] . '/wp-content/plugins/vineyard-city-content/assets/blocks-editor.css"><body style="margin:0;background:#fff;font-family:sans-serif">'
+	. '<div style="max-width:840px;margin:0 auto;padding:24px"><h1 style="font-size:40px;font-weight:600;margin:10px 0 20px">Home</h1>' . $cards . '</div>' );
+echo "editor preview written\n";

@@ -1495,7 +1495,7 @@
    "color": "#cc3232"
   }
  ],
- "home_content": "<!-- wp:vineyard-city-content/quick-links /-->\n\n<!-- wp:vineyard-city-content/events /-->\n\n<!-- wp:vineyard-city-content/photo-tiles /-->\n\n<!-- wp:vineyard-city-content/social /-->\n\n<!-- wp:vineyard-city-content/newsletter /-->",
+ "home_content": "<!-- wp:vineyard-city-content/home-banner /-->\n\n<!-- wp:vineyard-city-content/quick-links /-->\n\n<!-- wp:vineyard-city-content/events /-->\n\n<!-- wp:vineyard-city-content/photo-tiles /-->\n\n<!-- wp:vineyard-city-content/social /-->\n\n<!-- wp:vineyard-city-content/newsletter /-->\n\n<!-- wp:vineyard-city-content/alerts /-->",
  "calendar_pages": [
   "calendar.php",
   "government/events.php",

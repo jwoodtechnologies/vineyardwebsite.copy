@@ -9,12 +9,12 @@
 $root = dirname( __DIR__ );
 define( 'ABSPATH', __DIR__ . '/' );
 define( 'VCC_DIR', $root . '/plugin/vineyard-city-content/' );
-define( 'VCC_VERSION', 'test' );
+define( 'VCC_VERSION', '1.0.2' );
 
 /* ---------------------------------------------------------------- in-memory WordPress */
 $DB = array( 'posts' => array(), 'meta' => array(), 'options' => array(), 'next' => 100, 'revisions_on' => true );
 class WP_Error {}
-function add_action() {} function add_filter() {} function kses_remove_filters() {} function is_wp_error( $x ) { return $x instanceof WP_Error; }
+function add_action() {} function add_filter() {} function admin_url( $p = '' ) { return '/wp-admin/' . $p; } function kses_remove_filters() {} function is_wp_error( $x ) { return $x instanceof WP_Error; }
 function wp_slash( $v ) { return $v; } function wp_strip_all_tags( $s ) { return trim( strip_tags( $s ) ); }
 function get_option( $k, $d = false ) { global $DB; return array_key_exists( $k, $DB['options'] ) ? $DB['options'][ $k ] : $d; }
 function update_option( $k, $v ) { global $DB; $DB['options'][ $k ] = $v; return true; }
@@ -122,6 +122,22 @@ $before = get_post_field( 'post_content', 10 );
 $r      = vcc_rebuild_home();
 check( $r['ok'] && $seed['home_content'] === get_post_field( 'post_content', 10 ), 'Home rebuilt' );
 check( get_post_meta( 10, '_vcc_home_content_backup', true ) === $before, 'old content kept in the page details instead' );
+
+echo "One-time upgrade to 1.0.2 (banner and alerts become blocks)\n";
+$v101 = vcc_previous_home_layouts()[0];
+reset_state(); $GLOBALS['DB']['posts'][10]['post_content'] = $v101;
+vcc_maybe_upgrade();
+check( $seed['home_content'] === get_post_field( 'post_content', 10 ), 'an unchanged 1.0.1 home page gets the new layout (banner + alerts blocks)' );
+check( '1.0.2' === get_option( 'vcc_db_version' ), 'upgrade remembered' );
+$GLOBALS['DB']['posts'][10]['post_content'] = '<!-- wp:vineyard-city-content/photo-tiles /-->';
+vcc_maybe_upgrade();
+check( '<!-- wp:vineyard-city-content/photo-tiles /-->' === get_post_field( 'post_content', 10 ), 'it runs only once (a later re-arrangement is never touched)' );
+reset_state(); $mine = "<!-- wp:vineyard-city-content/photo-tiles /-->\n\n<!-- wp:vineyard-city-content/quick-links /-->";
+$GLOBALS['DB']['posts'][10]['post_content'] = $mine;
+vcc_maybe_upgrade();
+check( $mine . "\n\n<!-- wp:vineyard-city-content/alerts /-->" === get_post_field( 'post_content', 10 ), 'a home page the clerk re-arranged keeps her order; only the Alerts block is added' );
+reset_state(); vcc_maybe_upgrade();
+check( false !== strpos( get_post_field( 'post_content', 10 ), 'rz-block-list' ), 'upgrade never rewrites a home page with other content (that is the Rebuild button\'s job)' );
 
 echo $fails ? "\n$fails check(s) FAILED\n" : "\nAll checks passed\n";
 exit( $fails ? 1 : 0 );
