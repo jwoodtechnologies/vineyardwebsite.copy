@@ -393,7 +393,7 @@ def main():
             e = entries.get(rel)
             new_ref = "/" + e["new_path"] if e else "/"
         elif kind in ("document", "image") and not in_assets:
-            new_ref = "/wp-content/uploads/legacy/" + clean_rel
+            new_ref = "/wp-content/uploads/vineyard-files/" + clean_rel
         elif in_assets:
             new_ref = "theme: _assets_/" + clean_rel.split("_assets_/", 1)[-1] if "_assets_/" in rel else "theme: _assets_/revize_" + clean_rel[len("revize/"):]
         inv.append({"type": kind, "old_url": old_url_for(rel), "local_path": "source/www.vineyardutah.gov/" + rel,
@@ -405,34 +405,43 @@ def main():
         for r in sorted(inv, key=lambda r: (r["type"], r["old_url"])):
             w.writerow(r)
 
-    # media list for import
+    # media list: one row per clean old path (the mirror can hold several ?t= versions of the same file; keep the newest)
+    media = {}
+    for old, local in sorted(set(media_rows)):
+        media[old] = local  # sorted order => highest ?t= timestamp wins
     with open(CONTENT / "media.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["old_path", "local_path"])
-        for old, local in sorted(set(media_rows)):
+        for old, local in sorted(media.items()):
             w.writerow([old, "source/www.vineyardutah.gov/" + local])
 
-    # ---- redirects
+    # ---- redirects (format accepted by the Redirection plugin's CSV import: source,target,regex,code)
+    q = lambda path: up.quote(path, safe="/-_.~()'!$&,;=:@")
+    seen_src = set()
     redirects = []
+
+    def add(src, dst, regex=0, code=301):
+        if src not in seen_src:
+            seen_src.add(src)
+            redirects.append((src, dst, regex, code))
+
     for rel, e in sorted(entries.items()):
         if rel == home_rel:
             continue
-        old_p = "/" + strip_query(rel)
-        redirects.append((old_p, "/" + e["new_path"], 301, "page"))
+        add(q("/" + strip_query(rel)), "/" + e["new_path"])
         if rel.endswith("/index.php"):
-            redirects.append(("/" + rel[: -len("index.php")], "/" + e["new_path"], 301, "page-folder"))
-    redirects.append(("/index.php", "/", 301, "page"))
-    redirects.append(("/index.html", "/", 301, "page"))
-    for old, local in sorted(set(media_rows)):
-        redirects.append(("/" + old, "/wp-content/uploads/legacy/" + old, 301, "media"))
-    # Revize document links that appear without /wp-content (spaces are kept encoded by the web server)
-    redirects.append(("/search.php", "/", 301, "search (query string q= is mapped to ?s= by the theme)"))
-    redirects.append(("/DocumentCenter/View/319", "/government/resource-documents/", 301, "legacy CivicPlus URL; file id unknown"))
-    redirects.append(("/DocumentCenter/View/2375/Building-Portal-Account-Guide", "/government/resource-documents/", 301, "legacy CivicPlus URL; file id unknown"))
-    redirects.append(("^/DocumentCenter/(View|Home/View)/\\d+(/.*)?$", "/government/resource-documents/", 301, "REGEX: any legacy /DocumentCenter/View/N link"))
+            add(q("/" + rel[: -len("index.php")]), "/" + e["new_path"])
+    add("/index.php", "/")
+    add("/index.html", "/")
+    add("/search.php", "/")
+    for old in sorted(media):
+        add(q("/" + old), "/wp-content/uploads/vineyard-files/" + q(old))
+    add("/DocumentCenter/View/319", "/government/resource-documents/")
+    add("/DocumentCenter/View/2375/Building-Portal-Account-Guide", "/government/resource-documents/")
+    add("^/DocumentCenter/(View|Home/View)/[0-9]+(/.*)?$", "/government/resource-documents/", 1)
     with open(ROOT / "redirects.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["old_path", "new_path", "status", "note"])
+        w.writerow(["source", "target", "regex", "code"])
         w.writerows(redirects)
 
     # ---- copy theme assets (unchanged)
@@ -464,7 +473,7 @@ def main():
                 shutil.copy2(p, out)
     shutil.copy2(ROOT / "redirects.csv", THEME / "inc" / "redirects.csv")
 
-    print("pages:", len(manifest), "| media files:", len(set(media_rows)), "| inventory rows:", len(inv), "| redirects:", len(redirects))
+    print("pages:", len(manifest), "| media files:", len(media), "| inventory rows:", len(inv), "| redirects:", len(redirects))
 
 
 if __name__ == "__main__":

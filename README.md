@@ -10,7 +10,8 @@ The real HTML, CSS, JS, images and documents were mirrored from the live site on
 | `theme/vineyard/` | WordPress classic theme: `header.php`, `footer.php`, `page.php`, `front-page.php`, `functions.php`, `index.php`, `search.php`, `404.php`; the **original** `layout.css`, `scripts.js`, Font Awesome, etc. in `_assets_/` and `revize/plugins/` (class names unchanged) |
 | `content/` | `<slug>.html` main content of each of the 621 pages, `manifest.json` (title, slug, parent, menu order, old URL, page meta), `menu.json` (main nav tree), `media.csv` (files to import) |
 | `inventory.csv` | every page / image / document / theme asset with its old URL, local path, size, hash and new location |
-| `redirects.csv` | old URL → new URL (pages, folder indexes, every media file, legacy `/DocumentCenter/View/N`) |
+| `redirects.csv` | old URL → new URL in the **Redirection plugin CSV format** (`source,target,regex,code`): pages, folder indexes, every file, legacy `/DocumentCenter/View/N` |
+| `content/vineyard-import.xml` | **WXR file for Tools → Import**: 622 pages (621 + Home) with hierarchy, rewritten links, page meta, plus the 109‑item main menu |
 | `scripts/` | `import.sh` (WP‑CLI importer), `build_content.py` (regenerates everything above from `source/`), `fill_gaps.py`, `verify.sh`, … |
 | `docs/dynamic-features.md` | features that can't be copied (calendar, agendas, forms, search, bill pay, alerts, directory …) + proposed plugins |
 | `tests/` | link‑rewrite test and a WordPress‑less render harness used to check the theme |
@@ -18,12 +19,71 @@ The real HTML, CSS, JS, images and documents were mirrored from the live site on
 ## What was copied (and what wasn't)
 
 * **621 pages** (+ home) → WordPress pages. 154 use the sidebar layout, 467 the `fullwidth` layout (incl. ~460 staff/board "directory" profile pages `business_detail_T13_R*.php`).
-* **646 documents/images** (~1.6 GB; PDFs, DOCX, PNG, JPG) → Media Library under `wp-content/uploads/legacy/<original path>`.
+* **610 documents/images** (~1.5 GB; PDFs, DOCX, PNG, JPG) → laid out as a mirror of the old site paths and served from `wp-content/uploads/vineyard-files/<original path>` (branch `deploy/files`). One 140 MB PDF exceeds GitHub's 100 MB file limit and is not on any branch (see `source/LARGE_FILES.md`).
 * The **original CSS/JS are enqueued unchanged** (`layout.css?ver=1.02`, bootstrap 4.6, tiny‑slider, Font Awesome, YTPlayer, matchHeight, `scripts.js`). Page-specific Revize CSS/JS (document center, FAQ, business directory) is enqueued per page from the list the importer stores in post meta.
 * Header, footer, share modal and the 100‑language translate list are the original markup; the nav is generated from the Menu (`wp_nav_menu` with a walker that outputs the original `menuLI/menuA levelN` classes, so the original mega‑menu CSS/JS work as is).
 
 **Known gaps** (details in `docs/dynamic-features.md`): Revize‑hosted forms, the event calendar feed, the document‑center search box, the directory search/filter, the home‑page "newsletter" form. Two files are not in the mirror: 22 resources returned 404/403 on the live site (`source/_fetch_failures.tsv`, e.g. `Departmnts/Planning/fencing.JPG`, a few directory photos blocked by the origin's Cloudflare), and one 140 MB PDF is not committed to Git (see `source/LARGE_FILES.md`).
 There is **no `/documentcenter` on the live site** (that is a CivicPlus URL pattern; the Revize "Document Center" is a module that lists direct file links). Two legacy `/DocumentCenter/View/N` URLs appear in the old sitemap and 404 on the live site, so `redirects.csv` sends `^/DocumentCenter/(View|Home/View)/\d+…` to the Resource Documents page.
+
+## Deploy to WordPress.com (Business plan, GitHub Deployments, no SSH)
+
+Three branches of this repository are used. All were created with normal pushes:
+
+| Branch | Contents | Deploy target (remote path) |
+|--------|----------|-----------------------------|
+| `deploy/theme` | the theme **at the repo root** (`style.css`, `functions.php`, `page.php`, …) | `/wp-content/themes/vineyard` |
+| `deploy/files` | only documents/images, laid out like the old site (`Finance/FY 27….pdf`, `Headshots/….jpg`, …) | `/wp-content/uploads/vineyard-files` |
+| `claude/trusting-cori-wc9myt` (this branch) | everything else: `content/vineyard-import.xml`, `redirects.csv`, scripts, source mirror | not deployed – you download two files from it |
+
+> Screen names below are from the WordPress.com dashboard as of late 2026 and may be worded slightly differently. Do the steps **in this order**.
+
+### A. Deploy the theme and the files (GitHub Deployments)
+1. Go to **wordpress.com/sites → click your site → Deployments** (it may sit under **Settings → Deployments** or **Hosting → Deployments**; the page is titled *GitHub Deployments*).
+2. Click **Connect repository** and authorise the **WordPress.com Developer** GitHub app for `jwoodtechnologies/vineyardwebsite.copy` if asked (choose *Only select repositories* → this repo → **Install**).
+3. Select repository `vineyardwebsite.copy`, branch **`deploy/theme`**.
+4. **Target directory:** `/wp-content/themes/vineyard`. **Deployment mode:** *Simple* (copies the files as they are; no build step). Leave *Automatic deployments* on. Click **Connect**.
+5. Repeat **Connect repository** a second time: same repo, branch **`deploy/files`**, **Target directory** `/wp-content/uploads/vineyard-files`, mode *Simple*. Click **Connect**.
+6. Wait for both rows to show **Deployed** (the files branch is ~1.5 GB, the first run can take a long while; press **Run deployment / View logs** to follow it). Check one file in the browser: `https://YOUR-SITE/wp-content/uploads/vineyard-files/Headshots/IMG_1037%20-%20Copy.jpg` should open an image.
+
+### B. Activate the theme
+1. **wp-admin → Appearance → Themes** (on WordPress.com: **Appearance → Themes → Installed themes** if the list is filtered).
+2. Find **Vineyard City (Revize clone)** → **Activate**.
+
+### C. Import the pages and menu (WXR)
+1. Download `content/vineyard-import.xml` from this repository to your computer (GitHub → file → **Download raw file**).
+2. **wp-admin → Tools → Import → WordPress → Install Now → Run Importer** (if offered, activate the plugin).
+3. **Choose File** → `vineyard-import.xml` → **Upload file and import** (file is 3.7 MB; if you get a size error raise it with *Tools → Import* limits or split the file).
+4. On *Assign Authors* choose your administrator user (existing user) – do **not** tick *Download and import file attachments* (there are none). Click **Submit**.
+5. Expect: **Pages → All Pages = 622** (621 + Home), and **Appearance → Menus** shows a menu called **Primary** with 109 items.
+6. If iframes/forms/styles look stripped on some pages, your user lacks the *unfiltered_html* capability; import again as an administrator/owner account.
+
+### D. Install the redirects (Redirection plugin)
+1. **Plugins → Add New** → search **Redirection** (by John Godley) → **Install Now → Activate** → **Start Setup → Finish Setup**.
+2. Download `redirects.csv` from this repository.
+3. **Tools → Redirection → Import/Export tab** (the **Import** box) → choose `redirects.csv` → **Upload**, group **Redirections**. The CSV columns are `source,target,regex,code`; 1,249 rows, one of them (`^/DocumentCenter/…`) has the regex flag set.
+4. Test two: open `/government/building.php` (should land on `/government/building/`) and `/Departmnts/Building/Builder%20-%20Request%20Inspection.pdf` (should land on the file under `/wp-content/uploads/vineyard-files/`).
+
+### E. Front page, menu location, permalinks
+1. **Settings → Reading → Your homepage displays → A static page**; **Homepage:** *Home*; leave **Posts page** empty → **Save Changes**.
+2. **Appearance → Menus → Manage Locations** (tab) → set **Primary (main navigation)** to the menu **Primary** → **Save Changes**. (Or on the *Edit Menus* tab tick **Display location: Primary (main navigation)** at the bottom and **Save Menu**.)
+3. **Settings → Permalinks → Post name** → **Save Changes** (page URLs such as `/government/building/` rely on this).
+4. Visit the home page and compare with `docs/screenshots/`.
+
+### Known limits of this route
+* Links are written **root‑relative** (`/government/building/`), so the site must live at the domain root.
+* Forms still post to the old Revize host (they will not work); the events calendar is empty; see `docs/dynamic-features.md`.
+* Third‑party widgets (Analytics, UserWay, Podium) are off. To enable add `define('VINEYARD_THIRD_PARTY', true);` – not possible without file access on some plans; use WordPress.com's **Settings → Marketing → Traffic** for Analytics instead.
+* The theme redirect fallback (`inc/redirects.php`) switches itself off when the Redirection plugin is active.
+* The WP‑CLI importer (`scripts/import.sh`) is an alternative for hosts with SSH; the WXR route above is the one to use on WordPress.com.
+
+### Rebuilding the deploy branches and the WXR
+```bash
+python3 -I scripts/build_content.py     # content/, manifest, menu, redirects.csv, inventory, theme assets
+php scripts/build_wxr.php               # content/vineyard-import.xml
+python3 -I tests/validate_wxr.py        # well-formed + parent/menu IDs resolve
+scripts/build_deploy_branches.sh        # (re)creates deploy/theme and deploy/files locally; push them with normal pushes
+```
 
 ## Run a local WordPress
 
@@ -57,10 +117,10 @@ Raise PHP `memory_limit`/`upload_max_filesize` (≥256 MB) for the larger PDFs.
 ### What `import.sh` does (idempotent – safe to re‑run)
 
 1. Activates the theme, sets permalinks to `/%postname%/`.
-2. `import-media.php` – copies every file to `uploads/legacy/<old path>` and registers it in the Media Library (stores the old path in `_vc_old_path`).
-3. `import-pages.php` – creates pages from `content/manifest.json` (parents first), **rewrites internal links** (page links → new permalinks; file links → Media Library URLs; `?t=` cache‑busters dropped; theme assets → theme URL), saves page chrome (banner images, left nav, contact box, breadcrumbs, layout) as post meta, sets the static front page. Unresolvable internal URLs are written to `content/unresolved-links.txt`.
+2. `import-media.php` – copies every file to `uploads/vineyard-files/<old path>` and registers it in the Media Library (stores the old path in `_vc_old_path`).
+3. `import-pages.php` – creates pages from `content/manifest.json` (parents first), **rewrites internal links** (page links → new permalinks; file links → `/wp-content/uploads/vineyard-files/…`; `?t=` cache‑busters dropped; theme assets → theme URL), saves page chrome (banner images, left nav, contact box, breadcrumbs, layout) as post meta, sets the static front page. Unresolvable internal URLs are written to `content/unresolved-links.txt`.
 4. `import-menu.php` – builds the **Primary** menu from `content/menu.json` (109 items, 3 levels) and assigns it to the theme location.
-5. Installs `redirects.csv` for the theme's 404 handler (`theme/vineyard/inc/redirects.php`; supports `^regex` rows). For production you can also convert it to server rules (nginx `map` / Apache `RewriteMap`) – the CSV format is `old_path,new_path,status,note`.
+5. Installs `redirects.csv` for the theme's 404 handler (`theme/vineyard/inc/redirects.php`; supports `^regex` rows). For production you can also convert it to server rules (nginx `map` / Apache `RewriteMap`) – the CSV format is `source,target,regex,code`.
 
 Environment switches: `SKIP_MEDIA=1` (pages only), `WPUSER=<admin id>` (needs *unfiltered_html* so iframes/forms survive), `blog_public` is left **off** until you launch.
 Third‑party widgets (Google Analytics G‑DMHHVNQ10E, UserWay, Podium) are **off** by default; add `define('VINEYARD_THIRD_PARTY', true);` to `wp-config.php` to load them.
@@ -73,7 +133,7 @@ php tests/test-rewrite.php                   # link rewriter over all 621 conten
 ```
 
 Then compare by eye with the live site: Home, Government → Building, Government → Finance → Budget (accordions), Government → City Council → a profile page, and the mobile menu (≤ 991 px).
-Compare counts: **621 pages** (Pages → All), **646** Media items, 109 menu items.
+Compare counts: **622 pages** (621 + Home), 109 menu items.
 
 ## Regenerating from a fresh crawl
 

@@ -3,7 +3,7 @@
  * Import images & documents into the Media Library.
  * Run via:  wp eval-file scripts/import-media.php <repo_root>
  *
- * Files are copied to wp-content/uploads/legacy/<original site path> (so the new URL is predictable and
+ * Files are copied to wp-content/uploads/vineyard-files/<original site path> (so the new URL is predictable and
  * redirects.csv can be exact) and registered as attachments. The old path is stored in meta "_vc_old_path"
  * (used by vineyard_media_url() in the theme). Idempotent: already-imported paths are skipped.
  */
@@ -30,7 +30,7 @@ foreach ( $map as $old => $local ) {
 	if ( isset( $existing[ $old ] ) ) { $skipped++; continue; }
 	$src = $root . '/' . $local;
 	if ( ! is_file( $src ) ) { WP_CLI::warning( "missing file: $local" ); $failed++; continue; }
-	$rel  = 'legacy/' . $old;
+	$rel  = 'vineyard-files/' . $old;
 	$dest = $up['basedir'] . '/' . $rel;
 	wp_mkdir_p( dirname( $dest ) );
 	if ( ! copy( $src, $dest ) ) { WP_CLI::warning( "copy failed: $old" ); $failed++; continue; }
@@ -39,7 +39,7 @@ foreach ( $map as $old => $local ) {
 		'post_mime_type' => $type['type'] ?: 'application/octet-stream',
 		'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $old ) ),
 		'post_status'    => 'inherit',
-		'guid'           => $up['baseurl'] . '/legacy/' . vc_encode_path( $old ),
+		'guid'           => $up['baseurl'] . '/vineyard-files/' . vc_encode_path( $old ),
 	);
 	$id = wp_insert_attachment( $att, $dest );
 	if ( is_wp_error( $id ) || ! $id ) { WP_CLI::warning( "attachment failed: $old" ); $failed++; continue; }

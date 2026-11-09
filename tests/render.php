@@ -15,7 +15,7 @@ function vc_run_template( $file ) {
 	include get_template_directory() . '/' . $file;
 	return ob_get_clean();
 }
-// media: for the harness, "Media Library" lookups fall back to the theme-less path; resolve to /wp-content/uploads/legacy/<path>
+// media: for the harness, "Media Library" lookups fall back to the theme-less path; resolve to /wp-content/uploads/vineyard-files/<path>
 $GLOBALS['vc']['front'] = true;
 file_put_contents( "$out/index.html", vc_run_template( 'front-page.php' ) );
 $GLOBALS['vc']['front'] = false;

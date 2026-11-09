@@ -1,38 +1,35 @@
 <?php
 /**
- * Legacy URL redirects driven by inc/redirects.csv (copy of /redirects.csv; scripts/import.sh installs it).
- * Runs only on 404s, so real WordPress URLs and uploaded files are never intercepted.
- * Columns: old_path,new_path,status,note   — an old_path starting with "^" is a regular expression.
+ * Fallback legacy-URL redirects driven by inc/redirects.csv (a copy of /redirects.csv: source,target,regex,code).
+ * Skipped automatically when the Redirection plugin is active (import /redirects.csv there instead).
+ * Runs only on 404s, so real WordPress URLs and deployed files are never intercepted.
  */
 add_action( 'template_redirect', function () {
-	if ( ! is_404() ) {
+	if ( ! is_404() || class_exists( 'Red_Item' ) ) {
 		return;
 	}
 	$csv = __DIR__ . '/redirects.csv';
 	if ( ! is_readable( $csv ) ) {
 		return;
 	}
-	$req = rawurldecode( wp_parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) ); // phpcs:ignore
-	$req_l = strtolower( $req );
-	static $rows = null;
-	if ( null === $rows ) {
-		$rows = array();
-		if ( ( $h = fopen( $csv, 'r' ) ) ) {
-			fgetcsv( $h, 0, ',', '"', '' );
-			while ( ( $r = fgetcsv( $h, 0, ',', '"', '' ) ) !== false ) {
-				$rows[] = $r;
-			}
-			fclose( $h );
-		}
+	$req = rawurldecode( (string) wp_parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) ); // phpcs:ignore
+	$h   = fopen( $csv, 'r' );
+	if ( ! $h ) {
+		return;
 	}
-	foreach ( $rows as $r ) {
-		if ( count( $r ) < 3 ) { continue; }
-		list( $old, $new, $status ) = $r;
-		if ( '^' === substr( $old, 0, 1 ) ) {
-			if ( preg_match( '#' . str_replace( '#', '\#', $old ) . '#i', $req ) ) { wp_safe_redirect( home_url( $new ), (int) $status ); exit; }
-		} elseif ( strtolower( $old ) === $req_l || strtolower( rtrim( $old, '/' ) ) === strtolower( rtrim( $req, '/' ) ) ) {
-			wp_safe_redirect( home_url( $new ), (int) $status );
+	fgetcsv( $h, 0, ',', '"', '' ); // header
+	while ( ( $r = fgetcsv( $h, 0, ',', '"', '' ) ) !== false ) {
+		if ( count( $r ) < 4 ) {
+			continue;
+		}
+		list( $src, $dst, $regex, $code ) = $r;
+		$src = rawurldecode( $src );
+		$hit = $regex ? (bool) preg_match( '#' . str_replace( '#', '\#', $src ) . '#i', $req ) : ( 0 === strcasecmp( rtrim( $src, '/' ), rtrim( $req, '/' ) ) );
+		if ( $hit ) {
+			fclose( $h );
+			wp_safe_redirect( home_url( $dst ), (int) $code );
 			exit;
 		}
 	}
+	fclose( $h );
 } );

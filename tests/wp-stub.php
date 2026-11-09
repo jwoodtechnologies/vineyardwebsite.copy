@@ -104,4 +104,4 @@ class VC_Stub_DB { public $postmeta = 'wp_postmeta'; public function get_results
 	$rows = array(); $i = 0; foreach ( vc_load_media_csv( $GLOBALS['vc']['root'] . '/content/media.csv' ) as $old => $_ ) { $i++; $rows[] = (object) array( 'post_id' => $i, 'meta_value' => $old ); $GLOBALS['vc']['att'][ $i ] = $old; }
 	return $rows; } }
 $GLOBALS['wpdb'] = new VC_Stub_DB();
-function wp_get_attachment_url( $id ) { return $GLOBALS['vc']['site'] . '/wp-content/uploads/legacy/' . vc_encode_path( $GLOBALS['vc']['att'][ $id ] ); }
+function wp_get_attachment_url( $id ) { return $GLOBALS['vc']['site'] . '/wp-content/uploads/vineyard-files/' . vc_encode_path( $GLOBALS['vc']['att'][ $id ] ); }

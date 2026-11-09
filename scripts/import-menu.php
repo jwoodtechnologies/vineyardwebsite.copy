@@ -47,7 +47,7 @@ function vc_add_items( $nodes, $menu_id, $parent, &$n, $map ) {
 			$frag = parse_url( $node['url'], PHP_URL_FRAGMENT );
 			if ( $frag ) { $args = array_merge( $args, array( 'menu-item-type' => 'custom', 'menu-item-url' => get_permalink( $pid ) . '#' . $frag ) ); }
 		} elseif ( $internal && $path ) { // a file (PDF etc.) living in the media library
-			$args += array( 'menu-item-type' => 'custom', 'menu-item-url' => content_url( 'uploads/legacy/' . implode( '/', array_map( 'rawurlencode', explode( '/', $path ) ) ) ) );
+			$args += array( 'menu-item-type' => 'custom', 'menu-item-url' => content_url( 'uploads/vineyard-files/' . implode( '/', array_map( 'rawurlencode', explode( '/', $path ) ) ) ) );
 		} else {
 			$args += array( 'menu-item-type' => 'custom', 'menu-item-url' => $node['url'] );
 		}

@@ -25,17 +25,18 @@ echo "pages OK: $ok"
 echo "== redirects (sample: all page rows + 25 media rows)"
 python3 -I - "$ROOT/redirects.csv" <<'PY' > /tmp/vc_redirects.txt
 import csv,sys,itertools
-rows=[r for r in csv.DictReader(open(sys.argv[1], newline="")) if not r["old_path"].startswith("^")]
-pages=[r for r in rows if r["note"].startswith("page")]
-media=[r for r in rows if r["note"]=="media"][:25]
-for r in pages+media: print(r["old_path"]+"\t"+r["new_path"])
+rows=[r for r in csv.DictReader(open(sys.argv[1], newline="")) if not r["regex"]=="1"]
+pages=[r for r in rows if not r["source"].startswith("/wp-content") and "uploads" not in r["target"]]
+media=[r for r in rows if "uploads" in r["target"]][:25]
+for r in pages+media: print(r["source"]+"\t"+r["target"])
 PY
 rok=0
 while IFS=$'\t' read -r old new; do
   # curl follows the redirect; final URL must end with the expected path (media files must return 200)
-  final=$(curl -s -o /dev/null -L -m 30 -w '%{http_code} %{url_effective}' "$BASE$(python3 -I -c 'import sys,urllib.parse as u;print(u.quote(sys.argv[1],safe="/"))' "$old")")
+  final=$(curl -s -o /dev/null -L -m 30 -w '%{http_code} %{url_effective}' "$BASE$old")
   c=${final%% *}; u=${final#* }
-  if [ "$c" = 200 ] && [[ "$(python3 -I -c 'import sys,urllib.parse as u;print(u.unquote(sys.argv[1]))' "$u")" == *"$new" ]]; then rok=$((rok+1)); else echo "REDIRECT FAIL $old -> $new (got $c $u)"; fail=$((fail+1)); fi
+  un=$(python3 -I -c 'import sys,urllib.parse as u;print(u.unquote(sys.argv[1]))' "$u"); nn=$(python3 -I -c 'import sys,urllib.parse as u;print(u.unquote(sys.argv[1]))' "$new")
+  if [ "$c" = 200 ] && [[ "$un" == *"$nn" ]]; then rok=$((rok+1)); else echo "REDIRECT FAIL $old -> $new (got $c $u)"; fail=$((fail+1)); fi
 done < /tmp/vc_redirects.txt
 echo "redirects OK: $rok"
 
