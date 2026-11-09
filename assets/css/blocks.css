@@ -76,7 +76,8 @@ a { transition: color .3s ease, background .3s ease; }
 .inner-sidebar { position: relative; z-index: 5; }
 .vcb-related, .inner-sidebar #flyout-wrap { margin-top: 100px; margin-left: -50px; margin-bottom: 30px; width: 320px; background: var(--wp--preset--color--primary); color: #fff; border-radius: 0; position: relative; z-index: 200; }
 .editor-styles-wrapper .wp-block-vineyard-related-pages .vcb-related { margin: 0; }
-.editor-styles-wrapper .wp-block-vineyard-related-pages { margin-top: 100px; margin-left: -50px; width: 320px; }
+.editor-styles-wrapper .wp-block-vineyard-related-pages { margin-top: 100px; margin-left: 0; width: 320px; max-width: 100%; }
+.editor-styles-wrapper .contact-box { margin-left: 0; max-width: 100%; }
 .contact-box { width: 320px; margin: 0 0 40px -50px; padding: 47px 50px 54px 49px !important; }
 .contact-box > * { margin: 0; }
 .contact-box .box-header { color: inherit; font-size: 24px; font-weight: 700; text-transform: uppercase; margin: 0 0 38px; }
