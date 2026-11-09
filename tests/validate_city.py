@@ -20,8 +20,11 @@ if len(seed["quicklinks"]) != 11 or len(seed["tiles"]) != 3: errs.append("quick 
 menus = {m["name"] for m in seed["related_menus"]}
 for k, p in pages.items():
     if p.get("related_menu") and p["related_menu"] not in menus: errs.append(f"missing related menu {p['related_menu']}")
-for z in ("content/vineyard-city-theme.zip", "content/vineyard-city-content.zip"):
-    zf = zipfile.ZipFile(R / z); names = zf.namelist(); root = names[0].split("/")[0]
+import glob
+zips = sorted(glob.glob(str(R / "content/vineyard-city-theme-*.zip"))) + sorted(glob.glob(str(R / "content/vineyard-city-content-*.zip")))
+if len(zips) != 2: errs.append(f"expected exactly one theme zip and one plugin zip, found {zips}")
+for z in zips:
+    zf = zipfile.ZipFile(z); z = Path(z).name; names = zf.namelist(); root = names[0].split("/")[0]
     if any(not n.startswith(root + "/") for n in names): errs.append(f"{z}: files outside {root}/")
     if any("/files/" in n and n.count("/") > 2 and root == "vineyard-city" and n.startswith("vineyard-city/files/") for n in names): errs.append("theme zip contains the files folder")
     print(f"{z}: {len(names)} files, root '{root}/', {sum(i.file_size for i in zf.infolist())/1e6:.1f} MB unpacked")

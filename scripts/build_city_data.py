@@ -310,7 +310,9 @@ def main():
     for m in manifest:
         html, form = clean_page(m)
         entry = {"title": m["title"], "html": html, "contact": contact_box(m), "buttons": buttons(m), "banner": banner(m),
-                 "template": "template-fullwidth.php" if m["meta"].get("vc_layout") == "full" else "", "slug": m["slug"], "form": form}
+                 "template": "template-fullwidth.php" if m["meta"].get("vc_layout") == "full" else "", "slug": m["slug"], "form": form,
+                 "menu_order": m["menu_order"],
+                 "parent_old": next((x["old_path"] for x in manifest if m["parent"] and x["slug"] == m["parent"] and not x["parent"]), "")}
         ln = m["meta"].get("vc_leftnav")
         if ln:
             ul = BeautifulSoup(ln, "lxml").select_one("#flyout")

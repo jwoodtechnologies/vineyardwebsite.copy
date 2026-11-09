@@ -64,8 +64,13 @@ for i, b in enumerate(batches, 1):
 imp = os.path.join(wt, "files", "_import"); os.makedirs(imp, exist_ok=True)
 import glob
 extra = [("vineyard-import.xml", "content/vineyard-import.xml"), ("vineyard-import-missing.xml", "content/vineyard-import-missing.xml"),
-         ("missing-pages.tsv", "content/missing-pages.tsv"), ("media-manifest.csv", "content/media-manifest.csv"), ("vineyard-city-theme.zip", "content/vineyard-city-theme.zip"), ("vineyard-city-content.zip", "content/vineyard-city-content.zip"), ("redirects.csv", "redirects.csv")]
+         ("missing-pages.tsv", "content/missing-pages.tsv"), ("media-manifest.csv", "content/media-manifest.csv"), ("redirects.csv", "redirects.csv")]
 extra += [(os.path.basename(f), f) for f in sorted(glob.glob("content/media-import-*.xml"))]
+zips = sorted(glob.glob("content/vineyard-city-theme-*.zip")) + sorted(glob.glob("content/vineyard-city-content-*.zip"))
+extra += [(os.path.basename(f), f) for f in zips]
+for stale in glob.glob(os.path.join(imp, "vineyard-city-*.zip")):          # older/unversioned zips: remove so only the current ones are offered
+    if os.path.basename(stale) not in [os.path.basename(z) for z in zips]:
+        os.remove(stale)
 for name, src in extra:
     shutil.copy2(src, os.path.join(imp, name))
 git("add", "-A")

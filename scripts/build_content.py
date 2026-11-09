@@ -133,6 +133,14 @@ def extract_page(path: Path):
     post = fm
     h1 = soup.select_one("#page-title")
     title = h1.get_text(" ", strip=True) if h1 else (soup.title.get_text(strip=True) if soup.title else rel)
+    if not title:
+        # A page with an empty <h1> must still get a title: WordPress Importer treats an empty title as "same as any page
+        # with this date" and silently merges the page into another one (this is how Business Directory landed on Home).
+        crumbs = soup.select("#breadcrumbs li")
+        title = crumbs[-1].get_text(" ", strip=True).replace("\xa0", " ") if crumbs else ""
+        if not title and soup.title:
+            title = soup.title.get_text(" ", strip=True)
+        title = title or Path(rel).stem.replace("_", " ").strip().title()
     meta = {}
     if post is None:
         return None
@@ -449,7 +457,7 @@ def main():
     if dst.exists():
         shutil.rmtree(dst)
     for p in (SRC / "_assets_").rglob("*"):
-        if p.is_file():
+        if p.is_file() and not p.name.endswith(".orig"):
             rel = p.relative_to(SRC / "_assets_").as_posix()
             out = dst / strip_query(rel)
             out.parent.mkdir(parents=True, exist_ok=True)

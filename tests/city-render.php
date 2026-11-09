@@ -70,7 +70,7 @@ function wp_list_pluck( $a, $f ) { return array_map( function ( $o ) use ( $f ) 
 function is_wp_error( $x ) { return $x instanceof WP_Error; }
 function is_front_page() { return $GLOBALS['S']['front']; } function is_singular() { return true; } function in_the_loop() { return true; } function is_main_query() { return true; }
 function is_search() { return false; } function is_page_template( $t ) { return false; } function get_search_query() { return ''; } function is_404() { return false; } function is_active_sidebar() { return false; } function dynamic_sidebar() {}
-function get_pages( $a ) { return array(); } function wp_parse_url( $u, $c = -1 ) { return parse_url( $u, $c ); } function is_admin() { return false; }
+function get_pages( $a ) { return array(); } function wp_parse_url( $u, $c = -1 ) { return parse_url( $u, $c ); } function is_admin() { return false; } function current_user_can( $c ) { return false; } function admin_url( $p = '' ) { return $GLOBALS['SITE'] . '/wp-admin/' . $p; }
 function wp_head() { do_action( 'wp_enqueue_scripts' ); echo '<title>' . esc_html( $GLOBALS['S']['title'] ?? 'Vineyard City' ) . "</title>\n"; foreach ( $GLOBALS['S']['styles'] as $h => $s ) { echo '<link rel="stylesheet" href="' . esc_url( $s ) . '">' . "\n"; } do_action( 'wp_head' ); }
 function wp_footer() {
 	// original jQuery 3.5.1 stands in for WordPress' own jQuery in this harness
@@ -146,6 +146,11 @@ function vc_render( $S_cb ) { ob_start(); $S_cb(); return ob_get_clean(); }
 $S['front'] = true; $S['cur'] = $home_id; $S['content'] = $seed['home_content']; $S['title'] = 'Welcome to Vineyard UT';
 $html = vc_render( function () { include get_template_directory() . '/front-page.php'; } );
 file_put_contents( "$out/index.html", $html );
+// the state reported on the live site after v1.0.0: Home holding the Business Directory page (theme safeguard must still show the home sections)
+$S['content'] = $pages['government/business_directory.php']['html'];
+@mkdir( "$out/home-polluted", 0777, true );
+file_put_contents( "$out/home-polluted/index.html", vc_render( function () { include get_template_directory() . '/front-page.php'; } ) );
+$S['content'] = $seed['home_content'];
 
 // inner pages
 $S['front'] = false; $S['body'] = '';
