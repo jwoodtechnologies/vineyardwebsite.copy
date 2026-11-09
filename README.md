@@ -77,6 +77,21 @@ After deployment the files are served from `/wp-content/themes/vineyard/files/<o
 3. **Settings → Permalinks → Post name** → **Save Changes** (page URLs such as `/government/building/` rely on this).
 4. Visit the home page and compare with `docs/screenshots/`.
 
+### F. Add the 19 pages the first import skipped (`vineyard-import-missing.xml`)
+WordPress Importer decides a page "already exists" from its **title + date** (it ignores the content), so pages that share a title with an earlier page were skipped (19 of 622). `vineyard-import-missing.xml` has the same IDs, parents and slugs, no menu, and gives those 19 pages a unique date, so the importer skips the 603 existing pages and creates only these 19:
+Bout Time Pub & Grub Vineyard · Tsubame Sushi LLC · Topgolf USA VY, LLC · Maverik, Inc. #517 · Nutricost Manufacturing, LLC (×7) · Dynamic Blending Specialists, Inc. (×2) · Caden Rhoton · Bella's Market LLC · Press (`press`) · Finance (`financing`) · Report a Concern (`report-a-concern` under Community) · UCSO Vineyard Citizens Academy (`vineyard-citizens-academy`). Full list with slugs: `files/_import/missing-pages.tsv`.
+1. Download `https://YOUR-SITE/wp-content/themes/vineyard/files/_import/vineyard-import-missing.xml`.
+2. **Tools → Import → WordPress → Choose File → Upload file and import** → assign to your admin user → leave *Download and import file attachments* **unticked** → **Submit**.
+3. The importer prints "Page … already exists" for 603 pages and creates 19. Check **Pages → All Pages = 622**. Duplicates mean a page had been edited after the first import (the importer compares the stored title), so don't re‑run it more than once.
+
+### G. Put the documents into the Media Library (`media-import-1…13.xml`)
+The documents already work from `/wp-content/themes/vineyard/files/…`; this step additionally lists them under **Media → Library** so staff can search them, and so new uploads sit beside them. 609 files in 13 chunks of ≤ 60 files / ≤ 150 MB (chunk **1 = the water / Consumer Confidence reports**). `files/_import/media-manifest.csv` lists `chunk, filename, size`.
+1. For each chunk 1…13: download `https://YOUR-SITE/wp-content/themes/vineyard/files/_import/media-import-N.xml`.
+2. **Tools → Import → WordPress → Choose File → Upload file and import**.
+3. Assign to your admin user and **tick *Download and import file attachments*** (this is what copies each file into the Media Library; without it nothing is imported). **Submit**. Wait until the page says *All done*, then do the next chunk. If a chunk times out, simply run it again – files already imported are reported as "already exists" and skipped.
+4. The import URLs point at `https://vineyard54.wpcomstaging.com/…`. If the site's address is different when you run this, regenerate with `python3 -I scripts/build_media_wxr.py https://YOUR-SITE/wp-content/themes/vineyard/files`.
+5. Note: page text still links to the copies in `/wp-content/themes/vineyard/files/…`; the Media Library copies are extra. Replacing a file in the Media Library does **not** change those existing links (see the clerk's guide).
+
 ### Known limits of this route
 * Links are written **root‑relative** (`/government/building/`), so the site must live at the domain root.
 * Forms still post to the old Revize host (they will not work); the events calendar is empty; see `docs/dynamic-features.md`.
@@ -89,10 +104,32 @@ After deployment the files are served from `/wp-content/themes/vineyard/files/<o
 ### Rebuilding the deploy branches and the WXR
 ```bash
 python3 -I scripts/build_content.py     # content/, manifest, menu, redirects.csv, inventory, theme assets
-php scripts/build_wxr.php               # content/vineyard-import.xml
+php scripts/build_wxr.php               # content/vineyard-import.xml + vineyard-import-missing.xml + missing-pages.tsv
+python3 -I scripts/build_media_wxr.py   # content/media-import-N.xml + media-manifest.csv
+python3 -I tests/validate_missing.py && python3 -I tests/validate_media.py
 python3 -I tests/validate_wxr.py        # well-formed + parent/menu IDs resolve
 scripts/build_deploy_branches.sh        # (re)builds deploy/site (theme + files/ + files/_import/) and pushes it with normal pushes
 ```
+
+## Editing guide for the City Clerk (no coding)
+
+Sign in at `https://YOUR-SITE/wp-admin`. You will mostly use the menu on the left.
+
+**What you can change yourself**
+* **Page text** – *Pages → All Pages*, hover the page, **Edit**. Change the words, fix a date, add a sentence, then click **Update**. Use the **Visual** tab for ordinary text. Many pages were copied from the old site and contain boxes and lists; if you are not sure what a piece of text belongs to, change the words only and leave the surrounding blocks alone. If something looks wrong, open **History/Revisions** (right‑hand panel) and restore the previous version.
+* **A new page** – *Pages → Add New*. Pick a **Parent page** (for example *Government*) so it appears in the right section, then **Publish**.
+* **Documents (PDF, Word, images)** – *Media → Add New* and drag the file in. To put a link in a page: edit the page, place the cursor, click **Add Media**, choose the file, and click **Insert into page**. To replace an *old* link inside an existing page, edit the page, select the link text, click the link button, and paste the new file's address (copy it from *Media → Library → the file → "Copy URL"*). To search for a document use *Media → Library* and the search box. The existing documents also have a copy under `/wp-content/themes/vineyard/files/…`; those are what current pages point to – uploading a newer version in the Media Library does not update old links, so update the link on the page.
+* **Menus** – *Appearance → Menus*. Drag items to re‑order or indent them (indent = drop‑down), add a page from the left box, or add an outside website with **Custom Links**. Click **Save Menu**. The top bar is the menu called **Primary**.
+* **Page title and web address** – on the edit screen change the title; the address ("slug") is under **Permalink**. If you change a slug, tell your web person so a redirect can be added.
+* **Staff/board profile pages and the document lists** (Budget, Fee Schedule, Water Quality Reports, …) are ordinary pages – edit them like any other. Adding a *new* year to a document list means editing that page's text, because the old "Document Center" tool is not part of WordPress.
+
+**What needs a developer (code changes)**
+* The **home page**: big hero photo and Transparency Portal button, the row of **quick‑link tiles**, the three photo tiles (Mayor & Council, Recreation, Library), the social icons and the newsletter box.
+* The **header** (logo, search box, the drop‑down mega‑menu pictures) and the **footer** (phone, address, hours) – they live in the theme files `header.php` and `footer.php`.
+* The **events/calendar** area on the home page and the Calendar page – this needs a calendar plugin to be chosen and set up (see `docs/dynamic-features.md`).
+* The **banner picture, "Related Pages" list and the contact box** on the left/top of each inner page – they are stored as hidden page settings, not in the text you edit.
+* **Forms** (volunteer, water meter request, meeting with the mayor, …) – they still point to the old Revize system and need to be rebuilt with a form plugin.
+* Turning on Google Analytics, the accessibility button or the text‑us chat widget.
 
 ## Run a local WordPress
 

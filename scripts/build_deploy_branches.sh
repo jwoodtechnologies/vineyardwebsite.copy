@@ -2,7 +2,7 @@
 # Create / update the single GitHub-Deployments branch with NORMAL pushes only (never force):
 #   deploy/site   repo root = contents of theme/vineyard
 #                 + files/                      documents+images in old-site folder layout (content/media.csv)
-#                 + files/_import/              vineyard-import.xml, redirects.csv
+#                 + files/_import/              vineyard-import*.xml, media-import-N.xml, media-manifest.csv, redirects.csv
 #   -> deploy to /wp-content/themes/vineyard
 # Run with the main branch checked out and committed (the theme is taken from HEAD). NO_PUSH=1 skips pushing.
 set -euo pipefail
@@ -62,7 +62,11 @@ for i, b in enumerate(batches, 1):
     print(f"batch {i}/{len(batches)}: {len(b)} files, {sum(x[2] for x in b)/1e6:.0f} MB", flush=True)
 # import helpers, reachable at /wp-content/themes/vineyard/files/_import/
 imp = os.path.join(wt, "files", "_import"); os.makedirs(imp, exist_ok=True)
-for name, src in (("vineyard-import.xml", "content/vineyard-import.xml"), ("redirects.csv", "redirects.csv")):
+import glob
+extra = [("vineyard-import.xml", "content/vineyard-import.xml"), ("vineyard-import-missing.xml", "content/vineyard-import-missing.xml"),
+         ("missing-pages.tsv", "content/missing-pages.tsv"), ("media-manifest.csv", "content/media-manifest.csv"), ("redirects.csv", "redirects.csv")]
+extra += [(os.path.basename(f), f) for f in sorted(glob.glob("content/media-import-*.xml"))]
+for name, src in extra:
     shutil.copy2(src, os.path.join(imp, name))
 git("add", "-A")
 if git("status", "--porcelain").strip():
