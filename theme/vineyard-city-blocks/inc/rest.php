@@ -61,3 +61,30 @@ add_action( 'rest_api_init', function () {
 		},
 	) );
 } );
+
+/** Admins only: copy a file from the live vineyardutah.gov site into the Media Library. */
+add_action( 'rest_api_init', function () {
+	register_rest_route( 'vineyard/v1', '/import-remote', array(
+		'methods'             => 'POST',
+		'permission_callback' => function () { return current_user_can( 'manage_options' ); },
+		'args'                => array( 'path' => array( 'type' => 'string', 'required' => true ) ),
+		'callback'            => function ( $r ) {
+			$path = ltrim( (string) $r['path'], '/' );
+			$url  = 'https://www.vineyardutah.gov/' . $path;
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+			require_once ABSPATH . 'wp-admin/includes/media.php';
+			require_once ABSPATH . 'wp-admin/includes/image.php';
+			$tmp = download_url( $url, 300 );
+			if ( is_wp_error( $tmp ) ) {
+				return $tmp;
+			}
+			$name = sanitize_file_name( rawurldecode( basename( $path ) ) );
+			$id   = media_handle_sideload( array( 'name' => $name, 'tmp_name' => $tmp ), 0, preg_replace( '/\.[a-z0-9]+$/i', '', rawurldecode( basename( $path ) ) ) );
+			if ( is_wp_error( $id ) ) {
+				@unlink( $tmp ); // phpcs:ignore
+				return $id;
+			}
+			return array( 'id' => (int) $id, 'url' => wp_get_attachment_url( $id ) );
+		},
+	) );
+} );
