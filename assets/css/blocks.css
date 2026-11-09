@@ -99,7 +99,7 @@ a { transition: color .3s ease, background .3s ease; }
 /* buttons at the top of a page */
 .inner-buttons { gap: 25px; margin-bottom: 45px; align-items: stretch; }
 .inner-buttons .wp-block-button { display: flex; }
-.inner-buttons .wp-block-button__link { width: 250px; background: var(--wp--preset--color--slate); color: #fff; border-radius: 0; text-transform: uppercase; font-size: 20px; line-height: 22px; font-weight: 500; padding: 14px 20px; text-align: left; text-decoration: none; }
+.inner-buttons .wp-block-button__link { box-sizing: border-box; width: 250px; background: var(--wp--preset--color--slate); color: #fff; border-radius: 0; text-transform: uppercase; font-size: 20px; line-height: 22px; font-weight: 500; padding: 14px 20px; text-align: left; text-decoration: none; }
 .inner-buttons .wp-block-button__link:hover { background: var(--wp--preset--color--primary); color: var(--wp--preset--color--secondary); }
 
 /* ---------- home ---------- */
